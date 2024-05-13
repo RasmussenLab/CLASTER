@@ -1,0 +1,23 @@
+
+input_info:
+  input_source: ./inputs/microC/test/ 
+  input_name: contact_maps
+  input_type: array
+
+model_config:
+  model_type: cnn
+  #pre_normalization: "instancenorm"
+  model_init_config:
+    num_output_features: 512 #before fc_repr_dim
+    layers: [1,2]
+    kernel_height: 5
+    down_stride_width: 2
+    down_stride_height: 2 #5
+    kernel_width: 5  #10
+    dilation_factor_width: 2
+    dilation_factor_height: 2
+    channel_exp_base: 2  #3 #-1
+    first_channel_expansion: 2
+    rb_do: .3
+    stochastic_depth_p: .1
+    attention_inclusion_cutoff: 1 #128 #256

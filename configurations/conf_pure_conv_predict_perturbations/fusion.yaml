@@ -1,0 +1,9 @@
+  
+model_config:
+  fc_do: 0.4
+  fc_task_dim: 256
+  layers:
+  - 2
+  rb_do: 0.4
+  stochastic_depth_p: 0.5
+model_type: "mlp-residual"

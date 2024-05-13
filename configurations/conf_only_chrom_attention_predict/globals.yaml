@@ -1,0 +1,11 @@
+
+
+checkpoint_interval: 30300 # 100 epochs #60000
+sample_interval: 30300 #60000
+n_epochs: 120
+batch_size: 64
+optimizer: "adamw"
+lr: 0.0001 #0.0001
+device: "cuda"
+compute_attributions: false
+

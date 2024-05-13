@@ -1,0 +1,11 @@
+annotations
+benchmarks
+checkpoints
+figures
+GEO_files
+inputs
+runs
+scripts/*.py
+scripts/*.sh
+targets
+*.log

@@ -1,0 +1,25 @@
+ 
+input_info:
+  input_source: ./inputs/landscape_arrays/test/ 
+  input_name: gene_expression
+  input_type: array
+
+model_config:
+  model_type: cnn
+  #pre_normalization: "instancenorm"
+  model_init_config:
+    num_output_features: 512 # before fc_repr_dim
+    layers: [4,4]
+    kernel_height: 1
+    down_stride_width: 2
+    first_stride_expansion_width: 1
+    first_kernel_expansion_height: 4 #5
+    kernel_width: 10  #10
+    dilation_factor_width: 2
+    dilation_factor_height: 1
+    channel_exp_base: 5  #3 #-1
+    first_channel_expansion: 2
+    rb_do: .3
+    stochastic_depth_p: .1
+    attention_inclusion_cutoff: 1 #50 #256
+

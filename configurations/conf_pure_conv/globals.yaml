@@ -1,0 +1,21 @@
+
+output_folder: ./runs/gene_expression_only_chrom_pure_conv/  #gene_expression_prediction_no_H3K27ac_uncoupled/     #gene_expression_cnn_1kbp_401_bins_2_cond_reloaded/ 
+manual_valid_ids_file: ./annotations/manual_validation_ids_chr17.txt  #manual_validation_ids_chr17_uncoupled.txt
+checkpoint_interval: 30300 # 100 epochs #60000
+sample_interval: 30300 #60000
+n_epochs: 120
+batch_size: 64
+optimizer: "adamw"
+lr: 0.0001 #0.0001
+device: "cuda"
+compute_attributions: true
+# latent_sampling: 
+#   layers_to_sample:
+#     - "input_modules.contact_maps.feature_extractor.conv.0.conv_1"
+#     - "input_modules.contact_maps.feature_extractor.conv.1.conv_2"
+#     - "input_modules.contact_maps.feature_extractor.conv.2.conv_2"
+#     - "input_modules.contact_maps.feature_extractor.conv.3.conv_2"
+# attribution_background_samples: 512
+# attributions_every_sample_factor: 1
+#pretrained_checkpoint: best_models/gene_expression_exformer_unlimited_chrom_and_micro_with_attention_model_117600_perf-average=0.8435.pt 
+

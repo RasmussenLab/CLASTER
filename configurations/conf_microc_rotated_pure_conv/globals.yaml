@@ -1,0 +1,16 @@
+
+output_folder: ./runs/gene_expression_microc_rotated_pure_conv/  #gene_expression_prediction_no_H3K27ac_uncoupled/     #gene_expression_cnn_1kbp_401_bins_2_cond_reloaded/ 
+manual_valid_ids_file: ./annotations/manual_validation_ids_chr17.txt  #manual_validation_ids_chr17_uncoupled.txt
+checkpoint_interval: 30300 
+sample_interval: 30300 
+n_epochs: 120
+batch_size: 64
+optimizer: "adamw"
+lr: 0.0001 
+device: "cuda"
+compute_attributions: false
+# latent_sampling: 
+#   layers_to_sample:
+#     - "input_modules.contact_maps.feature_extractor.conv.0.conv_1"
+#     - "input_modules.contact_maps.feature_extractor.conv.1.conv_2"
+#     - "input_modules.contact_maps.feature_extractor.conv.1.conv_2"
