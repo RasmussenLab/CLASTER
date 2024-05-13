@@ -31,3 +31,5 @@ Scripts:
     - The addition of a model head on top of the embeddings to match our regression outputs.
     - Code to fine-tune Hyena-DNA's backbone and the added head together.
 - `3_Data_analysis.ipynb`: The notebook contains the functions used to perform the data analysis and create the figures of the manuscript.
+
+Thanks
