@@ -15,7 +15,6 @@ Configurations:
 - Configuration files (.yaml) required to build different flavours of CLASTER.
 
 Scripts:
-
 - `1_Data_obtention.ipynb`: This notebook guides the user through the data obtention process, including:
     - Data download from publicly available repositories:
         - Inputs: Chromatin landscape (ATAC-seq, H3K4me3, H3K27ac and H3K27me3 in mESCs) and structure (Micro-C maps in mESCs)
@@ -26,10 +25,12 @@ Scripts:
         - Obtain numpy arrays for the inputs.
         - Obtain csv files for the targets.
 - `2_Run_CLASTER.ipynb`: This notebook creates the configuration files required to train and test CLASTER using the EIR framework.
-- `2b_Run_HyenaDNA_and_Enformer.ipynb`: The notebook contains our adaptations of the code building Hyena-DNA (https://github.com/HazyResearch/hyena-dna) in its public colab version, and the Enformer (https://github.com/lucidrains/enformer-pytorch) in its python implementation. These were used to benchmark CLASTER. It includes:
+- `2b_Run_HyenaDNA_and_Enformer.ipynb`: The notebook contains our adaptations of the code building
+    - Hyena-DNA (https://github.com/HazyResearch/hyena-dna) in its public colab version.
+    - Enformer (https://github.com/lucidrains/enformer-pytorch) in its python implementation. 
+These were used to benchmark CLASTER. It includes:
     - The obtention of sequence embeddings from both model's backbones when loading the pretrained weights. 
     - The addition of a model head on top of the embeddings to match our regression outputs.
     - Code to fine-tune Hyena-DNA's backbone and the added head together.
-- `3_Data_analysis.ipynb`: The notebook contains the functions used to perform the data analysis and create the figures of the manuscript.
+- `3_Data_analysis.ipynb`: The notebook contains the functions used to perform the data analysis and create the figures included in the manuscript.
 
-Thanks
