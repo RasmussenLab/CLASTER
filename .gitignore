@@ -1,6 +1,7 @@
 annotations
 benchmarks
 checkpoints
+configurations/conf_microc_rotated_pure_conv_tutorial
 figures
 GEO_files
 inputs/DNA_sequences
