@@ -11,10 +11,21 @@ _Different cell types and their associated functionalities can emerge from a sin
 
 ## In this repository
 
-Configurations:
+This repository contains the files and scripts required to reproduce the results of the paper and a short tutorial. The repository consists of the following folders:
+
+```configurations```:
 - Configuration files (.yaml) required to build different flavours of CLASTER.
 
-Scripts:
+```images```:
+- Overview of CLASTER's architecture.
+
+```inputs```: 
+
+The folder contains the test set inputs for both data modalities, i.e. samples exploring regions of 1 Mbp centered at the TSS of protein coding genes found in chr4 (in mice). They will be used in the tutorial to exemplify how can we train and validate CLASTER.
+
+```scripts```:
+
+- `0_Tutorial.ipynb`: The notebook provides a rapid overview of the most important steps in CLASTER's pipeline, including training and validating the network using the EIR framework. 
 - `1_Data_obtention.ipynb`: This notebook guides the user through the data obtention process, including:
     - Data download from publicly available repositories:
         - Inputs: Chromatin landscape (ATAC-seq, H3K4me3, H3K27ac and H3K27me3 in mESCs) and structure (Micro-C maps in mESCs)
@@ -33,4 +44,10 @@ These were used to benchmark CLASTER. It includes:
     - The addition of a model head on top of the embeddings to match our regression outputs.
     - Code to fine-tune Hyena-DNA's backbone and the added head together.
 - `3_Data_analysis.ipynb`: The notebook contains the functions used to perform the data analysis and create the figures included in the manuscript.
+
+```targets```:
+
+The folder contains the target EU-seq profiles matching the input (test) samples.
+
+
 
