@@ -1,0 +1,27 @@
+name: Test tutorial
+
+on:
+  - push
+
+jobs:
+  format:
+    name: Check tutorial
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install Claster requirements
+        run: |
+          pip install numpy pandas matplotlib jupyter ipykernel eir-dl
+      - name: Run papermill for cmd-line execution of notebooks
+        run: |
+          pip install papermill
+      - name: Test Tutorial
+        run: |
+          cd scripts
+          papermill 0_Tutorial.ipynb 0_Tutorial_out.ipynb
+
