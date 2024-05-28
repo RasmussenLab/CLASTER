@@ -25,7 +25,7 @@ The folder contains the test set inputs for both data modalities, i.e. samples e
 
 ```scripts```:
 
-- `0_Tutorial.ipynb`: The notebook provides a rapid overview of the most important steps in CLASTER's pipeline, including training and validating the network using the EIR framework. 
+- [`0_Tutorial.ipynb`](scripts/0_Tutorial.ipynb): The notebook provides a rapid overview of the most important steps in CLASTER's pipeline, including training and validating the network using the EIR framework. 
 - `1_Data_obtention.ipynb`: This notebook guides the user through the data obtention process, including:
     - Data download from publicly available repositories:
         - Inputs: Chromatin landscape (ATAC-seq, H3K4me3, H3K27ac and H3K27me3 in mESCs) and structure (Micro-C maps in mESCs)
