@@ -23,5 +23,5 @@ jobs:
       - name: Test Tutorial
         run: |
           cd scripts
-          papermill 0_Tutorial.ipynb 0_Tutorial_out.ipynb
+          papermill 0_Tutorial.ipynb 0_Tutorial_out.ipynb -p epochs 4
 
