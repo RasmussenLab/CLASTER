@@ -445,7 +445,12 @@ document.write(`
 </div></blockquote>
 <section id="packages">
 <h2>Packages<a class="headerlink" href="#packages" title="Link to this heading">#</a></h2>
-<div class="cell docutils container">
+<div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
@@ -471,11 +476,17 @@ document.write(`
 </pre></div>
 </div>
 </div>
+</details>
 </div>
 </section>
 <section id="functions">
 <h2>Functions<a class="headerlink" href="#functions" title="Link to this heading">#</a></h2>
-<div class="cell docutils container">
+<div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">read_gene_positions</span><span class="p">(</span><span class="n">csv_path</span><span class="p">,</span> <span class="n">resolution</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot; </span>
@@ -1366,6 +1377,7 @@ document.write(`
 </pre></div>
 </div>
 </div>
+</details>
 </div>
 </section>
 <section id="model-performance-on-the-baseline-prediction-task">
@@ -1387,7 +1399,12 @@ document.write(`
 </div>
 </div>
 <p>Now we can load the predictions and compare them with the ground truth values. We will do that for point-wise predictions and also integrating the area under each reference gene. The area under the curve within the central gene’s coordinates, a proxy for length normalized nascent expression, will be added to the table that we just created.</p>
-<div class="cell docutils container">
+<div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Compute the correlations and add area for the central gene to the table</span>
 <span class="n">results_path</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="s2">&quot;../runs/test_runs/gene_expression_only_chrom_pure_conv/&quot;</span><span class="p">)</span> <span class="c1">#Path(&quot;../runs/test_runs/gene_expression_only_chrom_pure_conv/&quot;) #chrom_and_microc_with_attention&quot;) #Path(&quot;/Users/wjq311/Desktop/PhD/Enhancer_logic_project/Data/results_all/results_no_H3K27ac_uncoupled/expression_output&quot;)</span>
@@ -1420,6 +1437,7 @@ document.write(`
 </pre></div>
 </div>
 </div>
+</details>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>ENSMUSG00000028234.6 77.86259545833333
 ENSMUSG00000028280.9 0.08941720612903226
@@ -1435,7 +1453,12 @@ ENSMUSG00000078673.10 0.31774953625
 <blockquote>
 <div><p>Note: Create a folder ../benchmarks/Hyena/ and move the predictions (which were by default saved in the scripts directory).</p>
 </div></blockquote>
-<div class="cell docutils container">
+<div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#####</span>
 <span class="c1"># Paths:    </span>
@@ -1523,6 +1546,7 @@ ENSMUSG00000078673.10 0.31774953625
 </pre></div>
 </div>
 </div>
+</details>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Index([&#39;ENSMUSG00000028635.7_forward&#39;, &#39;ENSMUSG00000028989.3_forward&#39;,
        &#39;ENSMUSG00000034785.14_forward&#39;, &#39;ENSMUSG00000028496.17_forward&#39;,
@@ -1564,7 +1588,12 @@ ENSMUSG00000078673.10 0.31774953625
 <blockquote>
 <div><p><em>Note: Since we only want forward strand sequence predictions, we will remove the “_rev” samples from the enformer’s test (both in target csv and input npy arrays)</em></p>
 </div></blockquote>
-<div class="cell docutils container">
+<div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">figure_path</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="s2">&quot;../figures/Figure_2/&quot;</span><span class="p">)</span>
 <span class="n">performance_dicts</span> <span class="o">=</span> <span class="p">[{</span><span class="s2">&quot;Enformer embeddings&quot;</span><span class="p">:{</span><span class="s2">&quot;Spearman&quot;</span><span class="p">:</span><span class="mf">0.8067</span><span class="p">,</span><span class="s2">&quot;Pearson&quot;</span><span class="p">:</span><span class="mf">0.8739</span><span class="p">},</span>
@@ -1602,6 +1631,7 @@ ENSMUSG00000078673.10 0.31774953625
 </pre></div>
 </div>
 </div>
+</details>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;Enformer embeddings&#39;: {&#39;Spearman&#39;: 0.8067, &#39;Pearson&#39;: 0.8739}, &#39;HyenaDNA-32k fine tuned&#39;: {&#39;Spearman&#39;: 0.7514, &#39;Pearson&#39;: 0.7403}, &#39;CLASTER&#39;: {&#39;Spearman&#39;: 0.7717, &#39;Pearson&#39;: 0.869}}
 {&#39;Enformer embeddings&#39;: {&#39;Spearman&#39;: 0.9093, &#39;Pearson&#39;: 0.7874}, &#39;HyenaDNA-32k fine tuned&#39;: {&#39;Spearman&#39;: 0.8053, &#39;Pearson&#39;: 0.5247}, &#39;CLASTER&#39;: {&#39;Spearman&#39;: 0.9275, &#39;Pearson&#39;: 0.8859}}
@@ -1635,7 +1665,12 @@ ENSMUSG00000078673.10 0.31774953625
 </div>
 </div>
 </div>
-<div class="cell docutils container">
+<div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">input_table_path</span><span class="p">:</span> <span class="n">Path</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="s2">&quot;../annotations/gene_enhancer_relationships_perturbed.csv&quot;</span><span class="p">)</span>
 <span class="n">table</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">input_table_path</span><span class="p">)</span>
@@ -1644,6 +1679,7 @@ ENSMUSG00000078673.10 0.31774953625
 </pre></div>
 </div>
 </div>
+</details>
 <div class="cell_output docutils container">
 <div class="output text_html"><div>
 <style scoped>
@@ -1901,7 +1937,12 @@ ENSMUSG00000078673.10 0.31774953625
 </table>
 </div></div></div>
 </div>
-<div class="cell docutils container">
+<div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib</span> <span class="k">as</span> <span class="nn">mpl</span>
 
@@ -1918,6 +1959,7 @@ ENSMUSG00000078673.10 0.31774953625
 </pre></div>
 </div>
 </div>
+</details>
 <div class="cell_output docutils container">
 <img alt="../_images/449cee4954332e7119386ed3e1faa3af482e472d0e2507a8680de12c4850ff18.png" src="../_images/449cee4954332e7119386ed3e1faa3af482e472d0e2507a8680de12c4850ff18.png" />
 <img alt="../_images/0f6abd2cad8eb345367f22051722d5f4918ec8c02d08b0bc8f42191ada31a3ae.png" src="../_images/0f6abd2cad8eb345367f22051722d5f4918ec8c02d08b0bc8f42191ada31a3ae.png" />
@@ -1938,7 +1980,12 @@ ENSMUSG00000078673.10 0.31774953625
 <blockquote>
 <div><p>⚠️ IMPORTANT NOTE: Run first the cell where correlations are predicted for the model you used for the perturbed predictions. Otherwise the comparisons do not make sense!!!</p>
 </div></blockquote>
-<div class="cell docutils container">
+<div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
@@ -2111,6 +2158,7 @@ ENSMUSG00000078673.10 0.31774953625
 </pre></div>
 </div>
 </div>
+</details>
 <div class="cell_output docutils container">
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_2263363/2841167992.py:67: SettingWithCopyWarning: 
 A value is trying to be set on a copy of a slice from a DataFrame.
@@ -2141,7 +2189,12 @@ See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stab
 </div>
 <p><strong>Figure 2b: Chromatin mark correlations</strong></p>
 <p>Visualize possible chromatin states found in the data.</p>
-<div class="cell docutils container">
+<div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">array_path</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="s2">&quot;../inputs/landscape_arrays/test/&quot;</span><span class="p">)</span>
 <span class="n">figure_path</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="s2">&quot;../figures/Figure_2/&quot;</span><span class="p">)</span>
@@ -2152,6 +2205,7 @@ See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stab
 </pre></div>
 </div>
 </div>
+</details>
 </div>
 </section>
 </section>
@@ -2163,7 +2217,12 @@ The original paper can be found at:</p>
 <p>EIR uses the integrated gradients method as it is implemented in the captum library:</p>
 <p>https://captum.ai/docs/extension/integrated_gradients</p>
 <p><strong>Figure 3 and related supplementary figures</strong></p>
-<div class="cell docutils container">
+<div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">results_path</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="s2">&quot;../runs/test_runs/gene_expression_microc_rotated_pure_conv/expression_output/&quot;</span><span class="p">)</span> <span class="c1">#Path(&quot;../runs/gene_expression_only_chrom_pure_conv/results/expression_output/&quot;) #Path(&quot;../runs/training_runs/gene_expression_exformer_unlimited_all_rotated/results/expression_output/&quot;)</span>
 <span class="n">figure_path</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="s2">&quot;../figures/Figure_3/&quot;</span><span class="p">)</span>
@@ -2191,6 +2250,7 @@ The original paper can be found at:</p>
 </pre></div>
 </div>
 </div>
+</details>
 <div class="cell_output docutils container">
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_122633/2179293752.py:449: DeprecationWarning: Conversion of an array with ndim &gt; 0 to a scalar is deprecated, and will error in future. Ensure you extract a single element from your array before performing this operation. (Deprecated NumPy 1.25.)
   centered_attr = np.roll(attributions, -10*i+int(eps),axis=1)
@@ -2365,7 +2425,12 @@ The original paper can be found at:</p>
 </div>
 </div>
 <p><strong>Micro-C Matrices: Original and rotated</strong></p>
-<div class="cell docutils container">
+<div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;ENSMUSG00000059552.13_forward.npy&quot;</span> <span class="c1">#&quot;ENSMUSG00000024406.16_forward.npy&quot; # ENSMUSG00000028948.16_forward ENSMUSG00000078626.2_forward ENSMUSG00000046667.14_rev # Original paper example &quot;ENSMUST00000105369.7.npy&quot; #&quot;ENSMUST00000002350.10_flipped&quot;</span>
 <span class="n">pathlist</span> <span class="o">=</span> <span class="p">[</span><span class="n">Path</span><span class="p">(</span><span class="s1">&#39;../inputs/microC/training/&#39;</span><span class="p">),</span> <span class="n">Path</span><span class="p">(</span><span class="s1">&#39;../inputs/microC_rotated/training/&#39;</span><span class="p">)]</span>
@@ -2378,9 +2443,15 @@ The original paper can be found at:</p>
 </pre></div>
 </div>
 </div>
+</details>
 </div>
 <p><strong>Micro-C attributions</strong></p>
-<div class="cell docutils container">
+<div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">figure_path</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="s2">&quot;../figures/Figure_3/&quot;</span><span class="p">)</span>
 
@@ -2396,6 +2467,7 @@ The original paper can be found at:</p>
 </pre></div>
 </div>
 </div>
+</details>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.885297690053755
 </pre></div>
@@ -2410,7 +2482,12 @@ The original paper can be found at:</p>
 </div>
 <p><strong>Filter visualization</strong></p>
 <p>We can visualize the activations of a set of predefined filters, in this case for the structural branch handling Micro-C matrices. We can see what is the network propagating forward or what features are extracted.</p>
-<div class="cell docutils container">
+<div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Conv 0: first set of filters</span>
 <span class="n">root_path</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="s2">&quot;../runs/gene_expression_microc_pure_conv_latents/latents/latent_outputs/3600/&quot;</span><span class="p">)</span>
@@ -2433,6 +2510,7 @@ The original paper can be found at:</p>
 </pre></div>
 </div>
 </div>
+</details>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-2.021034002304077 1.9138600826263428
 -2.020750045776367 1.8846609592437744
@@ -2471,7 +2549,12 @@ The main signal in the target EU-seq profiles oscillates at a hbp-kbp scale. Kee
 <li><p>It is not clear that the information to predict those wiggles in the signal is encoded in the inputs (core chrom. landscape marks).</p></li>
 </ul>
 <p>Supplementary figure showing the downresolution of the targets</p>
-<div class="cell docutils container">
+<div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Optional</span>
 <span class="kn">from</span> <span class="nn">scipy.ndimage</span> <span class="kn">import</span> <span class="n">gaussian_filter1d</span>
@@ -2537,12 +2620,18 @@ The main signal in the target EU-seq profiles oscillates at a hbp-kbp scale. Kee
 </pre></div>
 </div>
 </div>
+</details>
 <div class="cell_output docutils container">
 <img alt="../_images/b1e819cc24fac0b58a40cef10c6595258a21d8f5eab6981ff47832330e9a860d.png" src="../_images/b1e819cc24fac0b58a40cef10c6595258a21d8f5eab6981ff47832330e9a860d.png" />
 </div>
 </div>
 <p><strong>Hyena and Enformer Embeddings</strong></p>
-<div class="cell docutils container">
+<div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
@@ -2595,6 +2684,7 @@ The main signal in the target EU-seq profiles oscillates at a hbp-kbp scale. Kee
 </pre></div>
 </div>
 </div>
+</details>
 <div class="cell_output docutils container">
 <img alt="../_images/ea4b8b99b7137408f989aed69b12602d7421d0777ec0f6ec177543bf56f2b54f.png" src="../_images/ea4b8b99b7137408f989aed69b12602d7421d0777ec0f6ec177543bf56f2b54f.png" />
 <img alt="../_images/cbc8c6c2aae1686c13c230af0dc602805e57a7a467e6a1261bf9201fb7ffd70e.png" src="../_images/cbc8c6c2aae1686c13c230af0dc602805e57a7a467e6a1261bf9201fb7ffd70e.png" />
@@ -2602,7 +2692,12 @@ The main signal in the target EU-seq profiles oscillates at a hbp-kbp scale. Kee
 </div>
 </div>
 <p><strong>Benchmark model loss evolution:</strong></p>
-<div class="cell docutils container">
+<div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">re</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
@@ -2676,6 +2771,7 @@ The main signal in the target EU-seq profiles oscillates at a hbp-kbp scale. Kee
 </pre></div>
 </div>
 </div>
+</details>
 <div class="cell_output docutils container">
 <img alt="../_images/2f4003fd5b4c67823fc75ca657a56a0125ffb0b30b98249b23ad656d260d3062.png" src="../_images/2f4003fd5b4c67823fc75ca657a56a0125ffb0b30b98249b23ad656d260d3062.png" />
 </div>

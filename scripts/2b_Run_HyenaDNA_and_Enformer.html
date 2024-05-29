@@ -551,7 +551,12 @@ Successfully installed tokenizers-0.13.3 transformers-4.26.1
 <span class="n">run_train_CLASTER_HYENA</span><span class="p">()</span>
 </pre></div>
 </div>
-<div class="cell docutils container">
+<div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%writefile</span> Hyena_DNA_Esrum.py 
 
@@ -2534,6 +2539,7 @@ Successfully installed tokenizers-0.13.3 transformers-4.26.1
 </pre></div>
 </div>
 </div>
+</details>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Overwriting Hyena_DNA_Esrum.py
 </pre></div>
@@ -2559,7 +2565,12 @@ https://github.com/lucidrains/enformer-pytorch.</p>
 </div>
 </div>
 <p><strong>Get Enformer embeddings</strong></p>
-<div class="cell docutils container">
+<div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%writefile</span> Enformer_GPU.py
 
@@ -2632,6 +2643,7 @@ https://github.com/lucidrains/enformer-pytorch.</p>
 </pre></div>
 </div>
 </div>
+</details>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Overwriting Enformer_GPU.py
 </pre></div>
@@ -2647,7 +2659,12 @@ https://github.com/lucidrains/enformer-pytorch.</p>
 <blockquote>
 <div><p><em>Note: The test set is quite large. I predicted it all at once using 100 CPUs, but the code can be splitted to predict in batches and join the predictions afterwards if needed. Additionally, I removed all reversed (duplicated) samples from inputs and targets for test predictions to match those of Hyena.</em></p>
 </div></blockquote>
-<div class="cell docutils container">
+<div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%writefile</span> Enformer_head.py
 
@@ -3155,6 +3172,7 @@ https://github.com/lucidrains/enformer-pytorch.</p>
 </pre></div>
 </div>
 </div>
+</details>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Overwriting Enformer_head.py
 </pre></div>

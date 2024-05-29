@@ -489,7 +489,12 @@ conda<span class="w"> </span>activate<span class="w"> </span>claster_env_tutoria
 <p>We ran this tutorial on eir version 0.1.43.</p>
 </div></blockquote>
 <p><strong>From now on, you can run the pipeline from this notebook!</strong></p>
-<div class="cell docutils container">
+<div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Import the required packages</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
@@ -502,6 +507,7 @@ conda<span class="w"> </span>activate<span class="w"> </span>claster_env_tutoria
 </pre></div>
 </div>
 </div>
+</details>
 </div>
 </section>
 <section id="inputs-and-outputs">
@@ -517,7 +523,12 @@ conda<span class="w"> </span>activate<span class="w"> </span>claster_env_tutoria
 <blockquote>
 <div><p><em>Note: As a standard data augmentation procedure, samples were provided in their natural orientation (SampleID_forward.npy) and flipped. (SampleID_forward.npy)</em></p>
 </div></blockquote>
-<div class="cell docutils container">
+<div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">visualize_input_array</span><span class="p">(</span><span class="n">a</span><span class="p">,</span>
                      <span class="n">cropped_bins</span><span class="p">,</span>
@@ -615,6 +626,7 @@ conda<span class="w"> </span>activate<span class="w"> </span>claster_env_tutoria
 </pre></div>
 </div>
 </div>
+</details>
 </div>
 <p><strong>Inputs:</strong></p>
 <p>Now we will visualize an input sample centered at the gene LcK (ENSMUSG00000000409.14).</p>
@@ -634,7 +646,12 @@ In green we show the silencer track.</p>
 </div></blockquote>
 <p><strong>Chromatin structure input:</strong></p>
 <p>The input to the chromatin structure branch of the model is a log 10 transformed Micro-C count matrix. The matrix was rotated 45 degrees and cropped to provide contact information of the region of interest in a CLASTER friendly way. On the top we would have the original “diagonal” of the Micro-C map. Now, a contact of any genomic locus in the top row of the matrix is shown as a darker region (orange-red) in the middle of the matrix.</p>
-<div class="cell docutils container">
+<div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cropped_bins</span> <span class="o">=</span> <span class="mi">4400</span>
 <span class="n">scaling_factor</span> <span class="o">=</span> <span class="mi">1</span>
@@ -659,6 +676,7 @@ In green we show the silencer track.</p>
 </pre></div>
 </div>
 </div>
+</details>
 <div class="cell_output docutils container">
 <img alt="../_images/4b0914f67e03c72a0df64c8c6e280414c3618fd515c03cc7ed2165cf42a6549e.png" src="../_images/4b0914f67e03c72a0df64c8c6e280414c3618fd515c03cc7ed2165cf42a6549e.png" />
 <img alt="../_images/703a79b7020671289c77a4dd011920866f5a2ce2b7f272f99ea38cfb519593b2.png" src="../_images/703a79b7020671289c77a4dd011920866f5a2ce2b7f272f99ea38cfb519593b2.png" />
@@ -670,7 +688,12 @@ In green we show the silencer track.</p>
 <p>The goal of the network is to predict the nascent transcription levels matching the previous inputs. Nascent transcription was measured by EU-seq, reads were mapped to the reference mouse genome. The Reads were then binned in bins of 20bp and the obtained enrichment profiles were further smoothed and downsampled to obtain output profiles at a kbp resolution for the central 401 kbp.</p>
 <p>In EIR, the outputs are provided as a csv file containing the sample ID and as many columns as targets we want to predict.
 You can now have a look at the targets for this tutorial, i.e EU-seq read counts per bin (1kbp) at a certain distance from the TSS of the gene of interest, the one naming each sample:</p>
-<div class="cell docutils container">
+<div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Target csv file:</span>
 <span class="n">targets</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;../targets/test_targets.csv&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">&#39;ID&#39;</span><span class="p">)</span>
@@ -678,6 +701,7 @@ You can now have a look at the targets for this tutorial, i.e EU-seq read counts
 </pre></div>
 </div>
 </div>
+</details>
 <div class="cell_output docutils container">
 <div class="output text_html"><div>
 <style scoped>
@@ -1015,7 +1039,12 @@ You can now have a look at the targets for this tutorial, i.e EU-seq read counts
 </div></div></div>
 </div>
 <p>The final profiles look like this:</p>
-<div class="cell docutils container">
+<div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Target profiles</span>
 <span class="n">sample_name</span> <span class="o">=</span> <span class="s2">&quot;ENSMUSG00000000409.14&quot;</span> 
@@ -1027,6 +1056,7 @@ You can now have a look at the targets for this tutorial, i.e EU-seq read counts
 </pre></div>
 </div>
 </div>
+</details>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Orientation: forward
 Orientation: rev
@@ -1058,7 +1088,12 @@ Orientation: rev
 </ul>
 <p>The following cell will create a folder with the configs. Have a look at the fields in each of them!
 We will also create a folder for the results called runs_tutorial.</p>
-<div class="cell docutils container">
+<div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Create folder to store configuration files</span>
 <span class="n">config_paths</span> <span class="o">=</span> <span class="p">[</span><span class="n">Path</span><span class="p">(</span><span class="s2">&quot;../configurations/conf_microc_rotated_pure_conv_tutorial/&quot;</span><span class="p">)]</span>
@@ -1568,6 +1603,7 @@ We will also create a folder for the results called runs_tutorial.</p>
 </pre></div>
 </div>
 </div>
+</details>
 </div>
 </section>
 <section id="run-claster">
@@ -1628,7 +1664,12 @@ We will also create a folder for the results called runs_tutorial.</p>
 <li><p>Plotting predicted vs True target values at a bin level (1kbp resolution).</p></li>
 <li><p>Visualizing the predicted profiles.</p></li>
 </ol>
-<div class="cell docutils container">
+<div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#### Functions:</span>
 <span class="k">def</span> <span class="nf">_get_predictions</span><span class="p">(</span><span class="n">results_path</span><span class="p">:</span> <span class="n">Path</span><span class="p">,</span> <span class="n">N_BINS</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">condition_list</span><span class="p">:</span> <span class="nb">list</span><span class="p">,</span> <span class="n">SPLIT</span><span class="p">:</span> <span class="nb">int</span><span class="p">):</span>
@@ -1742,10 +1783,16 @@ We will also create a folder for the results called runs_tutorial.</p>
 </pre></div>
 </div>
 </div>
+</details>
 </div>
 <p>We will now plot the overall validation performance (a fraction of samples are held out by default for validation).
 We will also plot the profiles for the sample centered around the gene Gm49337 (chr4, + strand).</p>
-<div class="cell docutils container">
+<div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">results_path</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="s2">&quot;../runs_tutorial/gene_expression_microc_rotated_pure_conv_tutorial/results/&quot;</span><span class="p">)</span>
 <span class="n">N_BINS</span><span class="o">=</span> <span class="mi">200</span>
@@ -1769,6 +1816,7 @@ We will also plot the profiles for the sample centered around the gene Gm49337 (
 </pre></div>
 </div>
 </div>
+</details>
 <div class="cell_output docutils container">
 <img alt="../_images/5a5a4347754a887daa6ca58fc76c550d19c7026a9bece856e7746ef21c3ed46b.png" src="../_images/5a5a4347754a887daa6ca58fc76c550d19c7026a9bece856e7746ef21c3ed46b.png" />
 <img alt="../_images/9bcc692333474381b0393db2d47ee7738ef3bd2a7946eab9ce9aade6f287809a.png" src="../_images/9bcc692333474381b0393db2d47ee7738ef3bd2a7946eab9ce9aade6f287809a.png" />

@@ -445,13 +445,19 @@ document.write(`
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>!<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>eir-dl<span class="w"> </span>
 </pre></div>
 </div>
-<div class="cell docutils container">
+<div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pathlib</span> <span class="kn">import</span> <span class="n">Path</span>
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 </pre></div>
 </div>
 </div>
+</details>
 </div>
 <section id="create-config-files">
 <h2>Create config files:<a class="headerlink" href="#create-config-files" title="Link to this heading">#</a></h2>
@@ -464,7 +470,12 @@ We will mainly need:</p>
 <li><p>Output config: describing the type of output we expect, our target file, the loss we want to optimize against and the names of the nodes.</p></li>
 </ul>
 <p>For a more detailed description, please go through EIR’s documentation.</p>
-<div class="cell docutils container">
+<div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">config_paths</span> <span class="o">=</span> <span class="p">[</span><span class="n">Path</span><span class="p">(</span><span class="s2">&quot;../configurations/conf_pure_conv/&quot;</span><span class="p">),</span> 
                 <span class="n">Path</span><span class="p">(</span><span class="s2">&quot;../configurations/conf_pure_conv_predict/&quot;</span><span class="p">),</span>
@@ -5807,12 +5818,18 @@ We will mainly need:</p>
 </pre></div>
 </div>
 </div>
+</details>
 </div>
 </section>
 <section id="create-validation-split">
 <h2>Create validation split<a class="headerlink" href="#create-validation-split" title="Link to this heading">#</a></h2>
 <p>All samples from chromosome 17 were used as a validation set. Samples from chromosome 4 were in turn used as a final test set.</p>
-<div class="cell docutils container">
+<div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">create_validation_ids</span><span class="p">(</span><span class="n">path</span><span class="p">:</span> <span class="n">Path</span><span class="p">,</span> <span class="n">val_chrom</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;chr17&quot;</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot; All genes encoded in chr17 will be used as a validation set.&quot;&quot;&quot;</span>
@@ -5832,6 +5849,7 @@ We will mainly need:</p>
 </pre></div>
 </div>
 </div>
+</details>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;ENSMUSG00000059890.16_forward&#39; &#39;ENSMUSG00000034833.10_rev&#39;
  &#39;ENSMUSG00000045794.3_forward&#39; &#39;ENSMUSG00000038628.8_forward&#39;

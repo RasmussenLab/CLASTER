@@ -478,7 +478,12 @@ In VS code we can simply choose the environment we want in the top right icon.</
 <section id="data-obtention">
 <h2>1. Data obtention<a class="headerlink" href="#data-obtention" title="Link to this heading">#</a></h2>
 <p><strong>Import libraries</strong></p>
-<div class="cell docutils container">
+<div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span> 
 <span class="kn">from</span> <span class="nn">pathlib</span> <span class="kn">import</span> <span class="n">Path</span>
@@ -493,9 +498,15 @@ In VS code we can simply choose the environment we want in the top right icon.</
 </pre></div>
 </div>
 </div>
+</details>
 </div>
 <p><strong>Functions</strong></p>
-<div class="cell docutils container">
+<div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">download_files</span><span class="p">(</span><span class="n">links</span><span class="p">,</span> <span class="n">destination_folder</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
@@ -521,6 +532,7 @@ In VS code we can simply choose the environment we want in the top right icon.</
 </pre></div>
 </div>
 </div>
+</details>
 </div>
 <p><strong>Gene annotations</strong></p>
 <p>We obtained both the mouse reference genome and protein coding gene annotations from the release M25 (GRCm38.p6) from GENCODE.</p>
@@ -606,7 +618,12 @@ You can run the file in the terminal as:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="n">create_microC_arrays</span><span class="o">.</span><span class="n">py</span>
 </pre></div>
 </div>
-<div class="cell docutils container">
+<div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%writefile</span> create_microC_arrays.py
 
@@ -747,8 +764,14 @@ You can run the file in the terminal as:</p>
 </pre></div>
 </div>
 </div>
+</details>
 </div>
-<div class="cell docutils container">
+<div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%writefile</span> create_microC_arrays.py
 
@@ -864,6 +887,7 @@ You can run the file in the terminal as:</p>
 </pre></div>
 </div>
 </div>
+</details>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -920,7 +944,12 @@ https://doi.org/10.1016/j.molcel.2021.03.008.
 <p><code class="docutils literal notranslate"><span class="pre">srun</span> <span class="pre">--cpus-per-task=128</span> <span class="pre">--</span> <span class="pre">python</span> <span class="pre">create_landscape_arrays_and_targets.py</span> </code></p>
 <p>This took more or less a couple of hours.</p>
 </div></blockquote>
-<div class="cell docutils container">
+<div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%writefile</span> create_landscape_arrays_and_targets.py
 
@@ -1129,6 +1158,7 @@ https://doi.org/10.1016/j.molcel.2021.03.008.
 </pre></div>
 </div>
 </div>
+</details>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Overwriting create_landscape_arrays_and_targets.py
 </pre></div>
@@ -1141,7 +1171,12 @@ https://doi.org/10.1016/j.molcel.2021.03.008.
 </div></blockquote>
 <p><strong>Create report of missing samples</strong></p>
 <p>Not all samples could be created in all data modalities given boundary issues (genes close to the end of the chromosome). Hence, we will create a report of missing samples.</p>
-<div class="cell docutils container">
+<div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%writefile</span> keep_only_sample_intersection.py
 
@@ -1185,9 +1220,15 @@ https://doi.org/10.1016/j.molcel.2021.03.008.
 </pre></div>
 </div>
 </div>
+</details>
 </div>
 <p>We will now remove all missing samples from the rest of the modalities, including targets.</p>
-<div class="cell docutils container">
+<div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%writefile</span> remove_missing_samples.py
 
@@ -1228,6 +1269,7 @@ https://doi.org/10.1016/j.molcel.2021.03.008.
 </pre></div>
 </div>
 </div>
+</details>
 </div>
 </section>
 </section>
@@ -1240,7 +1282,12 @@ https://doi.org/10.1016/j.molcel.2021.03.008.
 </ul>
 <p><strong>Create gene and enhancer coordinate table</strong></p>
 <p>We will create a table with all enhancers and genes that appear in a sample given the target boundaries from the TSS.</p>
-<div class="cell docutils container">
+<div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
@@ -1320,6 +1367,7 @@ https://doi.org/10.1016/j.molcel.2021.03.008.
 </pre></div>
 </div>
 </div>
+</details>
 <div class="cell_output docutils container">
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/maps/projects/rasmussen/data/enhancer_logic_project/claster_env/lib/python3.11/site-packages/numpy/core/fromnumeric.py:59: FutureWarning: &#39;DataFrame.swapaxes&#39; is deprecated and will be removed in a future version. Please use &#39;DataFrame.transpose&#39; instead.
   return bound(*args, **kwds)
@@ -1336,7 +1384,12 @@ https://doi.org/10.1016/j.molcel.2021.03.008.
 <blockquote>
 <div><p><em>Note: EIR requires to have matching targets even when predicting new samples and therefore we will create dummy target tables filled with zeros.</em></p>
 </div></blockquote>
-<div class="cell docutils container">
+<div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%writefile</span> create_perturbed_arrays_and_targets.py 
 
@@ -1423,6 +1476,7 @@ https://doi.org/10.1016/j.molcel.2021.03.008.
 </pre></div>
 </div>
 </div>
+</details>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Overwriting create_perturbed_arrays_and_targets.py
 </pre></div>
@@ -1471,7 +1525,12 @@ conda<span class="w"> </span>install<span class="w"> </span>bioconda:samtools
 </div>
 <section id="create-bed-file-with-dna-chunk-boundaries">
 <h3>Create bed file with DNA chunk boundaries:<a class="headerlink" href="#create-bed-file-with-dna-chunk-boundaries" title="Link to this heading">#</a></h3>
-<div class="cell docutils container">
+<div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%writefile</span> create_sequence_boundaries.sh
 
@@ -1550,6 +1609,7 @@ conda<span class="w"> </span>install<span class="w"> </span>bioconda:samtools
 </pre></div>
 </div>
 </div>
+</details>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Overwriting create_sequence_boundaries.sh
 </pre></div>
@@ -1569,7 +1629,12 @@ conda<span class="w"> </span>install<span class="w"> </span>bioconda:samtools
 </div>
 </div>
 <p><strong>Create fasta files with the sequences:</strong></p>
-<div class="cell docutils container">
+<div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pathlib</span> <span class="kn">import</span> <span class="n">Path</span>
 <span class="kn">import</span> <span class="nn">subprocess</span>
@@ -1605,10 +1670,16 @@ conda<span class="w"> </span>install<span class="w"> </span>bioconda:samtools
 </pre></div>
 </div>
 </div>
+</details>
 </div>
 <p><strong>Create Enformer benchmark targets</strong></p>
 <p>Enformer targets are the same targets, just cropped to fit the new target window (-57 to 57 bins). Test targets are de-duplicated, i.e. we only want forward strand oriented predictions.</p>
-<div class="cell docutils container">
+<div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 
@@ -1640,6 +1711,7 @@ conda<span class="w"> </span>install<span class="w"> </span>bioconda:samtools
 </pre></div>
 </div>
 </div>
+</details>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>File &#39;../targets/training_targets_Enformer.csv&#39; has been created with columns from -57 to 57.
 File &#39;../targets/test_targets_Enformer.csv&#39; has been created with columns from -57 to 57.
