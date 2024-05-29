@@ -171,9 +171,7 @@
         </ul>
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Tutorial:</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active"><a class="current reference internal" href="#"><center> TUTORIAL <center></center></center></a></li>
-
-
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">TUTORIAL</a></li>
 </ul>
 
     </div>
@@ -390,7 +388,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1><center> TUTORIAL <center></h1>
+    <h1>TUTORIAL</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -400,17 +398,13 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#"><center> TUTORIAL <center></center></center></a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#training-and-validating-claster"><center> <em>Training and validating CLASTER</em> <center></center></center></a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">Introduction</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#about-claster">About CLASTER</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#before-we-start">0. Before we start …</a></li>
-</ul>
-</li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#inputs-and-outputs">1. Inputs and outputs</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">2. Training and validating CLASTER</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#inputs-and-outputs">1. Inputs and outputs</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#training-and-validating-claster">2. Training and validating CLASTER</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#create-config-files">2.1 Create config files:</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#run-claster">2.2 Run CLASTER:</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#analyze-results">2.3 Analyze results:</a></li>
@@ -418,9 +412,6 @@ document.write(`
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">3. Summary</a></li>
 </ul>
-</li>
-</ul>
-
             </nav>
         </div>
     </div>
@@ -432,10 +423,8 @@ document.write(`
                 <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="tutorial">
-<h1><center> TUTORIAL <center><a class="headerlink" href="#tutorial" title="Link to this heading">#</a></h1>
-</section>
-<section class="tex2jax_ignore mathjax_ignore" id="training-and-validating-claster">
-<h1><center> <em>Training and validating CLASTER</em> <center><a class="headerlink" href="#training-and-validating-claster" title="Link to this heading">#</a></h1>
+<h1>TUTORIAL<a class="headerlink" href="#tutorial" title="Link to this heading">#</a></h1>
+<p><strong><em>Training and validating CLASTER</em></strong></p>
 <p><em>Authors:</em></p>
 <p>Marc Pielies Avelli (<a class="reference external" href="mailto:marc&#46;pielies-avelli&#37;&#52;&#48;cpr&#46;ku&#46;dk">marc<span>&#46;</span>pielies-avelli<span>&#64;</span>cpr<span>&#46;</span>ku<span>&#46;</span>dk</a>, <a class="reference external" href="mailto:mpielies&#37;&#52;&#48;broadinstitute&#46;org">mpielies<span>&#64;</span>broadinstitute<span>&#46;</span>org</a> )</p>
 <p>Arnor Sigurdsson (<a class="reference external" href="mailto:arnor&#46;sigurdsson&#37;&#52;&#48;sund&#46;ku&#46;dk">arnor<span>&#46;</span>sigurdsson<span>&#64;</span>sund<span>&#46;</span>ku<span>&#46;</span>dk</a>, <a class="reference external" href="mailto:asigurds&#37;&#52;&#48;broadinstitute&#46;org">asigurds<span>&#64;</span>broadinstitute<span>&#46;</span>org</a>)</p>
@@ -506,9 +495,8 @@ conda<span class="w"> </span>activate<span class="w"> </span>claster_env_tutoria
 </div>
 </div>
 </section>
-</section>
-<section class="tex2jax_ignore mathjax_ignore" id="inputs-and-outputs">
-<h1>1. Inputs and outputs<a class="headerlink" href="#inputs-and-outputs" title="Link to this heading">#</a></h1>
+<section id="inputs-and-outputs">
+<h2>1. Inputs and outputs<a class="headerlink" href="#inputs-and-outputs" title="Link to this heading">#</a></h2>
 <p>The obtention of inputs and outputs from publicly available sources is detailed in notebook <code class="docutils literal notranslate"><span class="pre">1_Data_obtention.ipynb</span></code>. In this tutorial we will however provide you with the already created inputs and targets for all samples in the test set.</p>
 <p>Input samples and their matching targets are named after the ENSEMBL ID code for the protein coding gene located at the center of the region of interest. We kept the orientation of the genes, and hence the EU-seq signal can go both towards the right or towards the left.</p>
 <p><strong>Landscape branch:</strong></p>
@@ -1039,8 +1027,9 @@ Orientation: rev
 <img alt="../_images/0588dea779ffc94056629fcb21174c60735dce2f97aba6bf7bb8e5ad805a7abf.png" src="../_images/0588dea779ffc94056629fcb21174c60735dce2f97aba6bf7bb8e5ad805a7abf.png" />
 </div>
 </div>
-<section id="id1">
-<h2>2. Training and validating CLASTER<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
+</section>
+<section id="training-and-validating-claster">
+<h2>2. Training and validating CLASTER<a class="headerlink" href="#training-and-validating-claster" title="Link to this heading">#</a></h2>
 <div class="cell tag_Parameters tag_parameters docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">epochs</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">120</span>
@@ -1822,17 +1811,13 @@ We will also plot the profiles for the sample centered around the gene Gm49337 (
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#"><center> TUTORIAL <center></center></center></a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#training-and-validating-claster"><center> <em>Training and validating CLASTER</em> <center></center></center></a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">Introduction</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#about-claster">About CLASTER</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#before-we-start">0. Before we start …</a></li>
-</ul>
-</li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#inputs-and-outputs">1. Inputs and outputs</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">2. Training and validating CLASTER</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#inputs-and-outputs">1. Inputs and outputs</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#training-and-validating-claster">2. Training and validating CLASTER</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#create-config-files">2.1 Create config files:</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#run-claster">2.2 Run CLASTER:</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#analyze-results">2.3 Analyze results:</a></li>
@@ -1840,9 +1825,6 @@ We will also plot the profiles for the sample centered around the gene Gm49337 (
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">3. Summary</a></li>
 </ul>
-</li>
-</ul>
-
   </nav></div>
 
 </div></div>
