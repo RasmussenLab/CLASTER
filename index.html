@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Claster &#8212; CLASTER</title>
+    <title>Claster</title>
   
   
   
@@ -44,7 +44,7 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'index';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="TUTORIAL" href="nbs/0_Tutorial.html" />
+    <link rel="next" title="TUTORIAL" href="scripts/0_Tutorial.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -132,7 +132,7 @@
   
   
   
-    <p class="title logo__title">CLASTER</p>
+    <p class="title logo__title"></p>
   
 </a></div>
         <div class="sidebar-primary-item"><ul class="navbar-icon-links navbar-nav"
@@ -173,7 +173,7 @@
         </ul>
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Tutorial:</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="nbs/0_Tutorial.html">TUTORIAL</a></li>
+<li class="toctree-l1"><a class="reference internal" href="scripts/0_Tutorial.html">TUTORIAL</a></li>
 </ul>
 
     </div>
@@ -346,9 +346,7 @@ document.write(`
   </button>
 `);
 </script>
-<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="fa-solid fa-list"></span>
-</label>
+
 </div></div>
       
     </div>
@@ -364,22 +362,6 @@ document.write(`
     <div id="print-main-content">
         <div id="jb-print-toc">
             
-            <div>
-                <h2> Contents </h2>
-            </div>
-            <nav aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#abstract">Abstract</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#in-this-repository">In this repository</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#configurations"><code class="docutils literal notranslate"><span class="pre">configurations</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#images"><code class="docutils literal notranslate"><span class="pre">images</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#inputs"><code class="docutils literal notranslate"><span class="pre">inputs</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#scripts"><code class="docutils literal notranslate"><span class="pre">scripts</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#targets"><code class="docutils literal notranslate"><span class="pre">targets</span></code></a></li>
-</ul>
-</li>
-</ul>
-            </nav>
         </div>
     </div>
 </div>
@@ -392,81 +374,15 @@ document.write(`
   <section id="claster">
 <h1>Claster<a class="headerlink" href="#claster" title="Link to this heading">#</a></h1>
 <p>Modeling nascent RNA transcription from chromatin landscape and structure</p>
-<section id="abstract">
-<h2>Abstract<a class="headerlink" href="#abstract" title="Link to this heading">#</a></h2>
-<p><em>Different cell types and their associated functionalities can emerge from a single genomic sequence when certain regions are expressed while others remain silenced. The study of gene regulation and its potential malfunctioning in different cellular contexts is hence pivotal to understand both development and disease. We present the Chromatin Landscape and Structure to Expression Regressor (CLASTER), an epigenetic-based deep neural network that can integrate different data modalities describing the chromatin landscape and its 3D structure in their raw format. CLASTER effectively translates them into nascent transcription levels measured by EU-seq at a kilobasepair resolution. Our predictions reached a Pearson correlation with targets above r=0.86 at both bin and gene levels, without relying on DNA sequence nor explicitly extracted chromatin features. The model mostly used the information found within 10 kbp of the predicted locus to perform the predictions, even when a wide genomic region of 1 Mbp was available. Explicit modeling of long-range interactions using multi-headed attention and high-resolution chromatin contact maps had little impact on model performance, despite the model correctly identifying elements in these inputs influencing nascent transcription. The trained model then served as a platform to predict the transcriptional impact of simulated epigenetic silencing perturbations. Our results point towards a rather local, integrative and combinatorial paradigm of gene regulation, where changes in the chromatin environment surrounding a gene shape its context-specific transcription. We conclude that the predominant locality and limitations of current machine learning approaches might emerge as a genuine signature of genomic organization, having broad implications for future modeling approaches.</em></p>
-<p><img alt="Claster image" src="https://raw.githubusercontent.com/RasmussenLab/CLASTER/master/images/Claster_image.png" /></p>
-<p><strong>CLASTER overview</strong> CLASTER integrates the chromatin landscape (accessibility, promoter and enhancer activities and chromatin silencing) and structure (Micro-C) to predict nascent transcription levels measured by EU-seq.</p>
-</section>
-<section id="in-this-repository">
-<h2>In this repository<a class="headerlink" href="#in-this-repository" title="Link to this heading">#</a></h2>
-<p>This repository contains the files and scripts required to reproduce the results of the paper and a short tutorial. The repository consists of the following folders:</p>
-<section id="configurations">
-<h3><code class="docutils literal notranslate"><span class="pre">configurations</span></code><a class="headerlink" href="#configurations" title="Link to this heading">#</a></h3>
-<ul class="simple">
-<li><p>Configuration files (.yaml) required to build different flavours of CLASTER.</p></li>
-</ul>
-</section>
-<section id="images">
-<h3><code class="docutils literal notranslate"><span class="pre">images</span></code><a class="headerlink" href="#images" title="Link to this heading">#</a></h3>
-<ul class="simple">
-<li><p>Overview of CLASTER’s architecture.</p></li>
-</ul>
-</section>
-<section id="inputs">
-<h3><code class="docutils literal notranslate"><span class="pre">inputs</span></code><a class="headerlink" href="#inputs" title="Link to this heading">#</a></h3>
-<p>The folder contains the test set inputs for both data modalities, i.e. samples exploring regions of 1 Mbp centered at the TSS of protein coding genes found in chr4 (in mice). They will be used in the tutorial to exemplify how can we train and validate CLASTER.</p>
-</section>
-<section id="scripts">
-<h3><code class="docutils literal notranslate"><span class="pre">scripts</span></code><a class="headerlink" href="#scripts" title="Link to this heading">#</a></h3>
-<ul class="simple">
-<li><p><a class="reference external" href="https://github.com/RasmussenLab/CLASTER/blob/master/scripts/0_Tutorial.ipynb"><code class="docutils literal notranslate"><span class="pre">0_Tutorial.ipynb</span></code></a>: The notebook provides a rapid overview of the most important steps in CLASTER’s pipeline, including training and validating the network using the EIR framework.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">1_Data_obtention.ipynb</span></code>: This notebook guides the user through the data obtention process, including:</p>
-<ul>
-<li><p>Data download from publicly available repositories:</p>
-<ul>
-<li><p>Inputs: Chromatin landscape (ATAC-seq, H3K4me3, H3K27ac and H3K27me3 in mESCs) and structure (Micro-C maps in mESCs)</p></li>
-<li><p>Outputs: Nascent transcription profiles (EU-seq).</p></li>
-<li><p>Reference genome and gene annotations.</p></li>
-<li><p>Enhancer-Like Signatures (ELS).</p></li>
-</ul>
-</li>
-<li><p>Data filtering and preprocessing:</p>
-<ul>
-<li><p>Obtain numpy arrays for the inputs.</p></li>
-<li><p>Obtain csv files for the targets.</p></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p><code class="docutils literal notranslate"><span class="pre">2_Run_CLASTER.ipynb</span></code>: This notebook creates the configuration files required to train and test CLASTER using the EIR framework.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">2b_Run_HyenaDNA_and_Enformer.ipynb</span></code>: The notebook contains our adaptations of the code building</p>
-<ul>
-<li><p>Hyena-DNA (https://github.com/HazyResearch/hyena-dna) in its public colab version.</p></li>
-<li><p>Enformer (https://github.com/lucidrains/enformer-pytorch) in its python implementation.
-These were used to benchmark CLASTER. It includes:</p></li>
-<li><p>The obtention of sequence embeddings from both model’s backbones when loading the pretrained weights.</p></li>
-<li><p>The addition of a model head on top of the embeddings to match our regression outputs.</p></li>
-<li><p>Code to fine-tune Hyena-DNA’s backbone and the added head together.</p></li>
-</ul>
-</li>
-<li><p><code class="docutils literal notranslate"><span class="pre">3_Data_analysis.ipynb</span></code>: The notebook contains the functions used to perform the data analysis and create the figures included in the manuscript.</p></li>
-</ul>
-</section>
-<section id="targets">
-<h3><code class="docutils literal notranslate"><span class="pre">targets</span></code><a class="headerlink" href="#targets" title="Link to this heading">#</a></h3>
-<p>The folder contains the target EU-seq profiles matching the input (test) samples.</p>
-</section>
-</section>
 <div class="toctree-wrapper compound">
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Tutorial:</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="nbs/0_Tutorial.html">TUTORIAL</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="nbs/0_Tutorial.html#introduction">Introduction</a></li>
-<li class="toctree-l2"><a class="reference internal" href="nbs/0_Tutorial.html#before-we-start">0. Before we start …</a></li>
-<li class="toctree-l2"><a class="reference internal" href="nbs/0_Tutorial.html#inputs-and-outputs">1. Inputs and outputs</a></li>
-<li class="toctree-l2"><a class="reference internal" href="nbs/0_Tutorial.html#training-and-validating-claster">2. Training and validating CLASTER</a></li>
-<li class="toctree-l2"><a class="reference internal" href="nbs/0_Tutorial.html#summary">3. Summary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="scripts/0_Tutorial.html">TUTORIAL</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="scripts/0_Tutorial.html#introduction">Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="scripts/0_Tutorial.html#before-we-start">0. Before we start …</a></li>
+<li class="toctree-l2"><a class="reference internal" href="scripts/0_Tutorial.html#inputs-and-outputs">1. Inputs and outputs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="scripts/0_Tutorial.html#training-and-validating-claster">2. Training and validating CLASTER</a></li>
+<li class="toctree-l2"><a class="reference internal" href="scripts/0_Tutorial.html#summary">3. Summary</a></li>
 </ul>
 </li>
 </ul>
@@ -485,7 +401,7 @@ These were used to benchmark CLASTER. It includes:</p></li>
                   
 <div class="prev-next-area">
     <a class="right-next"
-       href="nbs/0_Tutorial.html"
+       href="scripts/0_Tutorial.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
@@ -499,29 +415,6 @@ These were used to benchmark CLASTER. It includes:</p></li>
             </div>
             
             
-              
-                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
-
-
-  <div class="sidebar-secondary-item">
-  <div class="page-toc tocsection onthispage">
-    <i class="fa-solid fa-list"></i> Contents
-  </div>
-  <nav class="bd-toc-nav page-toc">
-    <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#abstract">Abstract</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#in-this-repository">In this repository</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#configurations"><code class="docutils literal notranslate"><span class="pre">configurations</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#images"><code class="docutils literal notranslate"><span class="pre">images</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#inputs"><code class="docutils literal notranslate"><span class="pre">inputs</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#scripts"><code class="docutils literal notranslate"><span class="pre">scripts</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#targets"><code class="docutils literal notranslate"><span class="pre">targets</span></code></a></li>
-</ul>
-</li>
-</ul>
-  </nav></div>
-
-</div></div>
               
             
           </div>

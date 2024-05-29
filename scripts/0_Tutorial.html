@@ -1,0 +1,1881 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>TUTORIAL</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=3ee479438cf8b5e0d341" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=3ee479438cf8b5e0d341" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=3ee479438cf8b5e0d341" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=3ee479438cf8b5e0d341" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=384b581d" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=3ee479438cf8b5e0d341" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=3ee479438cf8b5e0d341" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=3ee479438cf8b5e0d341"></script>
+
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'scripts/0_Tutorial';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="prev" title="Claster" href="../index.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title"></p>
+  
+</a></div>
+        <div class="sidebar-primary-item"><ul class="navbar-icon-links navbar-nav"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/RasmussenLab/CLASTER" title="GitHub" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i></span>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+</ul></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../index.html">
+                    Claster
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Tutorial:</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">TUTORIAL</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://colab.research.google.com/github/RasmussenLab/CLASTER/blob/master/docs/scripts/0_Tutorial.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onColab"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img src="../_static/images/logo_colab.png">
+  </span>
+<span class="btn__text-container">Colab</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/RasmussenLab/CLASTER" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/RasmussenLab/CLASTER/edit/master/docs/scripts/0_Tutorial.ipynb" target="_blank"
+   class="btn btn-sm btn-source-edit-button dropdown-item"
+   title="Suggest edit"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="btn__text-container">Suggest edit</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/scripts/0_Tutorial.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>TUTORIAL</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">Introduction</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#about-claster">About CLASTER</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#before-we-start">0. Before we start …</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#inputs-and-outputs">1. Inputs and outputs</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#training-and-validating-claster">2. Training and validating CLASTER</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#create-config-files">2.1 Create config files:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#run-claster">2.2 Run CLASTER:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#analyze-results">2.3 Analyze results:</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">3. Summary</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="tutorial">
+<h1>TUTORIAL<a class="headerlink" href="#tutorial" title="Link to this heading">#</a></h1>
+<p><strong><em>Training and validating CLASTER</em></strong></p>
+<p><em>Authors:</em></p>
+<p>Marc Pielies Avelli (<a class="reference external" href="mailto:marc&#46;pielies-avelli&#37;&#52;&#48;cpr&#46;ku&#46;dk">marc<span>&#46;</span>pielies-avelli<span>&#64;</span>cpr<span>&#46;</span>ku<span>&#46;</span>dk</a>, <a class="reference external" href="mailto:mpielies&#37;&#52;&#48;broadinstitute&#46;org">mpielies<span>&#64;</span>broadinstitute<span>&#46;</span>org</a> )</p>
+<p>Arnor Sigurdsson (<a class="reference external" href="mailto:arnor&#46;sigurdsson&#37;&#52;&#48;sund&#46;ku&#46;dk">arnor<span>&#46;</span>sigurdsson<span>&#64;</span>sund<span>&#46;</span>ku<span>&#46;</span>dk</a>, <a class="reference external" href="mailto:asigurds&#37;&#52;&#48;broadinstitute&#46;org">asigurds<span>&#64;</span>broadinstitute<span>&#46;</span>org</a>)</p>
+<p>Henry Webel (<a class="reference external" href="mailto:henry&#46;webel&#37;&#52;&#48;sund&#46;ku&#46;dk">henry<span>&#46;</span>webel<span>&#64;</span>sund<span>&#46;</span>ku<span>&#46;</span>dk</a>)</p>
+<p>Simon Rasmussen (<a class="reference external" href="mailto:srasmuss&#37;&#52;&#48;sund&#46;ku&#46;dk">srasmuss<span>&#64;</span>sund<span>&#46;</span>ku<span>&#46;</span>dk</a>, <a class="reference external" href="mailto:srasmuss&#37;&#52;&#48;broadinstitute&#46;org">srasmuss<span>&#64;</span>broadinstitute<span>&#46;</span>org</a>)</p>
+<section id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Link to this heading">#</a></h2>
+<p>Hi!</p>
+<p>Welcome to this small tutorial on how to build and run CLASTER using the EIR framework. Please clone this repository (CLASTER) on your computer to start.</p>
+<section id="about-claster">
+<h3>About CLASTER<a class="headerlink" href="#about-claster" title="Link to this heading">#</a></h3>
+<p>The Chromatin Landscape and Structure Expression Regressor (CLASTER) is a deep convolutional neural network aimed to translate a given chromatin landscape and its matching 3D structure to the corresponding nascent RNA landscape.</p>
+<p align="center">
+<img src="../images/Claster_image.png" alt="Claster image" width="600"/>
+</p>
+<p><strong>Figure 1. Network overview.</strong> <em>Chromatin landscape information is provided as ATAC-seq, H3K4me3 (promoter), H3K27ac (enhancer) and H3K27me3 (silencer) enrichment levels for a region of 1Mbp at a resolution of 100bp. Chromatin structure is provided as a Micro-C map matching the genomic region covered by the other branch of the model at a resolution of 1600kbp. A set of convolutions extract features from both branches separately, then these features are combined in a set of fully connected layers (MLP) and finally used to predict the nascent transcription profiles (measured by EU-seq) at a kbp resolution.</em></p>
+<p><strong>Inputs:</strong></p>
+<p>The network takes as inputs two matrices describing the chromatin landscape in a region of 1 Mbp and the matching Micro-C map describing the contact frequency between different loci in this region.</p>
+<ol class="arabic simple">
+<li><p>The chromatin landscape is described by a matrix of shape (4,10001) where we have the enrichment of ATAC-seq, H3K4me3, H3K27ac and H3K27me3 in bins of 100bp exploring 1Mbp of genomic context.</p></li>
+<li><p>Micro-C contact maps explore the same region at a resolution of 1600 bp.</p></li>
+</ol>
+<p><strong>Network:</strong>
+The network consists of:</p>
+<ul class="simple">
+<li><p><strong>Feature extractors</strong>: two separate feature extractors with a number of convolutional layers implementing dilated convolutions and some residual connections.</p>
+<ul>
+<li><p>The first one extracts patterns from the chromatin landscape, described by combinations of ATAC-seq, H3K4me3, H3K27ac and H3K27me3 enrichments.</p></li>
+<li><p>The second one extracts features from the Micro-C maps (e.g. point-like contacts, compartments or domains).</p></li>
+</ul>
+</li>
+<li><p><strong>Fusion module</strong>: The extracted high-level, abstract features are then combined in a number of dense layers.</p></li>
+<li><p><strong>Output module</strong>: A final set of dense layers maps the feature vectors to the targets in a regression task per node, which will represent the EU-seq signal at a distance from the TSS of the gene defining the sample (located in the middle).</p></li>
+</ul>
+<p>CLASTER was built using the EIR framework, a python package developed by Arnor Sigurdsson (<a class="reference external" href="mailto:arnor&#46;sigurdsson&#37;&#52;&#48;sund&#46;ku&#46;dk">arnor<span>&#46;</span>sigurdsson<span>&#64;</span>sund<span>&#46;</span>ku<span>&#46;</span>dk</a>) which makes it easy to replicate and adapt it to new tasks. Documentation on EIR can be found at <a class="reference external" href="https://eir.readthedocs.io/en/latest/">eir.readthedocs.io</a>. Have a look at the tutorials to get a feel for the config files required and all possibilities that EIR offers. The framework uses hydra (https://hydra.cc/docs/intro/) to manage a set of configuration files, which allow you to streamline the process.</p>
+</section>
+</section>
+<section id="before-we-start">
+<h2>0. Before we start …<a class="headerlink" href="#before-we-start" title="Link to this heading">#</a></h2>
+<blockquote>
+<div><p>💻 <strong>Create an environment for the project:</strong>
+The following steps will be performed from the terminal, and once the environment is set up we will run everything else from this notebook.
+We will first create an environment for this project, where we will install all the required dependencies. The python package EIR, which is the core framework used to build, train and test CLASTER, will need <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">&gt;=</span> <span class="pre">3.11</span></code>.
+If you have anaconda, the environment can be created from the terminal by typing:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda<span class="w"> </span>create<span class="w"> </span>-n<span class="w"> </span>claster_env_tutorial<span class="w"> </span><span class="nv">python</span><span class="o">=</span><span class="m">3</span>.11<span class="w"> </span>pip<span class="w"> </span>-y<span class="w"> </span><span class="c1">#  Create environment</span>
+conda<span class="w"> </span>activate<span class="w"> </span>claster_env_tutorial<span class="w"> </span><span class="c1">#  Activate it</span>
+</pre></div>
+</div>
+<p>We can now install all the required packages by typing:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>numpy<span class="w"> </span>pandas<span class="w"> </span>matplotlib<span class="w"> </span>jupyter<span class="w"> </span>ipykernel<span class="w"> </span>eir-dl&gt;<span class="o">=</span><span class="m">0</span>.1.43<span class="w"> </span><span class="c1">#  Install these packages to run the notebook</span>
+</pre></div>
+</div>
+<p>We ran this tutorial on eir version 0.1.43.</p>
+</div></blockquote>
+<p><strong>From now on, you can run the pipeline from this notebook!</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Import the required packages</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">matplotlib.colors</span> <span class="k">as</span> <span class="nn">colors</span>
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">from</span> <span class="nn">pathlib</span> <span class="kn">import</span> <span class="n">Path</span>
+<span class="kn">from</span> <span class="nn">scipy.stats</span> <span class="kn">import</span> <span class="n">pearsonr</span><span class="p">,</span> <span class="n">spearmanr</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="inputs-and-outputs">
+<h2>1. Inputs and outputs<a class="headerlink" href="#inputs-and-outputs" title="Link to this heading">#</a></h2>
+<p>The obtention of inputs and outputs from publicly available sources is detailed in notebook <code class="docutils literal notranslate"><span class="pre">1_Data_obtention.ipynb</span></code>. In this tutorial we will however provide you with the already created inputs and targets for all samples in the test set.</p>
+<p>Input samples and their matching targets are named after the ENSEMBL ID code for the protein coding gene located at the center of the region of interest. We kept the orientation of the genes, and hence the EU-seq signal can go both towards the right or towards the left.</p>
+<p><strong>Landscape branch:</strong></p>
+<p>1Mbp regions centered at the TSS of protein coding genes in chromosome 4.</p>
+<ul class="simple">
+<li><p>Input arrays can be found at the folders <code class="docutils literal notranslate"><span class="pre">inputs/landscape_arrays/test/</span></code> and <code class="docutils literal notranslate"><span class="pre">inputs/microC_rotated/test/</span></code>.</p></li>
+<li><p>The matching target profiles are given in a tabular format and can be found in <code class="docutils literal notranslate"><span class="pre">targets/test_targets.csv</span></code>.</p></li>
+</ul>
+<blockquote>
+<div><p><em>Note: As a standard data augmentation procedure, samples were provided in their natural orientation (SampleID_forward.npy) and flipped. (SampleID_forward.npy)</em></p>
+</div></blockquote>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">visualize_input_array</span><span class="p">(</span><span class="n">a</span><span class="p">,</span>
+                     <span class="n">cropped_bins</span><span class="p">,</span>
+                     <span class="n">scaling_factor</span><span class="p">,</span>
+                     <span class="n">track_dict</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Function to visualize an input numpy array (chromatin landscape).</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        a: numpy array containing the data. (Shape (4,10.001) in our case)</span>
+<span class="sd">        cropped_bins: number of bins to crop from one side to visualize a zoomed in</span>
+<span class="sd">                      and centered chunk of the input sample.</span>
+<span class="sd">        scaling_factor: factor to multiply the profiles by. Default should be 1.</span>
+<span class="sd">        track_dict: dictionary with metadata about each track.</span>
+<span class="sd">    </span>
+<span class="sd">    Returns:</span>
+<span class="sd">        fig: the figure object to be saved or shown.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">fig</span><span class="p">,</span> <span class="n">axs</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">track_dict</span><span class="p">),</span> <span class="mi">2</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span><span class="mi">8</span><span class="p">))</span>
+
+    <span class="c1"># Plot the arrays, track by track</span>
+    <span class="k">for</span> <span class="n">j</span><span class="p">,</span><span class="n">line</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">a</span><span class="p">):</span>
+        <span class="n">axs</span><span class="p">[</span><span class="n">j</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="o">-</span><span class="nb">len</span><span class="p">(</span><span class="n">line</span><span class="p">)</span><span class="o">//</span><span class="mi">2</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="n">line</span><span class="p">)</span><span class="o">//</span><span class="mi">2</span><span class="p">),</span><span class="n">line</span><span class="o">*</span><span class="n">scaling_factor</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">track_dict</span><span class="p">[</span><span class="n">j</span><span class="p">][</span><span class="s2">&quot;color&quot;</span><span class="p">],</span> <span class="n">label</span><span class="o">=</span><span class="n">track_dict</span><span class="p">[</span><span class="n">j</span><span class="p">][</span><span class="s2">&quot;name&quot;</span><span class="p">],</span> <span class="n">lw</span><span class="o">=</span><span class="mf">.2</span><span class="p">)</span>
+        <span class="n">axs</span><span class="p">[</span><span class="n">j</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">fill_between</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="o">-</span><span class="nb">len</span><span class="p">(</span><span class="n">line</span><span class="p">)</span><span class="o">//</span><span class="mi">2</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="n">line</span><span class="p">)</span><span class="o">//</span><span class="mi">2</span><span class="p">),</span><span class="n">line</span><span class="o">*</span><span class="n">scaling_factor</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">track_dict</span><span class="p">[</span><span class="n">j</span><span class="p">][</span><span class="s2">&quot;color&quot;</span><span class="p">],</span> <span class="n">alpha</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+        <span class="n">axs</span><span class="p">[</span><span class="n">j</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="n">track_dict</span><span class="p">[</span><span class="n">j</span><span class="p">][</span><span class="s2">&quot;name&quot;</span><span class="p">])</span>
+        <span class="n">axs</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;Distance to TSS (kbp)&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span> <span class="mi">16</span><span class="p">)</span>
+
+        <span class="n">axs</span><span class="p">[</span><span class="n">j</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="o">-</span><span class="nb">len</span><span class="p">(</span><span class="n">line</span><span class="p">)</span><span class="o">//</span><span class="mi">2</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="n">line</span><span class="p">)</span><span class="o">//</span><span class="mi">2</span><span class="p">)[</span><span class="n">cropped_bins</span><span class="p">:</span><span class="o">-</span><span class="n">cropped_bins</span><span class="p">],</span><span class="n">line</span><span class="p">[</span><span class="n">cropped_bins</span><span class="p">:</span><span class="o">-</span><span class="n">cropped_bins</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="n">track_dict</span><span class="p">[</span><span class="n">j</span><span class="p">][</span><span class="s2">&quot;color&quot;</span><span class="p">],</span> <span class="n">label</span><span class="o">=</span><span class="n">track_dict</span><span class="p">[</span><span class="n">j</span><span class="p">][</span><span class="s2">&quot;name&quot;</span><span class="p">],</span> <span class="n">lw</span><span class="o">=</span><span class="mf">.2</span><span class="p">)</span>
+        <span class="n">axs</span><span class="p">[</span><span class="n">j</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">fill_between</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="o">-</span><span class="nb">len</span><span class="p">(</span><span class="n">line</span><span class="p">)</span><span class="o">//</span><span class="mi">2</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="n">line</span><span class="p">)</span><span class="o">//</span><span class="mi">2</span><span class="p">)[</span><span class="n">cropped_bins</span><span class="p">:</span><span class="o">-</span><span class="n">cropped_bins</span><span class="p">],</span><span class="n">line</span><span class="p">[</span><span class="n">cropped_bins</span><span class="p">:</span><span class="o">-</span><span class="n">cropped_bins</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="n">track_dict</span><span class="p">[</span><span class="n">j</span><span class="p">][</span><span class="s2">&quot;color&quot;</span><span class="p">],</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">.6</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">fig</span>
+        
+<span class="k">def</span> <span class="nf">visualize_target_array</span><span class="p">(</span><span class="n">a</span><span class="p">,</span>
+                           <span class="n">scaling_factor</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">1.</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Function to visualize target profiles.</span>
+<span class="sd">    </span>
+<span class="sd">    Args:</span>
+<span class="sd">        a: 1D numpy array containing the target EU-seq profile. (Shape = (401) in our case). </span>
+<span class="sd">        scaling_factor: factor to multiply the profiles by. Default should be 1.</span>
+<span class="sd">    </span>
+<span class="sd">    Returns:</span>
+<span class="sd">        fig: the figure object to be saved or shown.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">2</span><span class="p">))</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="o">-</span><span class="nb">len</span><span class="p">(</span><span class="n">a</span><span class="p">)</span><span class="o">//</span><span class="mi">2</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="n">a</span><span class="p">)</span><span class="o">//</span><span class="mi">2</span><span class="p">),</span><span class="n">a</span><span class="o">*</span><span class="n">scaling_factor</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s2">&quot;ctrl&quot;</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s2">&quot;grey&quot;</span><span class="p">,</span><span class="n">lw</span><span class="o">=</span><span class="mf">.2</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">fill_between</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="o">-</span><span class="nb">len</span><span class="p">(</span><span class="n">a</span><span class="p">)</span><span class="o">//</span><span class="mi">2</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="n">a</span><span class="p">)</span><span class="o">//</span><span class="mi">2</span><span class="p">),</span><span class="n">a</span><span class="o">*</span><span class="n">scaling_factor</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s2">&quot;silver&quot;</span> <span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Distance to TSS (kbp)&quot;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;EU-seq enrichment (reads)&quot;</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">fig</span>
+
+<span class="k">def</span> <span class="nf">plot_microc_original_and_rotated</span><span class="p">(</span><span class="n">pathlist</span><span class="p">:</span> <span class="nb">list</span><span class="p">,</span> <span class="n">num_bins</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">window_of_observation</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span> <span class="n">name</span><span class="p">:</span> <span class="nb">str</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot; </span>
+<span class="sd">    This function plots the rotated and cropped Micro-C contact maps.</span>
+<span class="sd">    Args:</span>
+<span class="sd">        pathlist: list of directory paths to scan.</span>
+<span class="sd">        num_bins: number of bins in the width (626).</span>
+<span class="sd">        window_of_observation: genomic distance that our samples scan in kbp.  Set to ca. 0.707 Mbp given the</span>
+<span class="sd">        sqrt(2) factor in distances when rotating 45 degrees the contact matrices.</span>
+<span class="sd">        name: name of the sample.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        fig: figure object to be saved or shown.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">bin_per_kbp</span> <span class="o">=</span> <span class="n">num_bins</span><span class="o">/</span><span class="n">window_of_observation</span> <span class="c1">#Unit (bin/kbp)</span>
+    <span class="n">max_shift</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="mi">200</span><span class="o">*</span><span class="n">bin_per_kbp</span><span class="p">)</span> <span class="c1"># Distance to crop because it was rolled from the other side</span>
+
+    <span class="k">for</span> <span class="n">p</span><span class="p">,</span><span class="n">path</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">pathlist</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">sample</span> <span class="ow">in</span> <span class="n">os</span><span class="o">.</span><span class="n">scandir</span><span class="p">(</span><span class="n">path</span><span class="p">):</span>
+            <span class="k">if</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">sample</span><span class="o">.</span><span class="n">name</span><span class="p">:</span> <span class="c1"># Nice example: &quot;ENSMUST00000105369.7.npy&quot; common &quot;ENSMUST00000001565.14.npy&quot; </span>
+                <span class="n">microc_map</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">flipud</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">sample</span><span class="p">))</span>
+                <span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span><span class="mi">4</span><span class="p">))</span>
+                <span class="c1">#plt.imshow(microc_map, cmap=&quot;YlOrRd&quot;)</span>
+                <span class="c1"># plt.plot(200*bin_per_kbp,50,marker=&quot;x&quot;)</span>
+                <span class="c1"># plt.plot(-200*bin_per_kbp+313,50,marker=&quot;x&quot;)</span>
+                <span class="c1"># plt.plot(313,50,marker=&quot;x&quot;)</span>
+                <span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">microc_map</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s2">&quot;YlOrRd&quot;</span><span class="p">,</span> <span class="n">vmin</span> <span class="o">=</span> <span class="o">-</span><span class="mi">5</span><span class="p">,</span> <span class="n">vmax</span> <span class="o">=</span> <span class="mi">0</span><span class="p">)</span>
+                <span class="c1"># Real scale</span>
+                <span class="n">center_bin</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">shape</span><span class="p">(</span><span class="n">microc_map</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span><span class="o">//</span><span class="mi">2</span>
+                <span class="n">bin_pos</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">13</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">shape</span><span class="p">(</span><span class="n">microc_map</span><span class="p">)[</span><span class="mi">1</span><span class="p">],</span><span class="mi">50</span><span class="p">)</span>
+                <span class="n">kbp_per_bin</span> <span class="o">=</span> <span class="mi">1</span><span class="o">/</span><span class="n">bin_per_kbp</span>
+                <span class="n">bin_val</span> <span class="o">=</span> <span class="p">(</span><span class="n">bin_pos</span><span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">shape</span><span class="p">(</span><span class="n">microc_map</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span><span class="o">//</span><span class="mi">2</span><span class="p">)</span><span class="o">*</span><span class="n">kbp_per_bin</span> <span class="c1">#Unit (kbp/bin)</span>
+                <span class="n">bin_val</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;</span><span class="si">%.2f</span><span class="s2">&quot;</span><span class="o">%</span><span class="k">item</span> for item in bin_val]
+                <span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">(</span><span class="n">bin_pos</span><span class="p">,</span><span class="n">bin_val</span><span class="p">,</span> <span class="n">rotation</span><span class="o">=</span><span class="mi">90</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">8</span><span class="p">)</span>
+                <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Distance in 1D sequence (kbp)&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+                <span class="c1"># Careful! Scale is not the distance between points but the distance between interacting points in 1D! </span>
+                <span class="n">bin_pos</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">shape</span><span class="p">(</span><span class="n">microc_map</span><span class="p">)[</span><span class="mi">0</span><span class="p">],</span><span class="mi">25</span><span class="p">)</span>
+                <span class="n">bin_val</span> <span class="o">=</span> <span class="mi">2</span><span class="o">*</span><span class="n">bin_pos</span><span class="o">*</span><span class="n">kbp_per_bin</span> <span class="c1">#*(kbp_per_bin) + np.shape(avg_att_mat)[0]</span>
+                <span class="n">bin_val</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;</span><span class="si">%.2f</span><span class="s2">&quot;</span><span class="o">%</span><span class="k">item</span> for item in bin_val]
+                <span class="n">plt</span><span class="o">.</span><span class="n">yticks</span><span class="p">(</span><span class="n">bin_pos</span><span class="p">,</span><span class="n">bin_val</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">8</span><span class="p">)</span>
+                <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Separation between</span><span class="se">\n</span><span class="s2"> interacting elements</span><span class="se">\n</span><span class="s2"> in 1D sequence (kbp)&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+                <span class="n">plt</span><span class="o">.</span><span class="n">colorbar</span><span class="p">()</span>
+    <span class="k">return</span> <span class="n">fig</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Inputs:</strong></p>
+<p>Now we will visualize an input sample centered at the gene LcK (ENSMUSG00000000409.14).</p>
+<p><strong>Chromatin landscape input:</strong></p>
+<p>In black we visualize the ATAC-seq track, showing the open chromatin regions as peaks.
+In red we show the promoter track H3K4me3. Each peak marks an active promoter, i.e. the TSS of an expressed gene.
+In blue we show the enhancer track H3K27ac, marking cis and trans regulatory elements.
+In green we show the silencer track.</p>
+<blockquote>
+<div><p>Note:</p>
+<ul class="simple">
+<li><p>The wide input region per sample (1Mbp) allows us to capture plenty of different genes in a single snapshot.</p></li>
+<li><p>The correlations between marks. Active promoters (red peaks) overlap with open chromatin regions (black peaks)</p></li>
+<li><p>The enhancer mark can also appear in active promoters.</p></li>
+<li><p>The Lck gene seems to be silenced in mESCs: The gene at 0 has no active promoter nor enhancer peak, low accessibility and &gt;is marked with H3K27me3, the silencer mark.</p></li>
+</ul>
+</div></blockquote>
+<p><strong>Chromatin structure input:</strong></p>
+<p>The input to the chromatin structure branch of the model is a log 10 transformed Micro-C count matrix. The matrix was rotated 45 degrees and cropped to provide contact information of the region of interest in a CLASTER friendly way. On the top we would have the original “diagonal” of the Micro-C map. Now, a contact of any genomic locus in the top row of the matrix is shown as a darker region (orange-red) in the middle of the matrix.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cropped_bins</span> <span class="o">=</span> <span class="mi">4400</span>
+<span class="n">scaling_factor</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">track_dict</span> <span class="o">=</span> <span class="p">{</span><span class="mi">0</span><span class="p">:{</span><span class="s2">&quot;name&quot;</span><span class="p">:</span><span class="s2">&quot;ATAC-seq&quot;</span><span class="p">,</span><span class="s2">&quot;function&quot;</span><span class="p">:</span><span class="s2">&quot;Chromatin accessibility&quot;</span><span class="p">,</span><span class="s2">&quot;color&quot;</span><span class="p">:</span><span class="s2">&quot;k&quot;</span><span class="p">},</span>
+            <span class="mi">1</span><span class="p">:{</span><span class="s2">&quot;name&quot;</span><span class="p">:</span><span class="s2">&quot;H3K4me3&quot;</span><span class="p">,</span><span class="s2">&quot;function&quot;</span><span class="p">:</span><span class="s2">&quot;Promoter&quot;</span><span class="p">,</span><span class="s2">&quot;color&quot;</span><span class="p">:</span><span class="s2">&quot;r&quot;</span><span class="p">},</span>
+            <span class="mi">2</span><span class="p">:{</span><span class="s2">&quot;name&quot;</span><span class="p">:</span><span class="s2">&quot;H3K27ac&quot;</span><span class="p">,</span><span class="s2">&quot;function&quot;</span><span class="p">:</span><span class="s2">&quot;Enhancer&quot;</span><span class="p">,</span><span class="s2">&quot;color&quot;</span><span class="p">:</span><span class="s2">&quot;b&quot;</span><span class="p">},</span>
+            <span class="mi">3</span><span class="p">:{</span><span class="s2">&quot;name&quot;</span><span class="p">:</span><span class="s2">&quot;H3K27me3&quot;</span><span class="p">,</span><span class="s2">&quot;function&quot;</span><span class="p">:</span><span class="s2">&quot;Chromatin silencing&quot;</span><span class="p">,</span><span class="s2">&quot;color&quot;</span><span class="p">:</span><span class="s2">&quot;g&quot;</span><span class="p">}}</span>
+
+<span class="n">sample_name</span> <span class="o">=</span> <span class="s2">&quot;ENSMUSG00000000409.14&quot;</span> <span class="c1"># &quot;ENSMUSG00000000085.16&quot;</span>
+<span class="n">pathlist</span> <span class="o">=</span> <span class="p">[</span><span class="n">Path</span><span class="p">(</span><span class="s1">&#39;../inputs/microC_rotated/test/&#39;</span><span class="p">)]</span>
+<span class="n">num_bins</span> <span class="o">=</span> <span class="mi">626</span>
+<span class="n">window_of_observation</span> <span class="o">=</span> <span class="mf">707.10678118</span>  <span class="c1"># kbp (diagonal is not observing the same length in the genome.)</span>
+
+<span class="k">for</span> <span class="n">orientation</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">&quot;forward&quot;</span><span class="p">,</span><span class="s2">&quot;rev&quot;</span><span class="p">]:</span>
+    <span class="n">landscape_array</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;../inputs/landscape_arrays/test/</span><span class="si">{</span><span class="n">sample_name</span><span class="si">}</span><span class="s2">_</span><span class="si">{</span><span class="n">orientation</span><span class="si">}</span><span class="s2">.npy&quot;</span><span class="p">)</span>
+    <span class="n">fig</span> <span class="o">=</span> <span class="n">visualize_input_array</span><span class="p">(</span><span class="n">landscape_array</span><span class="p">,</span>
+                     <span class="n">cropped_bins</span><span class="p">,</span>
+                     <span class="n">scaling_factor</span><span class="p">,</span>
+                     <span class="n">track_dict</span><span class="p">)</span>
+    <span class="n">fig</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+    <span class="n">plot_microc_original_and_rotated</span><span class="p">(</span><span class="n">pathlist</span><span class="p">,</span> <span class="n">num_bins</span><span class="p">,</span> <span class="n">window_of_observation</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">sample_name</span><span class="si">}</span><span class="s2">_</span><span class="si">{</span><span class="n">orientation</span><span class="si">}</span><span class="s2">.npy&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/4b0914f67e03c72a0df64c8c6e280414c3618fd515c03cc7ed2165cf42a6549e.png" src="../_images/4b0914f67e03c72a0df64c8c6e280414c3618fd515c03cc7ed2165cf42a6549e.png" />
+<img alt="../_images/703a79b7020671289c77a4dd011920866f5a2ce2b7f272f99ea38cfb519593b2.png" src="../_images/703a79b7020671289c77a4dd011920866f5a2ce2b7f272f99ea38cfb519593b2.png" />
+<img alt="../_images/8d16f7e2ef31886e0915c94fc40128ae998e94f3e78bd7c4a040e573c16dd686.png" src="../_images/8d16f7e2ef31886e0915c94fc40128ae998e94f3e78bd7c4a040e573c16dd686.png" />
+<img alt="../_images/bbfcf21ab918ffc4600705418b1b8cbc389f4266e1eb4a57b8f3bc62016f2c59.png" src="../_images/bbfcf21ab918ffc4600705418b1b8cbc389f4266e1eb4a57b8f3bc62016f2c59.png" />
+</div>
+</div>
+<p><strong>Outputs:</strong></p>
+<p>The goal of the network is to predict the nascent transcription levels matching the previous inputs. Nascent transcription was measured by EU-seq, reads were mapped to the reference mouse genome. The Reads were then binned in bins of 20bp and the obtained enrichment profiles were further smoothed and downsampled to obtain output profiles at a kbp resolution for the central 401 kbp.</p>
+<p>In EIR, the outputs are provided as a csv file containing the sample ID and as many columns as targets we want to predict.
+You can now have a look at the targets for this tutorial, i.e EU-seq read counts per bin (1kbp) at a certain distance from the TSS of the gene of interest, the one naming each sample:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Target csv file:</span>
+<span class="n">targets</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;../targets/test_targets.csv&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">&#39;ID&#39;</span><span class="p">)</span>
+<span class="n">targets</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>-200_ctrl</th>
+      <th>-199_ctrl</th>
+      <th>-198_ctrl</th>
+      <th>-197_ctrl</th>
+      <th>-196_ctrl</th>
+      <th>-195_ctrl</th>
+      <th>-194_ctrl</th>
+      <th>-193_ctrl</th>
+      <th>-192_ctrl</th>
+      <th>-191_ctrl</th>
+      <th>...</th>
+      <th>191_ctrl</th>
+      <th>192_ctrl</th>
+      <th>193_ctrl</th>
+      <th>194_ctrl</th>
+      <th>195_ctrl</th>
+      <th>196_ctrl</th>
+      <th>197_ctrl</th>
+      <th>198_ctrl</th>
+      <th>199_ctrl</th>
+      <th>200_ctrl</th>
+    </tr>
+    <tr>
+      <th>ID</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>ENSMUSG00000078673.10_forward</th>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>...</td>
+      <td>0.000015</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>ENSMUSG00000078673.10_rev</th>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000015</td>
+      <td>...</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>ENSMUSG00000054885.11_forward</th>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>...</td>
+      <td>0.025029</td>
+      <td>0.004533</td>
+      <td>0.000326</td>
+      <td>0.000005</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>ENSMUSG00000054885.11_rev</th>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000005</td>
+      <td>0.000326</td>
+      <td>0.004533</td>
+      <td>0.025029</td>
+      <td>...</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>ENSMUSG00000089773.7_forward</th>
+      <td>1.058536</td>
+      <td>1.002071</td>
+      <td>1.319272</td>
+      <td>1.858992</td>
+      <td>2.096323</td>
+      <td>2.060021</td>
+      <td>2.106640</td>
+      <td>2.085410</td>
+      <td>1.904420</td>
+      <td>1.915196</td>
+      <td>...</td>
+      <td>0.012807</td>
+      <td>0.033052</td>
+      <td>0.034374</td>
+      <td>0.014422</td>
+      <td>0.002805</td>
+      <td>0.004286</td>
+      <td>0.017631</td>
+      <td>0.030766</td>
+      <td>0.026285</td>
+      <td>1.039061</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>ENSMUSG00000017264.16_rev</th>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000084</td>
+      <td>0.002141</td>
+      <td>0.020027</td>
+      <td>0.076142</td>
+      <td>0.120057</td>
+      <td>0.089212</td>
+      <td>0.064064</td>
+      <td>0.060956</td>
+      <td>...</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>ENSMUSG00000023153.9_forward</th>
+      <td>5.779009</td>
+      <td>5.093278</td>
+      <td>4.074456</td>
+      <td>3.768673</td>
+      <td>3.827777</td>
+      <td>3.966342</td>
+      <td>4.429978</td>
+      <td>5.024314</td>
+      <td>5.499461</td>
+      <td>5.229515</td>
+      <td>...</td>
+      <td>5.473969</td>
+      <td>4.959192</td>
+      <td>4.670817</td>
+      <td>4.674260</td>
+      <td>4.714505</td>
+      <td>5.124657</td>
+      <td>5.729764</td>
+      <td>6.290256</td>
+      <td>6.755382</td>
+      <td>5.804558</td>
+    </tr>
+    <tr>
+      <th>ENSMUSG00000023153.9_rev</th>
+      <td>5.804558</td>
+      <td>6.755382</td>
+      <td>6.290256</td>
+      <td>5.729764</td>
+      <td>5.124657</td>
+      <td>4.714505</td>
+      <td>4.674260</td>
+      <td>4.670817</td>
+      <td>4.959192</td>
+      <td>5.473969</td>
+      <td>...</td>
+      <td>5.229515</td>
+      <td>5.499461</td>
+      <td>5.024314</td>
+      <td>4.429978</td>
+      <td>3.966342</td>
+      <td>3.827777</td>
+      <td>3.768673</td>
+      <td>4.074456</td>
+      <td>5.093278</td>
+      <td>5.779009</td>
+    </tr>
+    <tr>
+      <th>ENSMUSG00000028635.7_forward</th>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>...</td>
+      <td>0.000177</td>
+      <td>0.002770</td>
+      <td>0.017101</td>
+      <td>0.042273</td>
+      <td>0.042111</td>
+      <td>0.016904</td>
+      <td>0.002717</td>
+      <td>0.000172</td>
+      <td>0.000001</td>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>ENSMUSG00000028635.7_rev</th>
+      <td>0.000000</td>
+      <td>0.000001</td>
+      <td>0.000172</td>
+      <td>0.002717</td>
+      <td>0.016904</td>
+      <td>0.042111</td>
+      <td>0.042273</td>
+      <td>0.017101</td>
+      <td>0.002770</td>
+      <td>0.000177</td>
+      <td>...</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+    </tr>
+  </tbody>
+</table>
+<p>2590 rows × 401 columns</p>
+</div></div></div>
+</div>
+<p>The final profiles look like this:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Target profiles</span>
+<span class="n">sample_name</span> <span class="o">=</span> <span class="s2">&quot;ENSMUSG00000000409.14&quot;</span> 
+<span class="k">for</span> <span class="n">orientation</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">&quot;forward&quot;</span><span class="p">,</span><span class="s2">&quot;rev&quot;</span><span class="p">]:</span>
+    <span class="n">target_profile</span> <span class="o">=</span> <span class="n">targets</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">sample_name</span><span class="si">}</span><span class="s2">_</span><span class="si">{</span><span class="n">orientation</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">]</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Orientation: </span><span class="si">{</span><span class="n">orientation</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="n">fig</span> <span class="o">=</span> <span class="n">visualize_target_array</span><span class="p">(</span><span class="n">target_profile</span><span class="p">,</span><span class="n">scaling_factor</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">fig</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Orientation: forward
+Orientation: rev
+</pre></div>
+</div>
+<img alt="../_images/3d05c6a5712d990e5c0db4c2fbd24dd8d6be096d99e39a645f32ba10fd1d73a5.png" src="../_images/3d05c6a5712d990e5c0db4c2fbd24dd8d6be096d99e39a645f32ba10fd1d73a5.png" />
+<img alt="../_images/0588dea779ffc94056629fcb21174c60735dce2f97aba6bf7bb8e5ad805a7abf.png" src="../_images/0588dea779ffc94056629fcb21174c60735dce2f97aba6bf7bb8e5ad805a7abf.png" />
+</div>
+</div>
+</section>
+<section id="training-and-validating-claster">
+<h2>2. Training and validating CLASTER<a class="headerlink" href="#training-and-validating-claster" title="Link to this heading">#</a></h2>
+<div class="cell tag_Parameters tag_parameters docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">epochs</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">120</span>
+</pre></div>
+</div>
+</div>
+</div>
+<section id="create-config-files">
+<h3>2.1 Create config files:<a class="headerlink" href="#create-config-files" title="Link to this heading">#</a></h3>
+<p>First we will create the config files required to train and validate CLASTER:</p>
+<p>We will need:</p>
+<ul class="simple">
+<li><p>A global configuration file: this file describes a number of training hyperparameters, e.g. the device we want to use, number of epochs, learning rate…</p></li>
+<li><p>An input configuration file: contains the description of the input feature extractor, including number of layers and type. We’ll have one for each branch of the model.</p></li>
+<li><p>A fusion configuration file: This file describes the type and number of layers we want to fuse our features.</p></li>
+<li><p>An output configuration file: It describes how do we want to link our hidden representations of each sample and our targets.</p></li>
+</ul>
+<p>The following cell will create a folder with the configs. Have a look at the fields in each of them!
+We will also create a folder for the results called runs_tutorial.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Create folder to store configuration files</span>
+<span class="n">config_paths</span> <span class="o">=</span> <span class="p">[</span><span class="n">Path</span><span class="p">(</span><span class="s2">&quot;../configurations/conf_microc_rotated_pure_conv_tutorial/&quot;</span><span class="p">)]</span>
+<span class="k">for</span> <span class="n">config_path</span> <span class="ow">in</span> <span class="n">config_paths</span><span class="p">:</span>
+  <span class="n">config_path</span><span class="o">.</span><span class="n">mkdir</span><span class="p">(</span><span class="n">parents</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">exist_ok</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="c1"># Create folder to store results:</span>
+<span class="n">output_path</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="s2">&quot;../runs_tutorial/&quot;</span><span class="p">)</span>
+<span class="n">output_path</span><span class="o">.</span><span class="n">mkdir</span><span class="p">(</span><span class="n">parents</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">exist_ok</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="c1"># Write config files explicitly:</span>
+<span class="n">training_microc_rotated_yaml_contents</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;globals.yaml&quot;</span><span class="p">:</span> <span class="sa">f</span><span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">output_folder: ../runs_tutorial/gene_expression_microc_rotated_pure_conv_tutorial/ </span>
+<span class="s2">checkpoint_interval: </span><span class="si">{</span><span class="nb">int</span><span class="p">(</span><span class="mi">860</span><span class="w"> </span><span class="o">/</span><span class="mi">120</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">epochs</span><span class="p">)</span><span class="si">}</span>
+<span class="s2">sample_interval: </span><span class="si">{</span><span class="nb">int</span><span class="p">(</span><span class="mi">860</span><span class="w"> </span><span class="o">/</span><span class="mi">120</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">epochs</span><span class="p">)</span><span class="si">}</span><span class="s2"> </span>
+<span class="s2">n_epochs: </span><span class="si">{</span><span class="n">epochs</span><span class="si">}</span>
+<span class="s2">batch_size: 64</span>
+<span class="s2">optimizer: &quot;adamw&quot;</span>
+<span class="s2">lr: 0.0001 </span>
+<span class="s2">device: &quot;cpu&quot;</span>
+<span class="s2">compute_attributions: false</span>
+<span class="s2"># latent_sampling: </span>
+<span class="s2">#   layers_to_sample:</span>
+<span class="s2">#     - &quot;input_modules.contact_maps.feature_extractor.conv.0.conv_1&quot;</span>
+<span class="s2">#     - &quot;input_modules.contact_maps.feature_extractor.conv.1.conv_2&quot;</span>
+<span class="s2">#     - &quot;input_modules.contact_maps.feature_extractor.conv.1.conv_2&quot;</span>
+<span class="s2">&quot;&quot;&quot;</span><span class="p">,</span>
+<span class="s2">&quot;input_cnn.yaml&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;&quot; </span>
+<span class="s2">input_info:</span>
+<span class="s2">  input_source: ../inputs/landscape_arrays/test/ </span>
+<span class="s2">  input_name: gene_expression</span>
+<span class="s2">  input_type: array</span>
+
+<span class="s2">model_config:</span>
+<span class="s2">  model_type: cnn</span>
+<span class="s2">  #pre_normalization: &quot;instancenorm&quot;</span>
+<span class="s2">  model_init_config:</span>
+<span class="s2">    num_output_features: 512 # before fc_repr_dim</span>
+<span class="s2">    layers: [4,4]</span>
+<span class="s2">    kernel_height: 1</span>
+<span class="s2">    down_stride_width: 2</span>
+<span class="s2">    first_stride_expansion_width: 1</span>
+<span class="s2">    first_kernel_expansion_height: 4 #5</span>
+<span class="s2">    kernel_width: 10  #10</span>
+<span class="s2">    dilation_factor_width: 2</span>
+<span class="s2">    dilation_factor_height: 1</span>
+<span class="s2">    channel_exp_base: 5  #3 #-1</span>
+<span class="s2">    first_channel_expansion: 2</span>
+<span class="s2">    rb_do: .3</span>
+<span class="s2">    stochastic_depth_p: .1</span>
+<span class="s2">    attention_inclusion_cutoff: 1 #50 #256</span>
+
+<span class="s2">&quot;&quot;&quot;</span><span class="p">,</span>
+<span class="sd">&quot;&quot;&quot;input_cnn_microc_rotated.yaml&quot;&quot;&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;&quot; </span>
+<span class="s2">input_info:</span>
+<span class="s2">  input_source: ../inputs/microC_rotated/test/ #arrays_train_100bp_no_H3K27ac_uncoupled/</span>
+<span class="s2">  input_name: contact_maps</span>
+<span class="s2">  input_type: array</span>
+
+<span class="s2">model_config:</span>
+<span class="s2">  model_type: cnn</span>
+<span class="s2">  #pre_normalization: &quot;instancenorm&quot;</span>
+<span class="s2">  model_init_config:</span>
+<span class="s2">    num_output_features: 512 #before fc_repr_dim</span>
+<span class="s2">    layers: [1,2]</span>
+<span class="s2">    kernel_height: 1</span>
+<span class="s2">    down_stride_width: 2</span>
+<span class="s2">    first_stride_expansion_width: 1</span>
+<span class="s2">    first_kernel_expansion_height: 129 #Height of the array</span>
+<span class="s2">    kernel_width: 10  #10</span>
+<span class="s2">    dilation_factor_width: 2</span>
+<span class="s2">    channel_exp_base: 4  #3 #-1</span>
+<span class="s2">    first_channel_expansion: 2</span>
+<span class="s2">    rb_do: .3</span>
+<span class="s2">    stochastic_depth_p: .1</span>
+<span class="s2">    attention_inclusion_cutoff: 1 # 50 #128 #256</span>
+<span class="s2">&quot;&quot;&quot;</span><span class="p">,</span>
+<span class="s2">&quot;fusion.yaml&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">model_config:</span>
+<span class="s2">  fc_do: 0.4</span>
+<span class="s2">  fc_task_dim: 256</span>
+<span class="s2">  layers:</span>
+<span class="s2">  - 2</span>
+<span class="s2">  rb_do: 0.4</span>
+<span class="s2">  stochastic_depth_p: 0.5</span>
+<span class="s2">model_type: &quot;mlp-residual&quot;</span>
+<span class="s2">&quot;&quot;&quot;</span><span class="p">,</span>
+<span class="s2">&quot;outputs.yaml&quot;</span><span class="p">:</span><span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">output_info:</span>
+<span class="s2">  output_name: expression_output</span>
+<span class="s2">  output_source: ../targets/test_targets.csv </span>
+<span class="s2">  output_type: tabular</span>
+
+<span class="s2">model_config: # &lt;- new</span>
+<span class="s2">  model_type: linear # &lt;- new</span>
+
+<span class="s2">output_type_info:</span>
+<span class="s2">  con_loss_name: &quot;SmoothL1Loss&quot;</span>
+<span class="s2">  target_con_columns:</span>
+<span class="s2">  - &quot;-200_ctrl&quot;</span>
+<span class="s2">  - &quot;-199_ctrl&quot;</span>
+<span class="s2">  - &quot;-198_ctrl&quot;</span>
+<span class="s2">  - &quot;-197_ctrl&quot;</span>
+<span class="s2">  - &quot;-196_ctrl&quot;</span>
+<span class="s2">  - &quot;-195_ctrl&quot;</span>
+<span class="s2">  - &quot;-194_ctrl&quot;</span>
+<span class="s2">  - &quot;-193_ctrl&quot;</span>
+<span class="s2">  - &quot;-192_ctrl&quot;</span>
+<span class="s2">  - &quot;-191_ctrl&quot;</span>
+<span class="s2">  - &quot;-190_ctrl&quot;</span>
+<span class="s2">  - &quot;-189_ctrl&quot;</span>
+<span class="s2">  - &quot;-188_ctrl&quot;</span>
+<span class="s2">  - &quot;-187_ctrl&quot;</span>
+<span class="s2">  - &quot;-186_ctrl&quot;</span>
+<span class="s2">  - &quot;-185_ctrl&quot;</span>
+<span class="s2">  - &quot;-184_ctrl&quot;</span>
+<span class="s2">  - &quot;-183_ctrl&quot;</span>
+<span class="s2">  - &quot;-182_ctrl&quot;</span>
+<span class="s2">  - &quot;-181_ctrl&quot;</span>
+<span class="s2">  - &quot;-180_ctrl&quot;</span>
+<span class="s2">  - &quot;-179_ctrl&quot;</span>
+<span class="s2">  - &quot;-178_ctrl&quot;</span>
+<span class="s2">  - &quot;-177_ctrl&quot;</span>
+<span class="s2">  - &quot;-176_ctrl&quot;</span>
+<span class="s2">  - &quot;-175_ctrl&quot;</span>
+<span class="s2">  - &quot;-174_ctrl&quot;</span>
+<span class="s2">  - &quot;-173_ctrl&quot;</span>
+<span class="s2">  - &quot;-172_ctrl&quot;</span>
+<span class="s2">  - &quot;-171_ctrl&quot;</span>
+<span class="s2">  - &quot;-170_ctrl&quot;</span>
+<span class="s2">  - &quot;-169_ctrl&quot;</span>
+<span class="s2">  - &quot;-168_ctrl&quot;</span>
+<span class="s2">  - &quot;-167_ctrl&quot;</span>
+<span class="s2">  - &quot;-166_ctrl&quot;</span>
+<span class="s2">  - &quot;-165_ctrl&quot;</span>
+<span class="s2">  - &quot;-164_ctrl&quot;</span>
+<span class="s2">  - &quot;-163_ctrl&quot;</span>
+<span class="s2">  - &quot;-162_ctrl&quot;</span>
+<span class="s2">  - &quot;-161_ctrl&quot;</span>
+<span class="s2">  - &quot;-160_ctrl&quot;</span>
+<span class="s2">  - &quot;-159_ctrl&quot;</span>
+<span class="s2">  - &quot;-158_ctrl&quot;</span>
+<span class="s2">  - &quot;-157_ctrl&quot;</span>
+<span class="s2">  - &quot;-156_ctrl&quot;</span>
+<span class="s2">  - &quot;-155_ctrl&quot;</span>
+<span class="s2">  - &quot;-154_ctrl&quot;</span>
+<span class="s2">  - &quot;-153_ctrl&quot;</span>
+<span class="s2">  - &quot;-152_ctrl&quot;</span>
+<span class="s2">  - &quot;-151_ctrl&quot;</span>
+<span class="s2">  - &quot;-150_ctrl&quot;</span>
+<span class="s2">  - &quot;-149_ctrl&quot;</span>
+<span class="s2">  - &quot;-148_ctrl&quot;</span>
+<span class="s2">  - &quot;-147_ctrl&quot;</span>
+<span class="s2">  - &quot;-146_ctrl&quot;</span>
+<span class="s2">  - &quot;-145_ctrl&quot;</span>
+<span class="s2">  - &quot;-144_ctrl&quot;</span>
+<span class="s2">  - &quot;-143_ctrl&quot;</span>
+<span class="s2">  - &quot;-142_ctrl&quot;</span>
+<span class="s2">  - &quot;-141_ctrl&quot;</span>
+<span class="s2">  - &quot;-140_ctrl&quot;</span>
+<span class="s2">  - &quot;-139_ctrl&quot;</span>
+<span class="s2">  - &quot;-138_ctrl&quot;</span>
+<span class="s2">  - &quot;-137_ctrl&quot;</span>
+<span class="s2">  - &quot;-136_ctrl&quot;</span>
+<span class="s2">  - &quot;-135_ctrl&quot;</span>
+<span class="s2">  - &quot;-134_ctrl&quot;</span>
+<span class="s2">  - &quot;-133_ctrl&quot;</span>
+<span class="s2">  - &quot;-132_ctrl&quot;</span>
+<span class="s2">  - &quot;-131_ctrl&quot;</span>
+<span class="s2">  - &quot;-130_ctrl&quot;</span>
+<span class="s2">  - &quot;-129_ctrl&quot;</span>
+<span class="s2">  - &quot;-128_ctrl&quot;</span>
+<span class="s2">  - &quot;-127_ctrl&quot;</span>
+<span class="s2">  - &quot;-126_ctrl&quot;</span>
+<span class="s2">  - &quot;-125_ctrl&quot;</span>
+<span class="s2">  - &quot;-124_ctrl&quot;</span>
+<span class="s2">  - &quot;-123_ctrl&quot;</span>
+<span class="s2">  - &quot;-122_ctrl&quot;</span>
+<span class="s2">  - &quot;-121_ctrl&quot;</span>
+<span class="s2">  - &quot;-120_ctrl&quot;</span>
+<span class="s2">  - &quot;-119_ctrl&quot;</span>
+<span class="s2">  - &quot;-118_ctrl&quot;</span>
+<span class="s2">  - &quot;-117_ctrl&quot;</span>
+<span class="s2">  - &quot;-116_ctrl&quot;</span>
+<span class="s2">  - &quot;-115_ctrl&quot;</span>
+<span class="s2">  - &quot;-114_ctrl&quot;</span>
+<span class="s2">  - &quot;-113_ctrl&quot;</span>
+<span class="s2">  - &quot;-112_ctrl&quot;</span>
+<span class="s2">  - &quot;-111_ctrl&quot;</span>
+<span class="s2">  - &quot;-110_ctrl&quot;</span>
+<span class="s2">  - &quot;-109_ctrl&quot;</span>
+<span class="s2">  - &quot;-108_ctrl&quot;</span>
+<span class="s2">  - &quot;-107_ctrl&quot;</span>
+<span class="s2">  - &quot;-106_ctrl&quot;</span>
+<span class="s2">  - &quot;-105_ctrl&quot;</span>
+<span class="s2">  - &quot;-104_ctrl&quot;</span>
+<span class="s2">  - &quot;-103_ctrl&quot;</span>
+<span class="s2">  - &quot;-102_ctrl&quot;</span>
+<span class="s2">  - &quot;-101_ctrl&quot;</span>
+<span class="s2">  - &quot;-100_ctrl&quot;</span>
+<span class="s2">  - &quot;-99_ctrl&quot;</span>
+<span class="s2">  - &quot;-98_ctrl&quot;</span>
+<span class="s2">  - &quot;-97_ctrl&quot;</span>
+<span class="s2">  - &quot;-96_ctrl&quot;</span>
+<span class="s2">  - &quot;-95_ctrl&quot;</span>
+<span class="s2">  - &quot;-94_ctrl&quot;</span>
+<span class="s2">  - &quot;-93_ctrl&quot;</span>
+<span class="s2">  - &quot;-92_ctrl&quot;</span>
+<span class="s2">  - &quot;-91_ctrl&quot;</span>
+<span class="s2">  - &quot;-90_ctrl&quot;</span>
+<span class="s2">  - &quot;-89_ctrl&quot;</span>
+<span class="s2">  - &quot;-88_ctrl&quot;</span>
+<span class="s2">  - &quot;-87_ctrl&quot;</span>
+<span class="s2">  - &quot;-86_ctrl&quot;</span>
+<span class="s2">  - &quot;-85_ctrl&quot;</span>
+<span class="s2">  - &quot;-84_ctrl&quot;</span>
+<span class="s2">  - &quot;-83_ctrl&quot;</span>
+<span class="s2">  - &quot;-82_ctrl&quot;</span>
+<span class="s2">  - &quot;-81_ctrl&quot;</span>
+<span class="s2">  - &quot;-80_ctrl&quot;</span>
+<span class="s2">  - &quot;-79_ctrl&quot;</span>
+<span class="s2">  - &quot;-78_ctrl&quot;</span>
+<span class="s2">  - &quot;-77_ctrl&quot;</span>
+<span class="s2">  - &quot;-76_ctrl&quot;</span>
+<span class="s2">  - &quot;-75_ctrl&quot;</span>
+<span class="s2">  - &quot;-74_ctrl&quot;</span>
+<span class="s2">  - &quot;-73_ctrl&quot;</span>
+<span class="s2">  - &quot;-72_ctrl&quot;</span>
+<span class="s2">  - &quot;-71_ctrl&quot;</span>
+<span class="s2">  - &quot;-70_ctrl&quot;</span>
+<span class="s2">  - &quot;-69_ctrl&quot;</span>
+<span class="s2">  - &quot;-68_ctrl&quot;</span>
+<span class="s2">  - &quot;-67_ctrl&quot;</span>
+<span class="s2">  - &quot;-66_ctrl&quot;</span>
+<span class="s2">  - &quot;-65_ctrl&quot;</span>
+<span class="s2">  - &quot;-64_ctrl&quot;</span>
+<span class="s2">  - &quot;-63_ctrl&quot;</span>
+<span class="s2">  - &quot;-62_ctrl&quot;</span>
+<span class="s2">  - &quot;-61_ctrl&quot;</span>
+<span class="s2">  - &quot;-60_ctrl&quot;</span>
+<span class="s2">  - &quot;-59_ctrl&quot;</span>
+<span class="s2">  - &quot;-58_ctrl&quot;</span>
+<span class="s2">  - &quot;-57_ctrl&quot;</span>
+<span class="s2">  - &quot;-56_ctrl&quot;</span>
+<span class="s2">  - &quot;-55_ctrl&quot;</span>
+<span class="s2">  - &quot;-54_ctrl&quot;</span>
+<span class="s2">  - &quot;-53_ctrl&quot;</span>
+<span class="s2">  - &quot;-52_ctrl&quot;</span>
+<span class="s2">  - &quot;-51_ctrl&quot;</span>
+<span class="s2">  - &quot;-50_ctrl&quot;</span>
+<span class="s2">  - &quot;-49_ctrl&quot;</span>
+<span class="s2">  - &quot;-48_ctrl&quot;</span>
+<span class="s2">  - &quot;-47_ctrl&quot;</span>
+<span class="s2">  - &quot;-46_ctrl&quot;</span>
+<span class="s2">  - &quot;-45_ctrl&quot;</span>
+<span class="s2">  - &quot;-44_ctrl&quot;</span>
+<span class="s2">  - &quot;-43_ctrl&quot;</span>
+<span class="s2">  - &quot;-42_ctrl&quot;</span>
+<span class="s2">  - &quot;-41_ctrl&quot;</span>
+<span class="s2">  - &quot;-40_ctrl&quot;</span>
+<span class="s2">  - &quot;-39_ctrl&quot;</span>
+<span class="s2">  - &quot;-38_ctrl&quot;</span>
+<span class="s2">  - &quot;-37_ctrl&quot;</span>
+<span class="s2">  - &quot;-36_ctrl&quot;</span>
+<span class="s2">  - &quot;-35_ctrl&quot;</span>
+<span class="s2">  - &quot;-34_ctrl&quot;</span>
+<span class="s2">  - &quot;-33_ctrl&quot;</span>
+<span class="s2">  - &quot;-32_ctrl&quot;</span>
+<span class="s2">  - &quot;-31_ctrl&quot;</span>
+<span class="s2">  - &quot;-30_ctrl&quot;</span>
+<span class="s2">  - &quot;-29_ctrl&quot;</span>
+<span class="s2">  - &quot;-28_ctrl&quot;</span>
+<span class="s2">  - &quot;-27_ctrl&quot;</span>
+<span class="s2">  - &quot;-26_ctrl&quot;</span>
+<span class="s2">  - &quot;-25_ctrl&quot;</span>
+<span class="s2">  - &quot;-24_ctrl&quot;</span>
+<span class="s2">  - &quot;-23_ctrl&quot;</span>
+<span class="s2">  - &quot;-22_ctrl&quot;</span>
+<span class="s2">  - &quot;-21_ctrl&quot;</span>
+<span class="s2">  - &quot;-20_ctrl&quot;</span>
+<span class="s2">  - &quot;-19_ctrl&quot;</span>
+<span class="s2">  - &quot;-18_ctrl&quot;</span>
+<span class="s2">  - &quot;-17_ctrl&quot;</span>
+<span class="s2">  - &quot;-16_ctrl&quot;</span>
+<span class="s2">  - &quot;-15_ctrl&quot;</span>
+<span class="s2">  - &quot;-14_ctrl&quot;</span>
+<span class="s2">  - &quot;-13_ctrl&quot;</span>
+<span class="s2">  - &quot;-12_ctrl&quot;</span>
+<span class="s2">  - &quot;-11_ctrl&quot;</span>
+<span class="s2">  - &quot;-10_ctrl&quot;</span>
+<span class="s2">  - &quot;-9_ctrl&quot;</span>
+<span class="s2">  - &quot;-8_ctrl&quot;</span>
+<span class="s2">  - &quot;-7_ctrl&quot;</span>
+<span class="s2">  - &quot;-6_ctrl&quot;</span>
+<span class="s2">  - &quot;-5_ctrl&quot;</span>
+<span class="s2">  - &quot;-4_ctrl&quot;</span>
+<span class="s2">  - &quot;-3_ctrl&quot;</span>
+<span class="s2">  - &quot;-2_ctrl&quot;</span>
+<span class="s2">  - &quot;-1_ctrl&quot;</span>
+<span class="s2">  - &quot;0_ctrl&quot;</span>
+<span class="s2">  - &quot;1_ctrl&quot;</span>
+<span class="s2">  - &quot;2_ctrl&quot;</span>
+<span class="s2">  - &quot;3_ctrl&quot;</span>
+<span class="s2">  - &quot;4_ctrl&quot;</span>
+<span class="s2">  - &quot;5_ctrl&quot;</span>
+<span class="s2">  - &quot;6_ctrl&quot;</span>
+<span class="s2">  - &quot;7_ctrl&quot;</span>
+<span class="s2">  - &quot;8_ctrl&quot;</span>
+<span class="s2">  - &quot;9_ctrl&quot;</span>
+<span class="s2">  - &quot;10_ctrl&quot;</span>
+<span class="s2">  - &quot;11_ctrl&quot;</span>
+<span class="s2">  - &quot;12_ctrl&quot;</span>
+<span class="s2">  - &quot;13_ctrl&quot;</span>
+<span class="s2">  - &quot;14_ctrl&quot;</span>
+<span class="s2">  - &quot;15_ctrl&quot;</span>
+<span class="s2">  - &quot;16_ctrl&quot;</span>
+<span class="s2">  - &quot;17_ctrl&quot;</span>
+<span class="s2">  - &quot;18_ctrl&quot;</span>
+<span class="s2">  - &quot;19_ctrl&quot;</span>
+<span class="s2">  - &quot;20_ctrl&quot;</span>
+<span class="s2">  - &quot;21_ctrl&quot;</span>
+<span class="s2">  - &quot;22_ctrl&quot;</span>
+<span class="s2">  - &quot;23_ctrl&quot;</span>
+<span class="s2">  - &quot;24_ctrl&quot;</span>
+<span class="s2">  - &quot;25_ctrl&quot;</span>
+<span class="s2">  - &quot;26_ctrl&quot;</span>
+<span class="s2">  - &quot;27_ctrl&quot;</span>
+<span class="s2">  - &quot;28_ctrl&quot;</span>
+<span class="s2">  - &quot;29_ctrl&quot;</span>
+<span class="s2">  - &quot;30_ctrl&quot;</span>
+<span class="s2">  - &quot;31_ctrl&quot;</span>
+<span class="s2">  - &quot;32_ctrl&quot;</span>
+<span class="s2">  - &quot;33_ctrl&quot;</span>
+<span class="s2">  - &quot;34_ctrl&quot;</span>
+<span class="s2">  - &quot;35_ctrl&quot;</span>
+<span class="s2">  - &quot;36_ctrl&quot;</span>
+<span class="s2">  - &quot;37_ctrl&quot;</span>
+<span class="s2">  - &quot;38_ctrl&quot;</span>
+<span class="s2">  - &quot;39_ctrl&quot;</span>
+<span class="s2">  - &quot;40_ctrl&quot;</span>
+<span class="s2">  - &quot;41_ctrl&quot;</span>
+<span class="s2">  - &quot;42_ctrl&quot;</span>
+<span class="s2">  - &quot;43_ctrl&quot;</span>
+<span class="s2">  - &quot;44_ctrl&quot;</span>
+<span class="s2">  - &quot;45_ctrl&quot;</span>
+<span class="s2">  - &quot;46_ctrl&quot;</span>
+<span class="s2">  - &quot;47_ctrl&quot;</span>
+<span class="s2">  - &quot;48_ctrl&quot;</span>
+<span class="s2">  - &quot;49_ctrl&quot;</span>
+<span class="s2">  - &quot;50_ctrl&quot;</span>
+<span class="s2">  - &quot;51_ctrl&quot;</span>
+<span class="s2">  - &quot;52_ctrl&quot;</span>
+<span class="s2">  - &quot;53_ctrl&quot;</span>
+<span class="s2">  - &quot;54_ctrl&quot;</span>
+<span class="s2">  - &quot;55_ctrl&quot;</span>
+<span class="s2">  - &quot;56_ctrl&quot;</span>
+<span class="s2">  - &quot;57_ctrl&quot;</span>
+<span class="s2">  - &quot;58_ctrl&quot;</span>
+<span class="s2">  - &quot;59_ctrl&quot;</span>
+<span class="s2">  - &quot;60_ctrl&quot;</span>
+<span class="s2">  - &quot;61_ctrl&quot;</span>
+<span class="s2">  - &quot;62_ctrl&quot;</span>
+<span class="s2">  - &quot;63_ctrl&quot;</span>
+<span class="s2">  - &quot;64_ctrl&quot;</span>
+<span class="s2">  - &quot;65_ctrl&quot;</span>
+<span class="s2">  - &quot;66_ctrl&quot;</span>
+<span class="s2">  - &quot;67_ctrl&quot;</span>
+<span class="s2">  - &quot;68_ctrl&quot;</span>
+<span class="s2">  - &quot;69_ctrl&quot;</span>
+<span class="s2">  - &quot;70_ctrl&quot;</span>
+<span class="s2">  - &quot;71_ctrl&quot;</span>
+<span class="s2">  - &quot;72_ctrl&quot;</span>
+<span class="s2">  - &quot;73_ctrl&quot;</span>
+<span class="s2">  - &quot;74_ctrl&quot;</span>
+<span class="s2">  - &quot;75_ctrl&quot;</span>
+<span class="s2">  - &quot;76_ctrl&quot;</span>
+<span class="s2">  - &quot;77_ctrl&quot;</span>
+<span class="s2">  - &quot;78_ctrl&quot;</span>
+<span class="s2">  - &quot;79_ctrl&quot;</span>
+<span class="s2">  - &quot;80_ctrl&quot;</span>
+<span class="s2">  - &quot;81_ctrl&quot;</span>
+<span class="s2">  - &quot;82_ctrl&quot;</span>
+<span class="s2">  - &quot;83_ctrl&quot;</span>
+<span class="s2">  - &quot;84_ctrl&quot;</span>
+<span class="s2">  - &quot;85_ctrl&quot;</span>
+<span class="s2">  - &quot;86_ctrl&quot;</span>
+<span class="s2">  - &quot;87_ctrl&quot;</span>
+<span class="s2">  - &quot;88_ctrl&quot;</span>
+<span class="s2">  - &quot;89_ctrl&quot;</span>
+<span class="s2">  - &quot;90_ctrl&quot;</span>
+<span class="s2">  - &quot;91_ctrl&quot;</span>
+<span class="s2">  - &quot;92_ctrl&quot;</span>
+<span class="s2">  - &quot;93_ctrl&quot;</span>
+<span class="s2">  - &quot;94_ctrl&quot;</span>
+<span class="s2">  - &quot;95_ctrl&quot;</span>
+<span class="s2">  - &quot;96_ctrl&quot;</span>
+<span class="s2">  - &quot;97_ctrl&quot;</span>
+<span class="s2">  - &quot;98_ctrl&quot;</span>
+<span class="s2">  - &quot;99_ctrl&quot;</span>
+<span class="s2">  - &quot;100_ctrl&quot;</span>
+<span class="s2">  - &quot;101_ctrl&quot;</span>
+<span class="s2">  - &quot;102_ctrl&quot;</span>
+<span class="s2">  - &quot;103_ctrl&quot;</span>
+<span class="s2">  - &quot;104_ctrl&quot;</span>
+<span class="s2">  - &quot;105_ctrl&quot;</span>
+<span class="s2">  - &quot;106_ctrl&quot;</span>
+<span class="s2">  - &quot;107_ctrl&quot;</span>
+<span class="s2">  - &quot;108_ctrl&quot;</span>
+<span class="s2">  - &quot;109_ctrl&quot;</span>
+<span class="s2">  - &quot;110_ctrl&quot;</span>
+<span class="s2">  - &quot;111_ctrl&quot;</span>
+<span class="s2">  - &quot;112_ctrl&quot;</span>
+<span class="s2">  - &quot;113_ctrl&quot;</span>
+<span class="s2">  - &quot;114_ctrl&quot;</span>
+<span class="s2">  - &quot;115_ctrl&quot;</span>
+<span class="s2">  - &quot;116_ctrl&quot;</span>
+<span class="s2">  - &quot;117_ctrl&quot;</span>
+<span class="s2">  - &quot;118_ctrl&quot;</span>
+<span class="s2">  - &quot;119_ctrl&quot;</span>
+<span class="s2">  - &quot;120_ctrl&quot;</span>
+<span class="s2">  - &quot;121_ctrl&quot;</span>
+<span class="s2">  - &quot;122_ctrl&quot;</span>
+<span class="s2">  - &quot;123_ctrl&quot;</span>
+<span class="s2">  - &quot;124_ctrl&quot;</span>
+<span class="s2">  - &quot;125_ctrl&quot;</span>
+<span class="s2">  - &quot;126_ctrl&quot;</span>
+<span class="s2">  - &quot;127_ctrl&quot;</span>
+<span class="s2">  - &quot;128_ctrl&quot;</span>
+<span class="s2">  - &quot;129_ctrl&quot;</span>
+<span class="s2">  - &quot;130_ctrl&quot;</span>
+<span class="s2">  - &quot;131_ctrl&quot;</span>
+<span class="s2">  - &quot;132_ctrl&quot;</span>
+<span class="s2">  - &quot;133_ctrl&quot;</span>
+<span class="s2">  - &quot;134_ctrl&quot;</span>
+<span class="s2">  - &quot;135_ctrl&quot;</span>
+<span class="s2">  - &quot;136_ctrl&quot;</span>
+<span class="s2">  - &quot;137_ctrl&quot;</span>
+<span class="s2">  - &quot;138_ctrl&quot;</span>
+<span class="s2">  - &quot;139_ctrl&quot;</span>
+<span class="s2">  - &quot;140_ctrl&quot;</span>
+<span class="s2">  - &quot;141_ctrl&quot;</span>
+<span class="s2">  - &quot;142_ctrl&quot;</span>
+<span class="s2">  - &quot;143_ctrl&quot;</span>
+<span class="s2">  - &quot;144_ctrl&quot;</span>
+<span class="s2">  - &quot;145_ctrl&quot;</span>
+<span class="s2">  - &quot;146_ctrl&quot;</span>
+<span class="s2">  - &quot;147_ctrl&quot;</span>
+<span class="s2">  - &quot;148_ctrl&quot;</span>
+<span class="s2">  - &quot;149_ctrl&quot;</span>
+<span class="s2">  - &quot;150_ctrl&quot;</span>
+<span class="s2">  - &quot;151_ctrl&quot;</span>
+<span class="s2">  - &quot;152_ctrl&quot;</span>
+<span class="s2">  - &quot;153_ctrl&quot;</span>
+<span class="s2">  - &quot;154_ctrl&quot;</span>
+<span class="s2">  - &quot;155_ctrl&quot;</span>
+<span class="s2">  - &quot;156_ctrl&quot;</span>
+<span class="s2">  - &quot;157_ctrl&quot;</span>
+<span class="s2">  - &quot;158_ctrl&quot;</span>
+<span class="s2">  - &quot;159_ctrl&quot;</span>
+<span class="s2">  - &quot;160_ctrl&quot;</span>
+<span class="s2">  - &quot;161_ctrl&quot;</span>
+<span class="s2">  - &quot;162_ctrl&quot;</span>
+<span class="s2">  - &quot;163_ctrl&quot;</span>
+<span class="s2">  - &quot;164_ctrl&quot;</span>
+<span class="s2">  - &quot;165_ctrl&quot;</span>
+<span class="s2">  - &quot;166_ctrl&quot;</span>
+<span class="s2">  - &quot;167_ctrl&quot;</span>
+<span class="s2">  - &quot;168_ctrl&quot;</span>
+<span class="s2">  - &quot;169_ctrl&quot;</span>
+<span class="s2">  - &quot;170_ctrl&quot;</span>
+<span class="s2">  - &quot;171_ctrl&quot;</span>
+<span class="s2">  - &quot;172_ctrl&quot;</span>
+<span class="s2">  - &quot;173_ctrl&quot;</span>
+<span class="s2">  - &quot;174_ctrl&quot;</span>
+<span class="s2">  - &quot;175_ctrl&quot;</span>
+<span class="s2">  - &quot;176_ctrl&quot;</span>
+<span class="s2">  - &quot;177_ctrl&quot;</span>
+<span class="s2">  - &quot;178_ctrl&quot;</span>
+<span class="s2">  - &quot;179_ctrl&quot;</span>
+<span class="s2">  - &quot;180_ctrl&quot;</span>
+<span class="s2">  - &quot;181_ctrl&quot;</span>
+<span class="s2">  - &quot;182_ctrl&quot;</span>
+<span class="s2">  - &quot;183_ctrl&quot;</span>
+<span class="s2">  - &quot;184_ctrl&quot;</span>
+<span class="s2">  - &quot;185_ctrl&quot;</span>
+<span class="s2">  - &quot;186_ctrl&quot;</span>
+<span class="s2">  - &quot;187_ctrl&quot;</span>
+<span class="s2">  - &quot;188_ctrl&quot;</span>
+<span class="s2">  - &quot;189_ctrl&quot;</span>
+<span class="s2">  - &quot;190_ctrl&quot;</span>
+<span class="s2">  - &quot;191_ctrl&quot;</span>
+<span class="s2">  - &quot;192_ctrl&quot;</span>
+<span class="s2">  - &quot;193_ctrl&quot;</span>
+<span class="s2">  - &quot;194_ctrl&quot;</span>
+<span class="s2">  - &quot;195_ctrl&quot;</span>
+<span class="s2">  - &quot;196_ctrl&quot;</span>
+<span class="s2">  - &quot;197_ctrl&quot;</span>
+<span class="s2">  - &quot;198_ctrl&quot;</span>
+<span class="s2">  - &quot;199_ctrl&quot;</span>
+<span class="s2">  - &quot;200_ctrl&quot;</span>
+<span class="s2">  &quot;&quot;&quot;</span>
+<span class="p">}</span>
+
+<span class="k">for</span> <span class="n">file</span><span class="p">,</span><span class="n">content</span> <span class="ow">in</span> <span class="n">training_microc_rotated_yaml_contents</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+  <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">config_paths</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">/</span> <span class="n">file</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+      <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">content</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="run-claster">
+<h3>2.2 Run CLASTER:<a class="headerlink" href="#run-claster" title="Link to this heading">#</a></h3>
+<blockquote>
+<div><p>⏰ <em>This step can take a while if we train for the recommended 120 epochs. To accelerate computations set the device to “cuda” or “mps” (for Mac) in the global config file, if you have access to a GPU.</em></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">device</span><span class="p">:</span> <span class="s2">&quot;cuda&quot;</span> <span class="c1"># Alternatives are &quot;mps&quot; or &quot;cpu&quot;</span>
+</pre></div>
+</div>
+<p><em>Otherwise, you can reduce the number of epochs by changing the following parameters in the global configs:</em></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">checkpoint_interval</span><span class="p">:</span> <span class="mi">860</span>
+<span class="n">sample_interval</span><span class="p">:</span> <span class="mi">860</span> 
+<span class="n">n_epochs</span><span class="p">:</span> <span class="mi">120</span>
+</pre></div>
+</div>
+<p><em>To</em></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">checkpoint_interval</span><span class="p">:</span> <span class="mi">72</span>
+<span class="n">sample_interval</span><span class="p">:</span> <span class="mi">72</span> 
+<span class="n">n_epochs</span><span class="p">:</span> <span class="mi">5</span>
+</pre></div>
+</div>
+<p><em>This will highly compromise the performance of the model but will run faster. <code class="docutils literal notranslate"><span class="pre">checkpoint_interval</span></code> and <code class="docutils literal notranslate"><span class="pre">sample_interval</span></code> define at which batch number should we keep the results (model weights and predictions). We have 2590 samples and train in batches of 64 samples, which yields 36 batches per epoch. We can hence save the model every 72 batches (i.e. 2 epochs).</em></p>
+</div></blockquote>
+<p>Run the following cell to train in a command-line fashion from this jupyter notebook.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span><span class="w"> </span>eirtrain<span class="w"> </span><span class="err">\</span>
+<span class="o">--</span><span class="n">global_configs</span> <span class="o">../</span><span class="n">configurations</span><span class="o">/</span><span class="n">conf_microc_rotated_pure_conv_tutorial</span><span class="o">/</span><span class="nb">globals</span><span class="o">.</span><span class="n">yaml</span> \
+<span class="o">--</span><span class="n">input_configs</span> <span class="o">../</span><span class="n">configurations</span><span class="o">/</span><span class="n">conf_microc_rotated_pure_conv_tutorial</span><span class="o">/</span><span class="n">input_cnn</span><span class="o">.</span><span class="n">yaml</span> <span class="o">../</span><span class="n">configurations</span><span class="o">/</span><span class="n">conf_microc_rotated_pure_conv_tutorial</span><span class="o">/</span><span class="n">input_cnn_microc_rotated</span><span class="o">.</span><span class="n">yaml</span> \
+<span class="o">--</span><span class="n">fusion_configs</span> <span class="o">../</span><span class="n">configurations</span><span class="o">/</span><span class="n">conf_microc_rotated_pure_conv_tutorial</span><span class="o">/</span><span class="n">fusion</span><span class="o">.</span><span class="n">yaml</span> \
+<span class="o">--</span><span class="n">output_configs</span> <span class="o">../</span><span class="n">configurations</span><span class="o">/</span><span class="n">conf_microc_rotated_pure_conv_tutorial</span><span class="o">/</span><span class="n">outputs</span><span class="o">.</span><span class="n">yaml</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="analyze-results">
+<h3>2.3 Analyze results:<a class="headerlink" href="#analyze-results" title="Link to this heading">#</a></h3>
+<p>The previous code will generate a number of files and folders.</p>
+<ul class="simple">
+<li><p>Configs: a summary of the config files and complete description of model hyperparameters.</p></li>
+<li><p>Meta: eir version used (tested with eir 0.1.43).</p></li>
+<li><p>Results: predictions and true targets are given here for every batch we decided to store (e.g. 860). Performance plots per target node (e.g. -143_ctrl) are also provided here as csv and pdf files. Individual files per target node will be concatenated to yield predicted and target dataframes.</p></li>
+<li><p>Saved models: saved model weights.</p></li>
+<li><p>Serializations</p></li>
+<li><p>Tensorboard_logs</p></li>
+<li><p>A number of files including:</p>
+<ul>
+<li><p>logging_history.log</p></li>
+<li><p>model_info.txt: meta description of the model’s architecture</p></li>
+<li><p>training and validation history logs</p></li>
+<li><p>*.pdf: performance curves</p></li>
+</ul>
+</li>
+</ul>
+<p>Now we will visualize the results by:</p>
+<ol class="arabic simple">
+<li><p>Plotting predicted vs True target values at a bin level (1kbp resolution).</p></li>
+<li><p>Visualizing the predicted profiles.</p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#### Functions:</span>
+<span class="k">def</span> <span class="nf">_get_predictions</span><span class="p">(</span><span class="n">results_path</span><span class="p">:</span> <span class="n">Path</span><span class="p">,</span> <span class="n">N_BINS</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">condition_list</span><span class="p">:</span> <span class="nb">list</span><span class="p">,</span> <span class="n">SPLIT</span><span class="p">:</span> <span class="nb">int</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    This function reads the prediction files that EIR yields for each target (bin_condition, e.g. -150_ctrl) in the </span>
+<span class="sd">    training setting. Predictions are then converted into dataframes. </span>
+<span class="sd">    </span>
+<span class="sd">    Args:</span>
+<span class="sd">        results_path: path where the predictions are stored</span>
+<span class="sd">        N_BINS: number of the bins to one side of the central bin (200 normally, 57 for the Enformer predictions).</span>
+<span class="sd">        condition_list: list of conditions. As of now [&quot;_ctrl&quot;], but can be extended to other target conditions.</span>
+<span class="sd">        SPLIT: The batch number we want to use for our visualization.</span>
+<span class="sd">    Returns:</span>
+<span class="sd">        ids: names of the samples</span>
+<span class="sd">        predicted: predicted untransformed values </span>
+<span class="sd">        actual: actual values </span>
+<span class="sd">        </span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="c1"># Lists to store DataFrames for concatenation</span>
+    <span class="n">predicted_dfs</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">actual_dfs</span> <span class="o">=</span> <span class="p">[]</span>
+
+    <span class="k">for</span> <span class="n">condition</span> <span class="ow">in</span> <span class="n">condition_list</span><span class="p">:</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="o">-</span><span class="n">N_BINS</span><span class="p">,</span> <span class="n">N_BINS</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
+            <span class="n">file_path</span> <span class="o">=</span> <span class="n">results_path</span> <span class="o">/</span> <span class="sa">f</span><span class="s2">&quot;expression_output/</span><span class="si">{</span><span class="n">i</span><span class="si">}{</span><span class="n">condition</span><span class="si">}</span><span class="s2">/samples/</span><span class="si">{</span><span class="n">SPLIT</span><span class="si">}</span><span class="s2">/regression_predictions.csv&quot;</span>
+            <span class="n">predictions</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">file_path</span><span class="p">)</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">&#39;ID&#39;</span><span class="p">)</span>
+
+            <span class="c1"># Apply ReLU to model predictions</span>
+            <span class="n">predictions</span> <span class="o">=</span> <span class="n">predictions</span><span class="o">.</span><span class="n">clip</span><span class="p">(</span><span class="n">lower</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+
+            <span class="c1"># Prepare data for concatenation.</span>
+            <span class="n">predicted_column</span> <span class="o">=</span> <span class="n">predictions</span><span class="p">[</span><span class="s2">&quot;Predicted&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">i</span><span class="si">}{</span><span class="n">condition</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+            <span class="n">actual_column</span> <span class="o">=</span> <span class="n">predictions</span><span class="p">[</span><span class="s2">&quot;Actual&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">i</span><span class="si">}{</span><span class="n">condition</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+            <span class="n">predicted_dfs</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">predicted_column</span><span class="p">)</span>
+            <span class="n">actual_dfs</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">actual_column</span><span class="p">)</span>
+
+    <span class="c1"># Concatenate all DataFrames horizontally</span>
+    <span class="n">predicted</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">(</span><span class="n">predicted_dfs</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">actual</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">(</span><span class="n">actual_dfs</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">ids</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">predicted</span><span class="o">.</span><span class="n">index</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">ids</span><span class="p">,</span> <span class="n">predicted</span><span class="p">,</span> <span class="n">actual</span>
+
+<span class="k">def</span> <span class="nf">plot_target_predictions</span><span class="p">(</span><span class="n">line_p</span><span class="p">,</span> <span class="n">line_a</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot; </span>
+<span class="sd">    Plot the predicted and target EU-seq profiles. </span>
+<span class="sd">    Args:</span>
+<span class="sd">        line_p: 1D numpy array containing the predicted values for the 401 output nodes</span>
+<span class="sd">        line_a: &quot;                           &quot; ground truth &quot;                         &quot;</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        fig: figure object to save or show.</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">fig</span><span class="p">,</span> <span class="n">axs</span> <span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span><span class="mi">4</span><span class="p">),</span> <span class="n">sharex</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
+    <span class="n">axs</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">fill_between</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="o">-</span><span class="mi">200</span><span class="p">,</span><span class="mi">201</span><span class="p">),</span><span class="n">line_p</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;royalblue&#39;</span><span class="p">,</span><span class="n">alpha</span><span class="o">=</span><span class="mf">.3</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Predicted expression control&quot;</span><span class="p">)</span>
+    <span class="n">axs</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">fill_between</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="o">-</span><span class="mi">200</span><span class="p">,</span><span class="mi">201</span><span class="p">),</span><span class="n">line_a</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;silver&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">.6</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Actual expression control&quot;</span><span class="p">)</span>
+    <span class="n">axs</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;Distance from TSS (kbp)&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+    <span class="n">axs</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Reads&#39;</span><span class="p">)</span>
+    <span class="n">fig</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s1">&#39;upper center&#39;</span><span class="p">,</span> <span class="n">ncols</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>   
+    
+    <span class="k">return</span> <span class="n">fig</span>
+
+<span class="k">def</span> <span class="nf">plot_correlations</span><span class="p">(</span><span class="n">pred_list_values</span><span class="p">:</span> <span class="nb">list</span><span class="p">,</span> <span class="n">actual_list_values</span><span class="p">:</span> <span class="nb">list</span><span class="p">,</span> <span class="n">title</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">cmap</span><span class="p">:</span> <span class="n">colors</span><span class="o">.</span><span class="n">Colormap</span> <span class="o">=</span> <span class="s2">&quot;afmhot&quot;</span><span class="p">,</span> <span class="n">binlims</span><span class="p">:</span> <span class="nb">tuple</span> <span class="o">=</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">50</span><span class="p">)):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot; </span>
+<span class="sd">    This function plots predicted vs. actual values as a density map and provides the Spearman and Pearson correlations of the regressions. </span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        pred_list_values: list of predicted values flattened for all samples.</span>
+<span class="sd">        actual_list_values: list of target values flattened for all samples.</span>
+<span class="sd">        title: title of the plot</span>
+<span class="sd">        cmap: colormap to visualize the density plot.</span>
+<span class="sd">        binlims: limits of the bins</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        fig: figure object to store or show.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1"># Get the counts histogram to plot correlation with density colormap</span>
+    <span class="n">counts</span><span class="p">,</span> <span class="n">xedges</span><span class="p">,</span> <span class="n">yedges</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">histogram2d</span><span class="p">(</span><span class="n">actual_list_values</span><span class="p">,</span> <span class="n">pred_list_values</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="n">binlims</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">binlims</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span><span class="mi">200</span><span class="p">),</span><span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="n">binlims</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">binlims</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span><span class="mi">200</span><span class="p">)],</span> <span class="n">density</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+    
+    <span class="c1"># Plot regression of single predicted values vs. real</span>
+    <span class="n">pearson_r</span> <span class="o">=</span> <span class="n">pearsonr</span><span class="p">(</span><span class="n">actual_list_values</span><span class="p">,</span><span class="n">pred_list_values</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">spearman_r</span> <span class="o">=</span> <span class="n">spearmanr</span><span class="p">(</span><span class="n">actual_list_values</span><span class="p">,</span><span class="n">pred_list_values</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">m</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">polyfit</span><span class="p">(</span><span class="n">actual_list_values</span><span class="p">,</span> <span class="n">pred_list_values</span><span class="p">,</span> <span class="n">deg</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+    <span class="c1"># Actual fit:</span>
+    <span class="n">a1</span><span class="p">,</span> <span class="n">a2</span><span class="p">,</span> <span class="n">a3</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">polyfit</span><span class="p">(</span><span class="n">actual_list_values</span><span class="p">,</span> <span class="n">pred_list_values</span><span class="p">,</span> <span class="n">deg</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+    <span class="c1"># Regression from origin:</span>
+    <span class="c1">#m_0 , _, _, _ = np.linalg.lstsq(np.array(actual_list_values)[:,np.newaxis], pred_list_values) #x needs to be a column vector for this function</span>
+
+    <span class="c1"># Create the figure</span>
+    <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="mi">4</span><span class="p">))</span>    
+    <span class="n">min_val</span><span class="p">,</span> <span class="n">max_val</span><span class="p">,</span> <span class="n">step</span> <span class="o">=</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mf">.01</span><span class="p">)</span>
+    <span class="n">eps</span><span class="o">=</span> <span class="mi">1</span>
+    <span class="c1"># Counts matrix is transposed: the origin convention for plt.imshow is (top, left), for plt.hist2D is (bottom,left)</span>
+    <span class="n">counts</span><span class="p">[</span><span class="n">counts</span> <span class="o">&lt;</span> <span class="n">eps</span><span class="p">]</span> <span class="o">=</span><span class="mi">1</span>
+    <span class="n">hist</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">counts</span><span class="o">.</span><span class="n">T</span><span class="p">,</span> <span class="n">origin</span><span class="o">=</span><span class="s1">&#39;lower&#39;</span><span class="p">,</span> <span class="n">extent</span><span class="o">=</span><span class="p">[</span><span class="n">xedges</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">xedges</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">yedges</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">yedges</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]],</span> <span class="n">cmap</span><span class="o">=</span><span class="n">cmap</span><span class="p">,</span>  <span class="n">norm</span><span class="o">=</span><span class="n">colors</span><span class="o">.</span><span class="n">LogNorm</span><span class="p">())</span>
+    <span class="n">_</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">colorbar</span><span class="p">(</span><span class="n">hist</span><span class="p">)</span>
+    <span class="n">_</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">axline</span><span class="p">(</span><span class="n">xy1</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">b</span><span class="p">),</span> <span class="n">slope</span><span class="o">=</span><span class="n">m</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;Linear fit:</span><span class="se">\n</span><span class="s1">$ y = </span><span class="si">{</span><span class="n">m</span><span class="si">:</span><span class="s1">.3f</span><span class="si">}</span><span class="s1">x </span><span class="si">{</span><span class="n">b</span><span class="si">:</span><span class="s1">+.3f</span><span class="si">}</span><span class="s1">$</span><span class="se">\n</span><span class="s1">$r_p:</span><span class="si">{</span><span class="n">pearson_r</span><span class="si">:</span><span class="s1">.4f</span><span class="si">}</span><span class="s1">$</span><span class="se">\n</span><span class="s1">$r_s:</span><span class="si">{</span><span class="n">spearman_r</span><span class="si">:</span><span class="s1">.4f</span><span class="si">}</span><span class="s1">$&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;royalblue&quot;</span><span class="p">,</span> <span class="n">ls</span><span class="o">=</span><span class="s2">&quot;-&quot;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+    <span class="c1">#_ = ax.plot(np.arange(min_val,max_val,step), a1*(np.arange(min_val,max_val,step)**2)+a2*(np.arange(min_val,max_val,step))+a3, color=&#39;royalblue&#39;, ls = &quot;--&quot;, lw=1, label= f&quot;Polynomial fit:\n$y={a1:.3f}x^2+{a2:.3f}x+{a3:.3f}$&quot;)</span>
+    <span class="n">_</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s2">&quot;scaled&quot;</span><span class="p">)</span>
+    <span class="n">_</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">(</span><span class="n">min_val</span><span class="p">,</span><span class="n">max_val</span><span class="p">)</span>
+    <span class="n">_</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">(</span><span class="n">min_val</span><span class="p">,</span><span class="n">max_val</span><span class="p">)</span>
+    <span class="n">_</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;log$_2$(True +1)&quot;</span><span class="p">)</span>
+    <span class="n">_</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;log$_2$(Predicted +1)&quot;</span><span class="p">)</span>
+    <span class="n">fig</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">bbox_to_anchor</span><span class="o">=</span><span class="p">(</span><span class="mf">.48</span><span class="p">,</span><span class="mf">.8</span><span class="p">),</span> <span class="n">fancybox</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">shadow</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">7</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">fig</span>
+    
+</pre></div>
+</div>
+</div>
+</div>
+<p>We will now plot the overall validation performance (a fraction of samples are held out by default for validation).
+We will also plot the profiles for the sample centered around the gene Gm49337 (chr4, + strand).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">results_path</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="s2">&quot;../runs_tutorial/gene_expression_microc_rotated_pure_conv_tutorial/results/&quot;</span><span class="p">)</span>
+<span class="n">N_BINS</span><span class="o">=</span> <span class="mi">200</span>
+<span class="n">condition_list</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;_ctrl&quot;</span><span class="p">]</span>
+<span class="n">SPLIT</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="mi">860</span> <span class="o">/</span><span class="mi">120</span> <span class="o">*</span> <span class="n">epochs</span><span class="p">)</span>
+<span class="c1"># SPLIT = 4300 # for 860 samples, 120 epochs</span>
+
+<span class="n">ids</span><span class="p">,</span> <span class="n">predicted</span><span class="p">,</span> <span class="n">actual</span> <span class="o">=</span> <span class="n">_get_predictions</span><span class="p">(</span><span class="n">results_path</span><span class="p">,</span> <span class="n">N_BINS</span><span class="p">,</span> <span class="n">condition_list</span><span class="p">,</span> <span class="n">SPLIT</span><span class="p">)</span>
+
+
+<span class="n">fig</span> <span class="o">=</span> <span class="n">plot_correlations</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">log2</span><span class="p">(</span><span class="n">predicted</span><span class="o">.</span><span class="n">values</span><span class="o">.</span><span class="n">flatten</span><span class="p">()</span> <span class="o">+</span> <span class="mi">1</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">log2</span><span class="p">(</span><span class="n">actual</span><span class="o">.</span><span class="n">values</span><span class="o">.</span><span class="n">flatten</span><span class="p">()</span> <span class="o">+</span><span class="mi">1</span> <span class="p">),</span> <span class="n">title</span><span class="o">=</span> <span class="s2">&quot;Binwise Predicted vs True&quot;</span><span class="p">,</span> <span class="n">cmap</span> <span class="o">=</span> <span class="s2">&quot;binary&quot;</span><span class="p">,</span> <span class="n">binlims</span> <span class="o">=</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">10</span><span class="p">))</span>
+
+<span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;ENSMUSG00000111410.1_forward&#39;</span><span class="p">]:</span>
+    <span class="n">sample_name</span> <span class="o">=</span> <span class="n">name</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;_&#39;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+
+    <span class="n">line_p</span> <span class="o">=</span> <span class="n">predicted</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">sample_name</span><span class="si">}</span><span class="s2">_forward&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
+    <span class="n">line_a</span> <span class="o">=</span> <span class="n">actual</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">sample_name</span><span class="si">}</span><span class="s2">_forward&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
+
+    <span class="n">fig</span> <span class="o">=</span> <span class="n">plot_target_predictions</span><span class="p">(</span><span class="n">line_p</span><span class="p">,</span> <span class="n">line_a</span><span class="p">)</span>
+    <span class="n">fig</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/5a5a4347754a887daa6ca58fc76c550d19c7026a9bece856e7746ef21c3ed46b.png" src="../_images/5a5a4347754a887daa6ca58fc76c550d19c7026a9bece856e7746ef21c3ed46b.png" />
+<img alt="../_images/9bcc692333474381b0393db2d47ee7738ef3bd2a7946eab9ce9aade6f287809a.png" src="../_images/9bcc692333474381b0393db2d47ee7738ef3bd2a7946eab9ce9aade6f287809a.png" />
+</div>
+</div>
+</section>
+</section>
+<section id="summary">
+<h2>3. Summary<a class="headerlink" href="#summary" title="Link to this heading">#</a></h2>
+<p>Thanks for making it that far! We would like to end this tutorial with the following remark:</p>
+<p>CLASTER was designed to predict nascent transcription, but the EIR framework can be reused and expanded for any other purpose. It can handle plenty of other data modalities as well! You just need a well defined input containing some information or signal that can be used to infer the values of another, as an output. You can then customize your network using EIR, provide the inputs and targets in one of the supported data modalities, and name samples with the same ID for input and output.</p>
+<p>If in doubt, feel free to reach out to us!</p>
+</section>
+</section>
+
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../index.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Claster</p>
+      </div>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">Introduction</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#about-claster">About CLASTER</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#before-we-start">0. Before we start …</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#inputs-and-outputs">1. Inputs and outputs</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#training-and-validating-claster">2. Training and validating CLASTER</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#create-config-files">2.1 Create config files:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#run-claster">2.2 Run CLASTER:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#analyze-results">2.3 Analyze results:</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">3. Summary</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Marc Pielies Avelli
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2022, Marc Pielies Avelli.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=3ee479438cf8b5e0d341"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=3ee479438cf8b5e0d341"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
