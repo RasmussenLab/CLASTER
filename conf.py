@@ -79,7 +79,7 @@ html_theme_options = {
     "repository_url": "https://github.com/RasmussenLab/CLASTER",
     "repository_branch": "master",
     "home_page_in_toc": True,
-    "path_to_docs": "docs",
+    # "path_to_docs": "",
     "show_navbar_depth": 1,
     "use_edit_page_button": True,
     "use_repository_button": True,
