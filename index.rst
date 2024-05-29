@@ -11,4 +11,5 @@ Modeling nascent RNA transcription from chromatin landscape and structure
     :maxdepth: 2
     :caption: Tutorial:
 
-    nbs/0_Tutorial.ipynb
+    scripts/0_Tutorial.ipynb
+

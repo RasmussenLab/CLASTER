@@ -37,10 +37,9 @@ jobs:
           pip install sphinx sphinx-book-theme myst-nb
       - name: Build website
         run: |
-          cd docs
           sphinx-build -n --keep-going -b html ./ ./_build/
       - name: Publish workflow as website
         uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: docs/_build
+          publish_dir: _build

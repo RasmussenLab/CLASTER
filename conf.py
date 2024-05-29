@@ -70,7 +70,7 @@ intersphinx_mapping = {
 # a list of builtin themes.
 # See:
 # https://github.com/executablebooks/MyST-NB/blob/master/docs/conf.py
-html_title = "CLASTER"
+html_title = ""
 html_theme = "sphinx_book_theme"
 # html_logo = "_static/logo-wide.svg"
 # html_favicon = "_static/logo-square.svg"
