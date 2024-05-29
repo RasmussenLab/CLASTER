@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>1. DATA OBTENTION &amp; PREPROCESSING</title>
+    <title>1. DATA OBTENTION &amp; PREPROCESSING &#8212; CLASTER</title>
   
   
   
@@ -37,7 +37,7 @@
 <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=3ee479438cf8b5e0d341" />
   <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=3ee479438cf8b5e0d341"></script>
 
-    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/documentation_options.js?v=6771b56e"></script>
     <script src="../_static/doctools.js?v=9a2dae69"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
@@ -46,6 +46,8 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'scripts/1_Data_obtention';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="2. CREATE &amp; RUN CLASTER" href="2_Run_CLASTER.html" />
+    <link rel="prev" title="TUTORIAL" href="0_Tutorial.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -108,8 +110,6 @@
       
       
       
-        
-      
       <div class="bd-sidebar-primary bd-sidebar">
         
 
@@ -133,7 +133,7 @@
   
   
   
-    <p class="title logo__title"></p>
+    <p class="title logo__title">CLASTER</p>
   
 </a></div>
         <div class="sidebar-primary-item"><ul class="navbar-icon-links navbar-nav"
@@ -175,6 +175,14 @@
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Tutorial:</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="0_Tutorial.html">TUTORIAL</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Scripts:</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">1. DATA OBTENTION &amp; PREPROCESSING</a></li>
+<li class="toctree-l1"><a class="reference internal" href="2_Run_CLASTER.html">2. CREATE &amp; RUN CLASTER</a></li>
+<li class="toctree-l1"><a class="reference internal" href="2b_Run_HyenaDNA_and_Enformer.html">2b. BENCHMARKING CLASTER WITH HYENA-DNA AND ENFORMER</a></li>
+<li class="toctree-l1"><a class="reference internal" href="3_Data_analysis.html">DATA ANALYSIS NOTEBOOK</a></li>
+
 </ul>
 
     </div>
@@ -391,7 +399,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1><center> 1. DATA OBTENTION & PREPROCESSING <center></h1>
+    <h1>1. DATA OBTENTION & PREPROCESSING</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -401,23 +409,19 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#"><center> 1. DATA OBTENTION &amp; PREPROCESSING <center></center></center></a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#before-we-start">Before we start …</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-obtention">1. Data obtention</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#micro-c-data-acquisition">Micro-C Data acquisition</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#epigenomic-data-acquisition">Epigenomic Data acquisition:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-preprocessing">Data preprocessing</a></li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#data-obtention">1. Data obtention</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#micro-c-data-acquisition">Micro-C Data acquisition</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#epigenomic-data-acquisition">Epigenomic Data acquisition:</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-preprocessing">Data preprocessing</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#enhancer-perturbations">2. Enhancer perturbations</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#benchmark-data-obtention">3. Benchmark data obtention</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#create-bed-file-with-dna-chunk-boundaries">Create bed file with DNA chunk boundaries:</a></li>
 </ul>
 </li>
 </ul>
-</li>
-</ul>
-
             </nav>
         </div>
     </div>
@@ -429,7 +433,7 @@ document.write(`
                 <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="data-obtention-preprocessing">
-<h1><center> 1. DATA OBTENTION &amp; PREPROCESSING <center><a class="headerlink" href="#data-obtention-preprocessing" title="Link to this heading">#</a></h1>
+<h1>1. DATA OBTENTION &amp; PREPROCESSING<a class="headerlink" href="#data-obtention-preprocessing" title="Link to this heading">#</a></h1>
 <p>Hi!
 This notebook is a guide to obtain and preprocess the data used to train and test CLASTER. It is meant to be run sequentially, i.e. one cell after the other, and it mainly contains:</p>
 <ul class="simple">
@@ -471,9 +475,8 @@ In VS code we can simply choose the environment we want in the top right icon.</
 </div>
 </div>
 </section>
-</section>
-<section class="tex2jax_ignore mathjax_ignore" id="data-obtention">
-<h1>1. Data obtention<a class="headerlink" href="#data-obtention" title="Link to this heading">#</a></h1>
+<section id="data-obtention">
+<h2>1. Data obtention<a class="headerlink" href="#data-obtention" title="Link to this heading">#</a></h2>
 <p><strong>Import libraries</strong></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -582,7 +585,7 @@ In VS code we can simply choose the environment we want in the top right icon.</
 </div>
 </div>
 <section id="micro-c-data-acquisition">
-<h2>Micro-C Data acquisition<a class="headerlink" href="#micro-c-data-acquisition" title="Link to this heading">#</a></h2>
+<h3>Micro-C Data acquisition<a class="headerlink" href="#micro-c-data-acquisition" title="Link to this heading">#</a></h3>
 <p>Micro-C matrices for mESCs were obtained from:</p>
 <p>Tsung-Han S. Hsieh et al., Resolving the 3D Landscape of Transcription-Linked Mammalian Chromatin Folding, Molecular Cell,
 2020 https://doi.org/10.1016/j.molcel.2020.03.002.</p>
@@ -871,7 +874,7 @@ You can run the file in the terminal as:</p>
 </div>
 </section>
 <section id="epigenomic-data-acquisition">
-<h2>Epigenomic Data acquisition:<a class="headerlink" href="#epigenomic-data-acquisition" title="Link to this heading">#</a></h2>
+<h3>Epigenomic Data acquisition:<a class="headerlink" href="#epigenomic-data-acquisition" title="Link to this heading">#</a></h3>
 <p><strong>Genomic tracks</strong></p>
 <p>The used genomic tracks can be obtained from NCBI GEO under accession numbers GSE146328 and GSE186349, which refer to papers:</p>
 <ul class="simple">
@@ -905,7 +908,7 @@ https://doi.org/10.1016/j.molcel.2021.03.008.
 </div>
 </section>
 <section id="data-preprocessing">
-<h2>Data preprocessing<a class="headerlink" href="#data-preprocessing" title="Link to this heading">#</a></h2>
+<h3>Data preprocessing<a class="headerlink" href="#data-preprocessing" title="Link to this heading">#</a></h3>
 <p>From the bigwig files from NCBI’s GEO, we will obtain:</p>
 <ul class="simple">
 <li><p>Input numpy arrays of shape (<span class="math notranslate nohighlight">\(n_{tracks}\)</span>,<span class="math notranslate nohighlight">\(n_{bins}\)</span>) = (4,10001) with enrichments of ATAC, H3K4me3, H2BK20ac and H3K27me3 (in rows) at 100bp resolution (where bins are in columns).</p></li>
@@ -1226,6 +1229,7 @@ https://doi.org/10.1016/j.molcel.2021.03.008.
 </div>
 </div>
 </div>
+</section>
 </section>
 <section id="enhancer-perturbations">
 <h2>2. Enhancer perturbations<a class="headerlink" href="#enhancer-perturbations" title="Link to this heading">#</a></h2>
@@ -1660,6 +1664,24 @@ Now you have all files required to proceed to create, train and test CLASTER. Th
                 <footer class="prev-next-footer d-print-none">
                   
 <div class="prev-next-area">
+    <a class="left-prev"
+       href="0_Tutorial.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">TUTORIAL</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="2_Run_CLASTER.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">2. CREATE &amp; RUN CLASTER</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
 </div>
                 </footer>
               
@@ -1676,23 +1698,19 @@ Now you have all files required to proceed to create, train and test CLASTER. Th
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#"><center> 1. DATA OBTENTION &amp; PREPROCESSING <center></center></center></a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#before-we-start">Before we start …</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-obtention">1. Data obtention</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#micro-c-data-acquisition">Micro-C Data acquisition</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#epigenomic-data-acquisition">Epigenomic Data acquisition:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-preprocessing">Data preprocessing</a></li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#data-obtention">1. Data obtention</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#micro-c-data-acquisition">Micro-C Data acquisition</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#epigenomic-data-acquisition">Epigenomic Data acquisition:</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-preprocessing">Data preprocessing</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#enhancer-perturbations">2. Enhancer perturbations</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#benchmark-data-obtention">3. Benchmark data obtention</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#create-bed-file-with-dna-chunk-boundaries">Create bed file with DNA chunk boundaries:</a></li>
 </ul>
 </li>
 </ul>
-</li>
-</ul>
-
   </nav></div>
 
 </div></div>
