@@ -3,7 +3,7 @@ Claster
 Modeling nascent RNA transcription from chromatin landscape and structure
 
 
-.. include:: ../Readme.md
+.. include:: Readme.md
    :parser: myst_parser.sphinx_
    :start-line: 3
 
