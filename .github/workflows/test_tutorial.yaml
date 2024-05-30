@@ -1,0 +1,45 @@
+name: Test tutorial and publish website
+
+on:
+  - push
+
+jobs:
+  test_tutorial:
+    name: Check tutorial
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install Claster requirements
+        run: |
+          pip install numpy pandas matplotlib jupyter ipykernel eir-dl
+      - name: Run papermill for cmd-line execution of notebooks
+        run: |
+          pip install papermill
+      - name: Test Tutorial
+        run: |
+          cd scripts
+          papermill 0_Tutorial.ipynb 0_Tutorial_out.ipynb -p epochs 4
+  website:
+    name: Publish notebooks as website
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install dependencies
+        run: |
+          pip install sphinx sphinx-book-theme myst-nb
+      - name: Build website
+        run: |
+          sphinx-build -n --keep-going -b html ./ ./_build/
+      - name: Publish workflow as website
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: _build
