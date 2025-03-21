@@ -18,33 +18,33 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=3ee479438cf8b5e0d341" rel="stylesheet" />
-<link href="../_static/styles/bootstrap.css?digest=3ee479438cf8b5e0d341" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=3ee479438cf8b5e0d341" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
 
   
-  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=3ee479438cf8b5e0d341" rel="stylesheet" />
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
   <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a746c00c" />
-    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=384b581d" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=3ee479438cf8b5e0d341" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=3ee479438cf8b5e0d341" />
-  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=3ee479438cf8b5e0d341"></script>
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
     <script src="../_static/documentation_options.js?v=6771b56e"></script>
-    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
-    <script src="../_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'scripts/0_Tutorial';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="1. DATA OBTENTION &amp; PREPROCESSING" href="1_Data_obtention.html" />
+    <link rel="next" title="1. DATA OBTENTION &amp; PREPROCESSING" href="I_Data_obtention.html" />
     <link rel="prev" title="Claster" href="../index.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -123,6 +123,8 @@
         <div class="sidebar-primary-item">
 
   
+    
+  
 
 <a class="navbar-brand logo" href="../index.html">
   
@@ -134,7 +136,7 @@
     <p class="title logo__title">CLASTER</p>
   
 </a></div>
-        <div class="sidebar-primary-item"><ul class="navbar-icon-links navbar-nav"
+        <div class="sidebar-primary-item"><ul class="navbar-icon-links"
     aria-label="Icon Links">
         <li class="nav-item">
           
@@ -145,7 +147,7 @@
           
           
           
-          <a href="https://github.com/RasmussenLab/CLASTER" title="GitHub" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i></span>
+          <a href="https://github.com/RasmussenLab/CLASTER" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
             <span class="sr-only">GitHub</span></a>
         </li>
 </ul></div>
@@ -153,7 +155,7 @@
 
  <script>
  document.write(`
-   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass"></i>
     <span class="search-button__default-text">Search</span>
     <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
@@ -176,11 +178,12 @@
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Scripts:</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="1_Data_obtention.html">1. DATA OBTENTION &amp; PREPROCESSING</a></li>
-<li class="toctree-l1"><a class="reference internal" href="2_Run_CLASTER.html">2. CREATE &amp; RUN CLASTER</a></li>
-<li class="toctree-l1"><a class="reference internal" href="2b_Run_HyenaDNA_and_Enformer.html">2b. BENCHMARKING CLASTER WITH HYENA-DNA AND ENFORMER</a></li>
-<li class="toctree-l1"><a class="reference internal" href="3_Data_analysis.html">DATA ANALYSIS NOTEBOOK</a></li>
+<li class="toctree-l1"><a class="reference internal" href="I_Data_obtention.html">1. DATA OBTENTION &amp; PREPROCESSING</a></li>
+<li class="toctree-l1"><a class="reference internal" href="II_Run_CLASTER.html">2. CREATE &amp; RUN CLASTER</a></li>
+<li class="toctree-l1"><a class="reference internal" href="IIb_Run_HyenaDNA_and_Enformer.html">2b. BENCHMARKING CLASTER WITH HYENA-DNA AND ENFORMER</a></li>
+<li class="toctree-l1"><a class="reference internal" href="III_Data_analysis.html">DATA ANALYSIS NOTEBOOK</a></li>
 
+<li class="toctree-l1"><a class="reference internal" href="IV_Revisions.html"><center> REVISIONS: CODE ADDED <center></center></center></a></li>
 </ul>
 
     </div>
@@ -210,9 +213,9 @@
   
     <div class="header-article-items__start">
       
-        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
   <span class="fa-solid fa-bars"></span>
-</label></div>
+</button></div>
       
     </div>
   
@@ -237,14 +240,14 @@
       
       <li><a href="https://colab.research.google.com/github/RasmussenLab/CLASTER/blob/master/scripts/0_Tutorial.ipynb" target="_blank"
    class="btn btn-sm dropdown-item"
-   title="Launch onColab"
+   title="Launch on Colab"
    data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
 <span class="btn__icon-container">
   
-    <img src="../_static/images/logo_colab.png">
+    <img alt="Colab logo" src="../_static/images/logo_colab.png">
   </span>
 <span class="btn__text-container">Colab</span>
 </a>
@@ -368,10 +371,10 @@
 
 <script>
 document.write(`
-  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
-    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
-    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
   </button>
 `);
 </script>
@@ -379,14 +382,14 @@ document.write(`
 
 <script>
 document.write(`
-  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
   </button>
 `);
 </script>
-<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
-</label>
+</button>
 </div></div>
       
     </div>
@@ -497,13 +500,13 @@ conda<span class="w"> </span>activate<span class="w"> </span>claster_env_tutoria
 </summary>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Import the required packages</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="kn">import</span> <span class="nn">matplotlib.colors</span> <span class="k">as</span> <span class="nn">colors</span>
-<span class="kn">import</span> <span class="nn">os</span>
-<span class="kn">from</span> <span class="nn">pathlib</span> <span class="kn">import</span> <span class="n">Path</span>
-<span class="kn">from</span> <span class="nn">scipy.stats</span> <span class="kn">import</span> <span class="n">pearsonr</span><span class="p">,</span> <span class="n">spearmanr</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.colors</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">colors</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">pathlib</span><span class="w"> </span><span class="kn">import</span> <span class="n">Path</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">scipy.stats</span><span class="w"> </span><span class="kn">import</span> <span class="n">pearsonr</span><span class="p">,</span> <span class="n">spearmanr</span>
 </pre></div>
 </div>
 </div>
@@ -530,7 +533,7 @@ conda<span class="w"> </span>activate<span class="w"> </span>claster_env_tutoria
 <span class="expanded">Hide code cell source</span>
 </summary>
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">visualize_input_array</span><span class="p">(</span><span class="n">a</span><span class="p">,</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">visualize_input_array</span><span class="p">(</span><span class="n">a</span><span class="p">,</span>
                      <span class="n">cropped_bins</span><span class="p">,</span>
                      <span class="n">scaling_factor</span><span class="p">,</span>
                      <span class="n">track_dict</span><span class="p">):</span>
@@ -561,7 +564,7 @@ conda<span class="w"> </span>activate<span class="w"> </span>claster_env_tutoria
 
     <span class="k">return</span> <span class="n">fig</span>
         
-<span class="k">def</span> <span class="nf">visualize_target_array</span><span class="p">(</span><span class="n">a</span><span class="p">,</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">visualize_target_array</span><span class="p">(</span><span class="n">a</span><span class="p">,</span>
                            <span class="n">scaling_factor</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">1.</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Function to visualize target profiles.</span>
@@ -581,7 +584,7 @@ conda<span class="w"> </span>activate<span class="w"> </span>claster_env_tutoria
 
     <span class="k">return</span> <span class="n">fig</span>
 
-<span class="k">def</span> <span class="nf">plot_microc_original_and_rotated</span><span class="p">(</span><span class="n">pathlist</span><span class="p">:</span> <span class="nb">list</span><span class="p">,</span> <span class="n">num_bins</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">window_of_observation</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span> <span class="n">name</span><span class="p">:</span> <span class="nb">str</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">plot_microc_original_and_rotated</span><span class="p">(</span><span class="n">pathlist</span><span class="p">:</span> <span class="nb">list</span><span class="p">,</span> <span class="n">num_bins</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">window_of_observation</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span> <span class="n">name</span><span class="p">:</span> <span class="nb">str</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot; </span>
 <span class="sd">    This function plots the rotated and cropped Micro-C contact maps.</span>
 <span class="sd">    Args:</span>
@@ -1672,7 +1675,7 @@ We will also create a folder for the results called runs_tutorial.</p>
 </summary>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#### Functions:</span>
-<span class="k">def</span> <span class="nf">_get_predictions</span><span class="p">(</span><span class="n">results_path</span><span class="p">:</span> <span class="n">Path</span><span class="p">,</span> <span class="n">N_BINS</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">condition_list</span><span class="p">:</span> <span class="nb">list</span><span class="p">,</span> <span class="n">SPLIT</span><span class="p">:</span> <span class="nb">int</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">_get_predictions</span><span class="p">(</span><span class="n">results_path</span><span class="p">:</span> <span class="n">Path</span><span class="p">,</span> <span class="n">N_BINS</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">condition_list</span><span class="p">:</span> <span class="nb">list</span><span class="p">,</span> <span class="n">SPLIT</span><span class="p">:</span> <span class="nb">int</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    This function reads the prediction files that EIR yields for each target (bin_condition, e.g. -150_ctrl) in the </span>
 <span class="sd">    training setting. Predictions are then converted into dataframes. </span>
@@ -1715,7 +1718,7 @@ We will also create a folder for the results called runs_tutorial.</p>
 
     <span class="k">return</span> <span class="n">ids</span><span class="p">,</span> <span class="n">predicted</span><span class="p">,</span> <span class="n">actual</span>
 
-<span class="k">def</span> <span class="nf">plot_target_predictions</span><span class="p">(</span><span class="n">line_p</span><span class="p">,</span> <span class="n">line_a</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">plot_target_predictions</span><span class="p">(</span><span class="n">line_p</span><span class="p">,</span> <span class="n">line_a</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot; </span>
 <span class="sd">    Plot the predicted and target EU-seq profiles. </span>
 <span class="sd">    Args:</span>
@@ -1735,7 +1738,7 @@ We will also create a folder for the results called runs_tutorial.</p>
     
     <span class="k">return</span> <span class="n">fig</span>
 
-<span class="k">def</span> <span class="nf">plot_correlations</span><span class="p">(</span><span class="n">pred_list_values</span><span class="p">:</span> <span class="nb">list</span><span class="p">,</span> <span class="n">actual_list_values</span><span class="p">:</span> <span class="nb">list</span><span class="p">,</span> <span class="n">title</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">cmap</span><span class="p">:</span> <span class="n">colors</span><span class="o">.</span><span class="n">Colormap</span> <span class="o">=</span> <span class="s2">&quot;afmhot&quot;</span><span class="p">,</span> <span class="n">binlims</span><span class="p">:</span> <span class="nb">tuple</span> <span class="o">=</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">50</span><span class="p">)):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">plot_correlations</span><span class="p">(</span><span class="n">pred_list_values</span><span class="p">:</span> <span class="nb">list</span><span class="p">,</span> <span class="n">actual_list_values</span><span class="p">:</span> <span class="nb">list</span><span class="p">,</span> <span class="n">title</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">cmap</span><span class="p">:</span> <span class="n">colors</span><span class="o">.</span><span class="n">Colormap</span> <span class="o">=</span> <span class="s2">&quot;afmhot&quot;</span><span class="p">,</span> <span class="n">binlims</span><span class="p">:</span> <span class="nb">tuple</span> <span class="o">=</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">50</span><span class="p">)):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot; </span>
 <span class="sd">    This function plots predicted vs. actual values as a density map and provides the Spearman and Pearson correlations of the regressions. </span>
 
@@ -1853,7 +1856,7 @@ We will also plot the profiles for the sample centered around the gene Gm49337 (
       </div>
     </a>
     <a class="right-next"
-       href="1_Data_obtention.html"
+       href="I_Data_obtention.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
@@ -1938,8 +1941,8 @@ By Marc Pielies Avelli
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/bootstrap.js?digest=3ee479438cf8b5e0d341"></script>
-<script src="../_static/scripts/pydata-sphinx-theme.js?digest=3ee479438cf8b5e0d341"></script>
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
 
   <footer class="bd-footer">
   </footer>

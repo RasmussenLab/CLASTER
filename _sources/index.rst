@@ -17,7 +17,8 @@ Modeling nascent RNA transcription from chromatin landscape and structure
     :maxdepth: 2
     :caption: Scripts:
 
-    scripts/1_Data_obtention.ipynb
-    scripts/2_Run_CLASTER.ipynb
-    scripts/2b_Run_HyenaDNA_and_Enformer.ipynb
-    scripts/3_Data_analysis.ipynb
+    scripts/I_Data_obtention.ipynb
+    scripts/II_Run_CLASTER.ipynb
+    scripts/IIb_Run_HyenaDNA_and_Enformer.ipynb
+    scripts/III_Data_analysis.ipynb
+    scripts/IV_Revisions.ipynb
