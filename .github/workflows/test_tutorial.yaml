@@ -16,7 +16,7 @@ jobs:
 
       - name: Install Claster requirements
         run: |
-          pip install numpy pandas matplotlib jupyter ipykernel eir-dl
+          pip install numpy pandas matplotlib jupyter ipykernel eir-dl==0.1.42
       - name: Run papermill for cmd-line execution of notebooks
         run: |
           pip install papermill
