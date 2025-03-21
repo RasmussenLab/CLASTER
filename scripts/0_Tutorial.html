@@ -415,7 +415,7 @@ document.write(`
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#before-we-start">0. Before we start …</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#inputs-and-outputs">1. Inputs and outputs</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#inputs-and-targets">1. Inputs and Targets</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#training-and-validating-claster">2. Training and validating CLASTER</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#create-config-files">2.1 Create config files:</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#run-claster">2.2 Run CLASTER:</a></li>
@@ -445,7 +445,7 @@ document.write(`
 <section id="introduction">
 <h2>Introduction<a class="headerlink" href="#introduction" title="Link to this heading">#</a></h2>
 <p>Hi!</p>
-<p>Welcome to this small tutorial on how to build and run CLASTER using the EIR framework. Please clone this repository (CLASTER) on your computer to start.</p>
+<p>Welcome to this small tutorial on how to build and run CLASTER using the EIR framework. Please clone this repository (CLASTER) on your computer to start. Otherwise, please make sure that the folder structure including inputs, targets and scripts is the same as in the repository.</p>
 <section id="about-claster">
 <h3>About CLASTER<a class="headerlink" href="#about-claster" title="Link to this heading">#</a></h3>
 <p>The Chromatin Landscape and Structure Expression Regressor (CLASTER) is a deep convolutional neural network aimed to translate a given chromatin landscape and its matching 3D structure to the corresponding nascent RNA landscape.</p>
@@ -513,9 +513,9 @@ conda<span class="w"> </span>activate<span class="w"> </span>claster_env_tutoria
 </details>
 </div>
 </section>
-<section id="inputs-and-outputs">
-<h2>1. Inputs and outputs<a class="headerlink" href="#inputs-and-outputs" title="Link to this heading">#</a></h2>
-<p>The obtention of inputs and outputs from publicly available sources is detailed in notebook <code class="docutils literal notranslate"><span class="pre">1_Data_obtention.ipynb</span></code>. In this tutorial we will however provide you with the already created inputs and targets for all samples in the test set.</p>
+<section id="inputs-and-targets">
+<h2>1. Inputs and Targets<a class="headerlink" href="#inputs-and-targets" title="Link to this heading">#</a></h2>
+<p>The obtention of inputs and targets from publicly available sources is detailed in notebook <code class="docutils literal notranslate"><span class="pre">1_Data_obtention.ipynb</span></code>. In this tutorial we will however provide you with the already created inputs and targets for all samples in the test set.</p>
 <p>Input samples and their matching targets are named after the ENSEMBL ID code for the protein coding gene located at the center of the region of interest. We kept the orientation of the genes, and hence the EU-seq signal can go both towards the right or towards the left.</p>
 <p><strong>Landscape branch:</strong></p>
 <p>1Mbp regions centered at the TSS of protein coding genes in chromosome 4.</p>
@@ -525,6 +525,17 @@ conda<span class="w"> </span>activate<span class="w"> </span>claster_env_tutoria
 </ul>
 <blockquote>
 <div><p><em>Note: As a standard data augmentation procedure, samples were provided in their natural orientation (SampleID_forward.npy) and flipped. (SampleID_forward.npy)</em></p>
+</div></blockquote>
+<blockquote>
+<div><p><strong>How do I extend this to my dataset?</strong></p>
+<p><em>Inputs:</em></p>
+<p>We need to store all input samples in a folder, e.g. <code class="docutils literal notranslate"><span class="pre">/inputs/</span></code>. Each sample will be a numpy array with the name {SAMPLE_ID}.npy, of shape (#tracks, sequence length). In our case, #tracks = 4 (ATAC, H3K4me3, H3K27ac, H3K27me3) and sequence length = 10001 (bins of 100bp).</p>
+<p><em>Targets:</em></p>
+<p>Targets are provided as a table, where:</p>
+<ul class="simple">
+<li><p>Columns are ID + name_of_output_1, name_of_ouput_2, etc. In our case we called them ID, -200_ctrl, -199_ctrl, etc.</p></li>
+<li><p>Rows correspond to the sample ID (without .npy) and the table is filled with target values. In our case these were 1kbp read averages for 401 output nodes.</p></li>
+</ul>
 </div></blockquote>
 <div class="cell tag_hide-input docutils container">
 <details class="hide above-input">
@@ -1292,6 +1303,62 @@ We will also create a folder for the results called runs_tutorial.</p>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[Epoch 5/120] | loss-average: 0.2258                                            
+Epoch [6/120]: [1/36]   3%|▋                      , loss-average=0.225 [00:00&lt;?]Traceback (most recent call last):
+  File &quot;/projects/rasmussen/data/enhancer_logic_project/claster_env/bin/eirtrain&quot;, line 8, in &lt;module&gt;
+    sys.exit(main())
+             ^^^^^^
+  File &quot;/maps/projects/rasmussen/data/enhancer_logic_project/claster_env/lib/python3.11/site-packages/eir/train.py&quot;, line 77, in main
+    run_experiment(experiment=default_experiment)
+  File &quot;/maps/projects/rasmussen/data/enhancer_logic_project/claster_env/lib/python3.11/site-packages/eir/train.py&quot;, line 353, in run_experiment
+    train(experiment=experiment)
+  File &quot;/maps/projects/rasmussen/data/enhancer_logic_project/claster_env/lib/python3.11/site-packages/eir/train.py&quot;, line 375, in train
+    trainer.run(data=exp.train_loader, max_epochs=gc.n_epochs)
+  File &quot;/maps/projects/rasmussen/data/enhancer_logic_project/claster_env/lib/python3.11/site-packages/ignite/engine/engine.py&quot;, line 898, in run
+    return self._internal_run()
+           ^^^^^^^^^^^^^^^^^^^^
+  File &quot;/maps/projects/rasmussen/data/enhancer_logic_project/claster_env/lib/python3.11/site-packages/ignite/engine/engine.py&quot;, line 941, in _internal_run
+    return next(self._internal_run_generator)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File &quot;/maps/projects/rasmussen/data/enhancer_logic_project/claster_env/lib/python3.11/site-packages/ignite/engine/engine.py&quot;, line 999, in _internal_run_as_gen
+    self._handle_exception(e)
+  File &quot;/maps/projects/rasmussen/data/enhancer_logic_project/claster_env/lib/python3.11/site-packages/ignite/engine/engine.py&quot;, line 644, in _handle_exception
+    raise e
+  File &quot;/maps/projects/rasmussen/data/enhancer_logic_project/claster_env/lib/python3.11/site-packages/ignite/engine/engine.py&quot;, line 965, in _internal_run_as_gen
+    epoch_time_taken += yield from self._run_once_on_dataset_as_gen()
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File &quot;/maps/projects/rasmussen/data/enhancer_logic_project/claster_env/lib/python3.11/site-packages/ignite/engine/engine.py&quot;, line 1074, in _run_once_on_dataset_as_gen
+    self.state.output = self._process_function(self, self.state.batch)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File &quot;/maps/projects/rasmussen/data/enhancer_logic_project/claster_env/lib/python3.11/site-packages/eir/train.py&quot;, line 415, in step
+    state = call_hooks_stage_iterable(
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File &quot;/maps/projects/rasmussen/data/enhancer_logic_project/claster_env/lib/python3.11/site-packages/eir/train_utils/utils.py&quot;, line 130, in call_hooks_stage_iterable
+    _, state = state_registered_hook_call(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File &quot;/maps/projects/rasmussen/data/enhancer_logic_project/claster_env/lib/python3.11/site-packages/eir/train_utils/utils.py&quot;, line 146, in state_registered_hook_call
+    state_updates = hook_func(state=state, *args, **kwargs)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File &quot;/maps/projects/rasmussen/data/enhancer_logic_project/claster_env/lib/python3.11/site-packages/eir/train_utils/metrics.py&quot;, line 536, in hook_add_uncertainty_loss
+    cur_uncertainty_losses = cur_module(losses_dict=cur_loss_dict)
+                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File &quot;/maps/projects/rasmussen/data/enhancer_logic_project/claster_env/lib/python3.11/site-packages/torch/nn/modules/module.py&quot;, line 1511, in _wrapped_call_impl
+^C
+  File &quot;/maps/projects/rasmussen/data/enhancer_logic_project/claster_env/lib/python3.11/site-packages/torch/nn/modules/module.py&quot;, line 1520, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File &quot;/maps/projects/rasmussen/data/enhancer_logic_project/claster_env/lib/python3.11/site-packages/eir/train_utils/metrics.py&quot;, line 590, in forward
+    loss_value_uncertain = self._calc_uncertainty_loss(
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File &quot;/maps/projects/rasmussen/data/enhancer_logic_project/claster_env/lib/python3.11/site-packages/eir/train_utils/metrics.py&quot;, line 582, in _calc_uncertainty_loss
+    loss = scalar * torch.sum(precision * loss_value + log_var)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+KeyboardInterrupt
+
+</pre></div>
+</div>
+</div>
 </div>
 </section>
 <section id="analyze-results">
@@ -1532,7 +1599,7 @@ We will also plot the profiles for the sample centered around the gene Gm49337 (
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#before-we-start">0. Before we start …</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#inputs-and-outputs">1. Inputs and outputs</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#inputs-and-targets">1. Inputs and Targets</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#training-and-validating-claster">2. Training and validating CLASTER</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#create-config-files">2.1 Create config files:</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#run-claster">2.2 Run CLASTER:</a></li>
