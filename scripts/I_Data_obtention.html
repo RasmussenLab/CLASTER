@@ -1163,11 +1163,6 @@ https://doi.org/10.1016/j.molcel.2021.03.008.
 </div>
 </div>
 </details>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Overwriting create_landscape_arrays_and_targets.py
-</pre></div>
-</div>
-</div>
 </div>
 <p>The created python file can be run from a jupyter notebook cell as:</p>
 <blockquote>
@@ -1372,12 +1367,6 @@ https://doi.org/10.1016/j.molcel.2021.03.008.
 </div>
 </div>
 </details>
-<div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/maps/projects/rasmussen/data/enhancer_logic_project/claster_env/lib/python3.11/site-packages/numpy/core/fromnumeric.py:59: FutureWarning: &#39;DataFrame.swapaxes&#39; is deprecated and will be removed in a future version. Please use &#39;DataFrame.transpose&#39; instead.
-  return bound(*args, **kwds)
-</pre></div>
-</div>
-</div>
 </div>
 <p><strong>Create perturbed inputs and corresponding targets.</strong></p>
 <p>The goal of this part of the pipeline will be to assess what genes are affected when silencing single enhancers.</p>
@@ -1481,11 +1470,6 @@ https://doi.org/10.1016/j.molcel.2021.03.008.
 </div>
 </div>
 </details>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Overwriting create_perturbed_arrays_and_targets.py
-</pre></div>
-</div>
-</div>
 </div>
 <p>Now we have all the data required to train and test CLASTER!</p>
 <p>(We’ll do that in the next python notebook.)</p>
@@ -1518,11 +1502,6 @@ conda<span class="w"> </span>install<span class="w"> </span>bioconda:samtools
 <span class="n">download_files</span><span class="p">(</span><span class="n">links</span><span class="p">,</span> <span class="n">savepath</span><span class="p">)</span>
 
 <span class="o">!</span><span class="w"> </span>gunzip<span class="w"> </span>../GEO_files/GRCm38.p6.genome.fa.gz
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Successfully downloaded GRCm38.p6.genome.fa.gz to ../GEO_files
 </pre></div>
 </div>
 </div>
@@ -1614,20 +1593,10 @@ conda<span class="w"> </span>install<span class="w"> </span>bioconda:samtools
 </div>
 </div>
 </details>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Overwriting create_sequence_boundaries.sh
-</pre></div>
-</div>
-</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span><span class="w"> </span>bash<span class="w"> </span>create_sequence_boundaries.sh<span class="w"> </span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Processing complete. Files generated: ../annotations/training_boundaries.bed, ../annotations/test_boundaries.bed, ../annotations/validation_boundaries.bed
 </pre></div>
 </div>
 </div>
@@ -1716,12 +1685,6 @@ conda<span class="w"> </span>install<span class="w"> </span>bioconda:samtools
 </div>
 </div>
 </details>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>File &#39;../targets/training_targets_Enformer.csv&#39; has been created with columns from -57 to 57.
-File &#39;../targets/test_targets_Enformer.csv&#39; has been created with columns from -57 to 57.
-</pre></div>
-</div>
-</div>
 </div>
 <p>That’s it!
 Now you have all files required to proceed to create, train and test CLASTER. This is done in the next notebook.</p>
