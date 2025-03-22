@@ -10,34 +10,61 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - uses: actions/setup-python@v5
+      - name: Set up Conda
+        uses: conda-incubator/setup-miniconda@v3
         with:
-          python-version: "3.11"
+          auto-update-conda: true
+          python-version: "3.11.11"
+          activate-environment: claster-env
 
-      - name: Install Claster requirements
+      - name: Create Conda environment from YAML
+        shell: bash -el {0}
         run: |
-          pip install numpy pandas matplotlib jupyter ipykernel eir-dl==0.1.42
-      - name: Run papermill for cmd-line execution of notebooks
+          conda env create -f environment/claster-env.yml
+
+      - name: Install papermill
+        shell: bash -el {0}
         run: |
+          conda activate claster-env
           pip install papermill
+
       - name: Test Tutorial
+        shell: bash -el {0}
         run: |
+          conda activate claster-env
           cd scripts
           papermill 0_Tutorial.ipynb 0_Tutorial_out.ipynb -p epochs 4
+
   website:
     name: Publish notebooks as website
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
+      
+      - name: Set up Conda
+        uses: conda-incubator/setup-miniconda@v3
         with:
-          python-version: "3.11"
-      - name: Install dependencies
+          auto-update-conda: true
+          python-version: "3.11.11"
+          activate-environment: claster-env
+
+      - name: Create Conda environment from YAML
+        shell: bash -el {0}
         run: |
+          conda env create -f environment/claster-env.yml
+
+      - name: Install website dependencies
+        shell: bash -el {0}
+        run: |
+          conda activate claster-env
           pip install sphinx sphinx-book-theme myst-nb
+          
       - name: Build website
+        shell: bash -el {0}
         run: |
+          conda activate claster-env
           sphinx-build -n --keep-going -b html ./ ./_build/
+          
       - name: Publish workflow as website
         uses: peaceiris/actions-gh-pages@v4
         with:
