@@ -422,7 +422,8 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#analyze-results">2.3 Analyze results:</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">3. Summary</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-adapt-it-to-work-with-your-own-data">3. How to adapt it to work with your own data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">4. Summary</a></li>
 </ul>
             </nav>
         </div>
@@ -445,7 +446,7 @@ document.write(`
 <section id="introduction">
 <h2>Introduction<a class="headerlink" href="#introduction" title="Link to this heading">#</a></h2>
 <p>Hi!</p>
-<p>Welcome to this small tutorial on how to build and run CLASTER using the EIR framework. Please clone this repository (CLASTER) on your computer to start. Otherwise, please make sure that the folder structure including inputs, targets and scripts is the same as in the repository.</p>
+<p>Welcome to this small tutorial on how to build and run CLASTER using the EIR framework. Please clone this repository (CLASTER) on your computer to start. We will guide you through the main steps required to train and predict using CLASTER, and also how to adapt the pipeline to work with own data.</p>
 <section id="about-claster">
 <h3>About CLASTER<a class="headerlink" href="#about-claster" title="Link to this heading">#</a></h3>
 <p>The Chromatin Landscape and Structure Expression Regressor (CLASTER) is a deep convolutional neural network aimed to translate a given chromatin landscape and its matching 3D structure to the corresponding nascent RNA landscape.</p>
@@ -477,19 +478,14 @@ The network consists of:</p>
 <section id="before-we-start">
 <h2>0. Before we start …<a class="headerlink" href="#before-we-start" title="Link to this heading">#</a></h2>
 <blockquote>
-<div><p>💻 <strong>Create an environment for the project:</strong>
-The following steps will be performed from the terminal, and once the environment is set up we will run everything else from this notebook.
-We will first create an environment for this project, where we will install all the required dependencies. The python package EIR, which is the core framework used to build, train and test CLASTER, will need <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">&gt;=</span> <span class="pre">3.11</span></code>.
-If you have anaconda, the environment can be created from the terminal by typing:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda<span class="w"> </span>create<span class="w"> </span>-n<span class="w"> </span>claster_env_tutorial<span class="w"> </span><span class="nv">python</span><span class="o">=</span><span class="m">3</span>.11<span class="w"> </span>pip<span class="w"> </span>-y<span class="w"> </span><span class="c1">#  Create environment</span>
-conda<span class="w"> </span>activate<span class="w"> </span>claster_env_tutorial<span class="w"> </span><span class="c1">#  Activate it</span>
+<div><p>💻 <strong>Create an environment for the project:</strong></p>
+<p>The following steps will be performed from the terminal, and once the environment is set up we will run everything else from this notebook.
+We will first create an environment for this project, where we will install all the required dependencies. To ease the process and avoid conflicts between versions of different dependencies, we provide a working environment configuration file,  <code class="docutils literal notranslate"><span class="pre">../environment/claster-env.yml</span></code>.
+If you have anaconda, the environment can be created using the yml file from the terminal by typing:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda<span class="w"> </span>env<span class="w"> </span>create<span class="w"> </span>-f<span class="w"> </span>../environment/claster-env.yml<span class="w"> </span><span class="c1"># Create environment</span>
+conda<span class="w"> </span>activate<span class="w"> </span>claster-env<span class="w"> </span><span class="c1">#  Activate it</span>
 </pre></div>
 </div>
-<p>We can now install all the required packages by typing:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>numpy<span class="w"> </span>pandas<span class="w"> </span>matplotlib<span class="w"> </span>jupyter<span class="w"> </span>ipykernel<span class="w"> </span>eir-dl&gt;<span class="o">=</span><span class="m">0</span>.1.43<span class="w"> </span><span class="c1">#  Install these packages to run the notebook</span>
-</pre></div>
-</div>
-<p>We ran this tutorial on eir version 0.1.43.</p>
 </div></blockquote>
 <p><strong>From now on, you can run the pipeline from this notebook!</strong></p>
 <div class="cell tag_hide-input docutils container">
@@ -1303,62 +1299,6 @@ We will also create a folder for the results called runs_tutorial.</p>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[Epoch 5/120] | loss-average: 0.2258                                            
-Epoch [6/120]: [1/36]   3%|▋                      , loss-average=0.225 [00:00&lt;?]Traceback (most recent call last):
-  File &quot;/projects/rasmussen/data/enhancer_logic_project/claster_env/bin/eirtrain&quot;, line 8, in &lt;module&gt;
-    sys.exit(main())
-             ^^^^^^
-  File &quot;/maps/projects/rasmussen/data/enhancer_logic_project/claster_env/lib/python3.11/site-packages/eir/train.py&quot;, line 77, in main
-    run_experiment(experiment=default_experiment)
-  File &quot;/maps/projects/rasmussen/data/enhancer_logic_project/claster_env/lib/python3.11/site-packages/eir/train.py&quot;, line 353, in run_experiment
-    train(experiment=experiment)
-  File &quot;/maps/projects/rasmussen/data/enhancer_logic_project/claster_env/lib/python3.11/site-packages/eir/train.py&quot;, line 375, in train
-    trainer.run(data=exp.train_loader, max_epochs=gc.n_epochs)
-  File &quot;/maps/projects/rasmussen/data/enhancer_logic_project/claster_env/lib/python3.11/site-packages/ignite/engine/engine.py&quot;, line 898, in run
-    return self._internal_run()
-           ^^^^^^^^^^^^^^^^^^^^
-  File &quot;/maps/projects/rasmussen/data/enhancer_logic_project/claster_env/lib/python3.11/site-packages/ignite/engine/engine.py&quot;, line 941, in _internal_run
-    return next(self._internal_run_generator)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File &quot;/maps/projects/rasmussen/data/enhancer_logic_project/claster_env/lib/python3.11/site-packages/ignite/engine/engine.py&quot;, line 999, in _internal_run_as_gen
-    self._handle_exception(e)
-  File &quot;/maps/projects/rasmussen/data/enhancer_logic_project/claster_env/lib/python3.11/site-packages/ignite/engine/engine.py&quot;, line 644, in _handle_exception
-    raise e
-  File &quot;/maps/projects/rasmussen/data/enhancer_logic_project/claster_env/lib/python3.11/site-packages/ignite/engine/engine.py&quot;, line 965, in _internal_run_as_gen
-    epoch_time_taken += yield from self._run_once_on_dataset_as_gen()
-                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File &quot;/maps/projects/rasmussen/data/enhancer_logic_project/claster_env/lib/python3.11/site-packages/ignite/engine/engine.py&quot;, line 1074, in _run_once_on_dataset_as_gen
-    self.state.output = self._process_function(self, self.state.batch)
-                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File &quot;/maps/projects/rasmussen/data/enhancer_logic_project/claster_env/lib/python3.11/site-packages/eir/train.py&quot;, line 415, in step
-    state = call_hooks_stage_iterable(
-            ^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File &quot;/maps/projects/rasmussen/data/enhancer_logic_project/claster_env/lib/python3.11/site-packages/eir/train_utils/utils.py&quot;, line 130, in call_hooks_stage_iterable
-    _, state = state_registered_hook_call(
-               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File &quot;/maps/projects/rasmussen/data/enhancer_logic_project/claster_env/lib/python3.11/site-packages/eir/train_utils/utils.py&quot;, line 146, in state_registered_hook_call
-    state_updates = hook_func(state=state, *args, **kwargs)
-                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File &quot;/maps/projects/rasmussen/data/enhancer_logic_project/claster_env/lib/python3.11/site-packages/eir/train_utils/metrics.py&quot;, line 536, in hook_add_uncertainty_loss
-    cur_uncertainty_losses = cur_module(losses_dict=cur_loss_dict)
-                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File &quot;/maps/projects/rasmussen/data/enhancer_logic_project/claster_env/lib/python3.11/site-packages/torch/nn/modules/module.py&quot;, line 1511, in _wrapped_call_impl
-^C
-  File &quot;/maps/projects/rasmussen/data/enhancer_logic_project/claster_env/lib/python3.11/site-packages/torch/nn/modules/module.py&quot;, line 1520, in _call_impl
-    return forward_call(*args, **kwargs)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File &quot;/maps/projects/rasmussen/data/enhancer_logic_project/claster_env/lib/python3.11/site-packages/eir/train_utils/metrics.py&quot;, line 590, in forward
-    loss_value_uncertain = self._calc_uncertainty_loss(
-                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File &quot;/maps/projects/rasmussen/data/enhancer_logic_project/claster_env/lib/python3.11/site-packages/eir/train_utils/metrics.py&quot;, line 582, in _calc_uncertainty_loss
-    loss = scalar * torch.sum(precision * loss_value + log_var)
-                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-KeyboardInterrupt
-
-</pre></div>
-</div>
-</div>
 </div>
 </section>
 <section id="analyze-results">
@@ -1541,8 +1481,48 @@ We will also plot the profiles for the sample centered around the gene Gm49337 (
 </div>
 </section>
 </section>
+<section id="how-to-adapt-it-to-work-with-your-own-data">
+<h2>3. How to adapt it to work with your own data<a class="headerlink" href="#how-to-adapt-it-to-work-with-your-own-data" title="Link to this heading">#</a></h2>
+<p>Input and target files were already given in an eir-friendly format for this tutorial. Now we will provide some guidelines on how to adapt this pipeline to train CLASTER with your own data. For more details, please have a look at the notebook <code class="docutils literal notranslate"><span class="pre">I_Data_obtention.ipynb</span></code>. We also refer the reader to <a class="reference external" href="https://eir.readthedocs.io/en/latest/">eir.readthedocs.io</a> for more information on how to extend the analyses to new data modalities.</p>
+<p><strong>You need:</strong></p>
+<ul class="simple">
+<li><p>BigWig files containing genomewide chromatin mark enrichments. These can usually be found in <a class="reference external" href="https://www.ncbi.nlm.nih.gov/geo/">NCBI’s GEO</a>.</p></li>
+<li><p>Gene annotations file. Gene annotations were obtained for hg19 from <a class="reference external" href="https://www.gencodegenes.org/human/release_19.html">gencode</a>. We used hg19 because the input data from the Danko lab was mapped to hg19 originally.</p></li>
+</ul>
+<p><strong>Inputs:</strong></p>
+<ul class="simple">
+<li><p>Chromatin landscape inputs are provided as numpy arrays of shape (number of tracks, sequence length).</p></li>
+<li><p>In CLASTER, number of tracks is 4 (ATAC-seq, H3K4me3, H3K27ac, H3K27me3) and sequence length is 10001 (bins at 100bp resolution).</p></li>
+<li><p>Given a BigWig file with the enrichment of a chromatin mark, we can use the python package <code class="docutils literal notranslate"><span class="pre">pyBigWig</span></code> to extract a numpy array with the enrichment of the signal inside predefined genomic boundaries in a desired number of bins as follows:</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>    <span class="n">bw</span> <span class="o">=</span> <span class="n">pyBigWig</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">data_path</span> <span class="o">/</span> <span class="n">bw_path</span><span class="p">),</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span>
+    <span class="n">stats</span> <span class="o">=</span> <span class="n">bw</span><span class="o">.</span><span class="n">stats</span><span class="p">(</span><span class="n">chrom</span><span class="p">,</span><span class="n">start</span><span class="p">,</span><span class="n">end</span><span class="p">,</span><span class="nb">type</span><span class="o">=</span><span class="s2">&quot;mean&quot;</span><span class="p">,</span><span class="n">nBins</span><span class="o">=</span><span class="n">n_input_bins</span><span class="p">)</span>
+    <span class="n">bw</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+    <span class="n">stats</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="nb">float</span><span class="p">(</span><span class="n">value</span><span class="p">)</span> <span class="k">if</span> <span class="n">value</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="k">else</span> <span class="mf">0.</span> <span class="k">for</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">stats</span><span class="p">])</span>
+    <span class="n">stats</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">clip</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">stats</span><span class="p">),</span><span class="mi">0</span><span class="p">,</span><span class="kc">None</span><span class="p">)</span> <span class="c1"># ReLU</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>We centered our samples at the TSS of protein coding genes found in the gene annotations file, and used their Ensemble ID to name each input sample (e.g. <code class="docutils literal notranslate"><span class="pre">ENSMUSG00000000085.16_forward.npy</span></code>). All input samples were stored in the same folder, <code class="docutils literal notranslate"><span class="pre">inputs/landscape_arrays/</span></code>.</p></li>
+<li><p>We then just need to stack the 1D arrays for the different marks in the same region, and give the resulting array a name or ID.</p></li>
+</ul>
+<p><strong>Targets:</strong></p>
+<ul class="simple">
+<li><p>Targets are provided as a table, e.g. a csv file.</p></li>
+<li><p>The header contains an index as the first column (‘ID’) and as many columns as output targets. In CLASTER, we named them <code class="docutils literal notranslate"><span class="pre">-200_ctrl</span></code>,<code class="docutils literal notranslate"><span class="pre">-199_ctrl</span></code>,…,<code class="docutils literal notranslate"><span class="pre">199_ctrl</span></code>,<code class="docutils literal notranslate"><span class="pre">200_ctrl</span></code>, i.e. we had 401 output nodes.</p></li>
+<li><p>Rows are then named after the sample ID (without the .npy prefix), and are filled with the target values matching our inputs. In CLASTER, we had EU-seq enrichment values binned at 1kbp resolution for the central 401 bins.</p></li>
+<li><p>You can follow the same steps as above:</p>
+<ul>
+<li><p>Download the bigwig file for the target genomic track.</p></li>
+<li><p>Extract the signal inside our desired boundaries and resolution using <code class="docutils literal notranslate"><span class="pre">pyBigWig</span></code>.</p></li>
+<li><p>Add the array as a row in the targets csv file matching the ID of the corresponding input.</p></li>
+</ul>
+</li>
+</ul>
+<p>For more advanced analyses like <em>in silico</em> perturbations of the inputs, we refer the reader to <code class="docutils literal notranslate"><span class="pre">IV_Revisions.ipynb</span></code> and <code class="docutils literal notranslate"><span class="pre">III_Data_analysis.ipynb</span></code> for an earlier version of the perturbations.</p>
+</section>
 <section id="summary">
-<h2>3. Summary<a class="headerlink" href="#summary" title="Link to this heading">#</a></h2>
+<h2>4. Summary<a class="headerlink" href="#summary" title="Link to this heading">#</a></h2>
 <p>Thanks for making it that far! We would like to end this tutorial with the following remark:</p>
 <p>CLASTER was designed to predict nascent transcription, but the EIR framework can be reused and expanded for any other purpose. It can handle plenty of other data modalities as well! You just need a well defined input containing some information or signal that can be used to infer the values of another, as an output. You can then customize your network using EIR, provide the inputs and targets in one of the supported data modalities, and name samples with the same ID for input and output.</p>
 <p>If in doubt, feel free to reach out to us!</p>
@@ -1606,7 +1586,8 @@ We will also plot the profiles for the sample centered around the gene Gm49337 (
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#analyze-results">2.3 Analyze results:</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">3. Summary</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-adapt-it-to-work-with-your-own-data">3. How to adapt it to work with your own data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">4. Summary</a></li>
 </ul>
   </nav></div>
 
