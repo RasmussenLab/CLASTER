@@ -29,5 +29,4 @@ targets/test_targets_*.csv
 targets/*1kbp*
 targets/training_targets_Enformer.csv
 training_targets.csv
-HiC-Pro-3.1.0
 *.log

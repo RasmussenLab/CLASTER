@@ -17,10 +17,17 @@ jobs:
           python-version: "3.11.11"
           activate-environment: claster-env
 
-      - name: Create Conda environment from YAML
+      - name: Create or update Conda environment from YAML
         shell: bash -el {0}
         run: |
-          conda env create -f environment/claster-env.yml
+          # Check if environment exists and update it if it does
+          if conda env list | grep -q "claster-env"; then
+            echo "Environment already exists, updating..."
+            conda env update -f environment/claster-env.yml --prune
+          else
+            echo "Creating new environment..."
+            conda env create -f environment/claster-env.yml
+          fi
 
       - name: Install papermill
         shell: bash -el {0}
@@ -48,10 +55,17 @@ jobs:
           python-version: "3.11.11"
           activate-environment: claster-env
 
-      - name: Create Conda environment from YAML
+      - name: Create or update Conda environment from YAML
         shell: bash -el {0}
         run: |
-          conda env create -f environment/claster-env.yml
+          # Check if environment exists and update it if it does
+          if conda env list | grep -q "claster-env"; then
+            echo "Environment already exists, updating..."
+            conda env update -f environment/claster-env.yml --prune
+          else
+            echo "Creating new environment..."
+            conda env create -f environment/claster-env.yml
+          fi
 
       - name: Install website dependencies
         shell: bash -el {0}
