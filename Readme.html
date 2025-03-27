@@ -383,6 +383,7 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#abstract">Abstract</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#in-this-repository">In this repository</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#configurations"><code class="docutils literal notranslate"><span class="pre">configurations</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#environment"><code class="docutils literal notranslate"><span class="pre">environment</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#images"><code class="docutils literal notranslate"><span class="pre">images</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#inputs"><code class="docutils literal notranslate"><span class="pre">inputs</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#scripts"><code class="docutils literal notranslate"><span class="pre">scripts</span></code></a></li>
@@ -420,6 +421,12 @@ document.write(`
 <li><p>Configuration files (.yaml) required to build different flavours of CLASTER.</p></li>
 </ul>
 </section>
+<section id="environment">
+<h3><code class="docutils literal notranslate"><span class="pre">environment</span></code><a class="headerlink" href="#environment" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>We provide a predefined environment configuration file to avoid compatibility issues between package versions when running the tutorial.</p></li>
+</ul>
+</section>
 <section id="images">
 <h3><code class="docutils literal notranslate"><span class="pre">images</span></code><a class="headerlink" href="#images" title="Link to this heading">#</a></h3>
 <ul class="simple">
@@ -433,8 +440,9 @@ document.write(`
 <section id="scripts">
 <h3><code class="docutils literal notranslate"><span class="pre">scripts</span></code><a class="headerlink" href="#scripts" title="Link to this heading">#</a></h3>
 <ul class="simple">
-<li><p><a class="reference external" href="https://github.com/RasmussenLab/CLASTER/blob/master/scripts/0_Tutorial.ipynb"><code class="docutils literal notranslate"><span class="pre">0_Tutorial.ipynb</span></code></a>: The notebook provides a rapid overview of the most important steps in CLASTER’s pipeline, including training and validating the network using the EIR framework.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">I_Data_obtention.ipynb</span></code>: This notebook guides the user through the data obtention process, including:</p>
+<li><p><strong>prom_CHiC_preprocessing</strong>: Folder containing the scripts used to obtain promoter-capture HiC cooler files from the raw reads deposited in SRA files.</p></li>
+<li><p><a class="reference external" href="https://github.com/RasmussenLab/CLASTER/blob/master/scripts/0_Tutorial.ipynb"><code class="docutils literal notranslate"><span class="pre">0_Tutorial.ipynb</span></code></a>: The notebook provides a rapid overview of the most important steps in CLASTER’s pipeline, including training and validating the network using the EIR framework. Please have a look at <code class="docutils literal notranslate"><span class="pre">I_Data_obtention.ipynb</span></code> to get more information on how to download publicly available data and convert it into an EIR-friendly format.</p></li>
+<li><p><a class="reference external" href="https://github.com/RasmussenLab/CLASTER/blob/master/scripts/I_Data_obtention.ipynb"><code class="docutils literal notranslate"><span class="pre">I_Data_obtention.ipynb</span></code></a>: This notebook guides the user through the data obtention process, including:</p>
 <ul>
 <li><p>Data download from publicly available repositories:</p>
 <ul>
@@ -452,8 +460,8 @@ document.write(`
 </li>
 </ul>
 </li>
-<li><p><code class="docutils literal notranslate"><span class="pre">II_Run_CLASTER.ipynb</span></code>: This notebook creates the configuration files required to train and test CLASTER using the EIR framework.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">IIb_Run_HyenaDNA_and_Enformer.ipynb</span></code>: The notebook contains our adaptations of the code building</p>
+<li><p><a class="reference external" href="https://github.com/RasmussenLab/CLASTER/blob/master/scripts/II_Run_CLASTER.ipynb"><code class="docutils literal notranslate"><span class="pre">II_Run_CLASTER.ipynb</span></code></a>: This notebook creates the configuration files required to train and test CLASTER using the EIR framework.</p></li>
+<li><p><a class="reference external" href="https://github.com/RasmussenLab/CLASTER/blob/master/scripts/IIb_Run_HyenaDNA_and_Enformer.ipynb"><code class="docutils literal notranslate"><span class="pre">IIb_Run_HyenaDNA_and_Enformer.ipynb</span></code></a>: The notebook contains our adaptations of the code building</p>
 <ul>
 <li><p>Hyena-DNA (https://github.com/HazyResearch/hyena-dna) in its public colab version.</p></li>
 <li><p>Enformer (https://github.com/lucidrains/enformer-pytorch) in its python implementation.
@@ -463,13 +471,35 @@ These were used to benchmark CLASTER. It includes:</p></li>
 <li><p>Code to fine-tune Hyena-DNA’s backbone and the added head together.</p></li>
 </ul>
 </li>
-<li><p><code class="docutils literal notranslate"><span class="pre">III_Data_analysis.ipynb</span></code>: The notebook contains the functions used to perform the data analysis and create the figures included in the manuscript.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">IV_Revisions.ipynb</span></code>: Code and analyses during the revisions.</p></li>
+<li><p><a class="reference external" href="https://github.com/RasmussenLab/CLASTER/blob/master/scripts/III_Data_analysis.ipynb"><code class="docutils literal notranslate"><span class="pre">III_Data_analysis.ipynb</span></code></a>: The notebook contains the functions used to perform the data analysis and create the figures included in the manuscript.</p></li>
+<li><p><a class="reference external" href="https://github.com/RasmussenLab/CLASTER/blob/master/scripts/IV_Revisions.ipynb"><code class="docutils literal notranslate"><span class="pre">IV_Revisions.ipynb</span></code></a>: Code and analyses added during the revisions. These include:</p>
+<ul>
+<li><p>Creation of EIR config files to define CLASTER model variants:</p>
+<ul>
+<li><p>Short context (20kbp).</p></li>
+<li><p>Different test split.</p></li>
+<li><p>No H3K27ac.</p></li>
+<li><p>Different loss functions.</p></li>
+<li><p>Different last layer activation functions.</p></li>
+<li><p>Adding promoter-capture Hi-C.</p></li>
+</ul>
+</li>
+<li><p>Enhancer-centric perturbational analysis.</p></li>
+<li><p>Extended perturbations to unveil the learned regulatory logic.</p></li>
+<li><p>Extended performance metrics.</p></li>
+<li><p>Data distribution plots.</p></li>
+<li><p>Predicting RNA-seq and POLR2A ChIP-seq.</p>
+<ul>
+<li><p>Benchmarking <em>in silico</em> enhancer silencing with CRISPR enhancer KO experiments on K562.</p></li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 </section>
 <section id="targets">
 <h3><code class="docutils literal notranslate"><span class="pre">targets</span></code><a class="headerlink" href="#targets" title="Link to this heading">#</a></h3>
-<p>The folder contains the target EU-seq profiles matching the input (test) samples.</p>
+<p>The folder contains target EU-seq profiles matching the input (test) samples.</p>
 </section>
 </section>
 </section>
@@ -505,6 +535,7 @@ These were used to benchmark CLASTER. It includes:</p></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#abstract">Abstract</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#in-this-repository">In this repository</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#configurations"><code class="docutils literal notranslate"><span class="pre">configurations</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#environment"><code class="docutils literal notranslate"><span class="pre">environment</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#images"><code class="docutils literal notranslate"><span class="pre">images</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#inputs"><code class="docutils literal notranslate"><span class="pre">inputs</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#scripts"><code class="docutils literal notranslate"><span class="pre">scripts</span></code></a></li>

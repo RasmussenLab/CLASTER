@@ -427,7 +427,7 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#v-performance-evaluations">V) Performance evaluations:</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#vi-data-distributions">VI) Data distributions</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#vii-promoter-capture-hi-c-analyses">VII) Promoter-Capture Hi-C analyses</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#vi-extending-claster-to-new-cell-types-k562-human"><center> VI) Extending CLASTER to new cell types: K562 (human) <center></center></center></a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#viii-extending-claster-to-new-cell-types-k562-human"><center> VIII) Extending CLASTER to new cell types: K562 (human) <center></center></center></a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#predicting-mature-rna-seq-counts-rna-polii-chip-seq">Predicting mature RNA-seq counts &amp; RNA-polII ChIP-seq</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#enhancer-centered-analyses-of-rna-seq-and-polr2a-binding-differences-after-in-silico-enhancer-ablation">Enhancer-centered analyses of RNA-seq and POLR2A binding differences after <em>in silico</em> enhancer ablation:</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#enhancer-gene-pairing-analysis-on-predicted-rna-seq-and-polr2a-chip-seq">Enhancer-gene pairing analysis on predicted RNA-seq and POLR2A Chip-seq.</a></li>
@@ -12178,8 +12178,8 @@ eirtrain<span class="w"> </span><span class="se">\</span>
 </div>
 </div>
 </section>
-<section id="vi-extending-claster-to-new-cell-types-k562-human">
-<h2><center> VI) Extending CLASTER to new cell types: K562 (human) <center><a class="headerlink" href="#vi-extending-claster-to-new-cell-types-k562-human" title="Link to this heading">#</a></h2>
+<section id="viii-extending-claster-to-new-cell-types-k562-human">
+<h2><center> VIII) Extending CLASTER to new cell types: K562 (human) <center><a class="headerlink" href="#viii-extending-claster-to-new-cell-types-k562-human" title="Link to this heading">#</a></h2>
 <p>Reviewer 1 asked us to benchmark our <em>in silico</em> perturbations with experimental data. Most experimental data on genome-wide enhancer KOs is obtained in K562 cells. We did not find nascent transcription data matching our protocol, and hence decided to predict two widespread transcriptional readouts: RNA-seq and POLR2A ChIP-seq.</p>
 <section id="predicting-mature-rna-seq-counts-rna-polii-chip-seq">
 <h3>Predicting mature RNA-seq counts &amp; RNA-polII ChIP-seq<a class="headerlink" href="#predicting-mature-rna-seq-counts-rna-polii-chip-seq" title="Link to this heading">#</a></h3>
@@ -12772,7 +12772,7 @@ eirtrain<span class="w"> </span><span class="se">\</span>
 <li><p>Predict using models trained on K562 (human) data.</p></li>
 <li><p>Quantify POLR2A /RNA-seq changes:</p>
 <ul>
-<li><p>For POLR2A: Integrate between 1 kbp upstream and 2 kbp downstream of all genes in predicted window.</p></li>
+<li><p>For POLR2A: Integrate between 2 kbp upstream and 3 kbp downstream of all genes in predicted window. (-1,2) kbp yielded similar results.</p></li>
 <li><p>For RNA-seq: Integrate inside gene boundaries of all genes in predicted window.</p></li>
 </ul>
 </li>
@@ -12782,6 +12782,7 @@ eirtrain<span class="w"> </span><span class="se">\</span>
 <ul>
 <li><p>Gene-enhancer distance: <span class="math notranslate nohighlight">\(Score = - Distance\)</span></p></li>
 <li><p>RNA and POLR2A models: <span class="math notranslate nohighlight">\(Score = abs(\)</span> Area difference <span class="math notranslate nohighlight">\()\)</span></p></li>
+<li><p>Ratio to max models: area difference divided by max area difference found in predicted window.</p></li>
 </ul>
 </li>
 <li><p>Confusion matrices:</p>
@@ -13519,8 +13520,8 @@ eirtrain<span class="w"> </span><span class="se">\</span>
     <span class="n">integration_type</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
     <span class="n">window_size</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">200500</span><span class="p">,</span>
     <span class="n">resolution</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">1000</span><span class="p">,</span>
-    <span class="n">upstream_bins</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span>
-    <span class="n">downstream_bins</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">2</span><span class="p">,</span>
+    <span class="n">upstream_bins</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">2</span><span class="p">,</span>
+    <span class="n">downstream_bins</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">3</span><span class="p">,</span>
     <span class="n">save_path</span><span class="p">:</span> <span class="n">Path</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
     <span class="n">show_plot</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span>
 <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">plt</span><span class="o">.</span><span class="n">Figure</span><span class="p">:</span>
@@ -14787,8 +14788,8 @@ eirtrain<span class="w"> </span><span class="se">\</span>
     <span class="n">ax1</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">200</span><span class="p">)</span>
     <span class="n">fig</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 
-    <span class="n">threshold_polr2a</span> <span class="o">=</span> <span class="mi">10</span>
-    <span class="n">merged_crispr_df</span> <span class="o">=</span> <span class="n">merged_crispr_df</span><span class="p">[(</span><span class="n">merged_crispr_df</span><span class="p">[</span><span class="s1">&#39;baseline_area_polr2a&#39;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">threshold_polr2a</span><span class="p">)]</span>
+    <span class="c1">#threshold_polr2a = 10</span>
+    <span class="c1">#merged_crispr_df = merged_crispr_df[(merged_crispr_df[&#39;baseline_area_polr2a&#39;] &gt; threshold_polr2a)]</span>
     
     <span class="c1"># 1. Plot correlation between methods</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;- Generating correlation scatter plot...&quot;</span><span class="p">)</span>
@@ -14871,7 +14872,7 @@ eirtrain<span class="w"> </span><span class="se">\</span>
 </div>
 </div>
 <p><strong>Plotting ground truth Enhancer-Gene pairs</strong></p>
-<p>Here we will plot ground truth Enhancer-Gene pairs in K562 cells, obtained by CRISPR KO of enhancers and measuring the induced gene expression changes. This data was downloaded from the <a class="reference external" href="https://github.com/EngreitzLab/CRISPR_comparison/tree/main/resources/crispr_data">Engreitz lab’s github</a>, referenced as a benchmarking dataset in <a class="reference external" href="https://doi.org/10.1101/2023.11.09.563812">A. Gschwind et al.</a>.</p>
+<p>Here we will plot ground truth Enhancer-Gene pairs in K562 cells, obtained by CRISPR KO of enhancers and measuring the induced gene expression changes. This data was downloaded from the <a class="reference external" href="https://github.com/EngreitzLab/CRISPR_comparison/tree/main/resources/crispr_data">Engreitz lab’s github</a>, referenced as a benchmarking dataset in <a class="reference external" href="https://doi.org/10.1101/2023.11.09.563812">Gschwind et al.</a>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">DOWNLOAD</span> <span class="o">=</span> <span class="kc">True</span>
@@ -15465,7 +15466,7 @@ eirtrain<span class="w"> </span><span class="se">\</span>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#v-performance-evaluations">V) Performance evaluations:</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#vi-data-distributions">VI) Data distributions</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#vii-promoter-capture-hi-c-analyses">VII) Promoter-Capture Hi-C analyses</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#vi-extending-claster-to-new-cell-types-k562-human"><center> VI) Extending CLASTER to new cell types: K562 (human) <center></center></center></a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#viii-extending-claster-to-new-cell-types-k562-human"><center> VIII) Extending CLASTER to new cell types: K562 (human) <center></center></center></a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#predicting-mature-rna-seq-counts-rna-polii-chip-seq">Predicting mature RNA-seq counts &amp; RNA-polII ChIP-seq</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#enhancer-centered-analyses-of-rna-seq-and-polr2a-binding-differences-after-in-silico-enhancer-ablation">Enhancer-centered analyses of RNA-seq and POLR2A binding differences after <em>in silico</em> enhancer ablation:</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#enhancer-gene-pairing-analysis-on-predicted-rna-seq-and-polr2a-chip-seq">Enhancer-gene pairing analysis on predicted RNA-seq and POLR2A Chip-seq.</a></li>

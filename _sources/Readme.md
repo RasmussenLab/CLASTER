@@ -16,6 +16,9 @@ This repository contains the files and scripts required to reproduce the results
 ### `configurations`
 - Configuration files (.yaml) required to build different flavours of CLASTER.
 
+### `environment`
+- We provide a predefined environment configuration file to avoid compatibility issues between package versions when running the tutorial.
+
 ### `images`
 - Overview of CLASTER's architecture.
 
@@ -25,8 +28,10 @@ The folder contains the test set inputs for both data modalities, i.e. samples e
 
 ### `scripts`
 
-- [`0_Tutorial.ipynb`](https://github.com/RasmussenLab/CLASTER/blob/master/scripts/0_Tutorial.ipynb): The notebook provides a rapid overview of the most important steps in CLASTER's pipeline, including training and validating the network using the EIR framework. 
-- `I_Data_obtention.ipynb`: This notebook guides the user through the data obtention process, including:
+- **prom_CHiC_preprocessing**: Folder containing the scripts used to obtain promoter-capture HiC cooler files from the raw reads deposited in SRA files.
+
+- [`0_Tutorial.ipynb`](https://github.com/RasmussenLab/CLASTER/blob/master/scripts/0_Tutorial.ipynb): The notebook provides a rapid overview of the most important steps in CLASTER's pipeline, including training and validating the network using the EIR framework. Please have a look at `I_Data_obtention.ipynb` to get more information on how to download publicly available data and convert it into an EIR-friendly format.
+- [`I_Data_obtention.ipynb`](https://github.com/RasmussenLab/CLASTER/blob/master/scripts/I_Data_obtention.ipynb): This notebook guides the user through the data obtention process, including:
     - Data download from publicly available repositories:
         - Inputs: Chromatin landscape (ATAC-seq, H3K4me3, H3K27ac and H3K27me3 in mESCs) and structure (Micro-C maps in mESCs)
         - Outputs: Nascent transcription profiles (EU-seq).
@@ -35,17 +40,30 @@ The folder contains the test set inputs for both data modalities, i.e. samples e
     - Data filtering and preprocessing:
         - Obtain numpy arrays for the inputs.
         - Obtain csv files for the targets.
-- `II_Run_CLASTER.ipynb`: This notebook creates the configuration files required to train and test CLASTER using the EIR framework.
-- `IIb_Run_HyenaDNA_and_Enformer.ipynb`: The notebook contains our adaptations of the code building
+- [`II_Run_CLASTER.ipynb`](https://github.com/RasmussenLab/CLASTER/blob/master/scripts/II_Run_CLASTER.ipynb): This notebook creates the configuration files required to train and test CLASTER using the EIR framework.
+- [`IIb_Run_HyenaDNA_and_Enformer.ipynb`](https://github.com/RasmussenLab/CLASTER/blob/master/scripts/IIb_Run_HyenaDNA_and_Enformer.ipynb): The notebook contains our adaptations of the code building
     - Hyena-DNA (https://github.com/HazyResearch/hyena-dna) in its public colab version.
     - Enformer (https://github.com/lucidrains/enformer-pytorch) in its python implementation. 
 These were used to benchmark CLASTER. It includes:
     - The obtention of sequence embeddings from both model's backbones when loading the pretrained weights. 
     - The addition of a model head on top of the embeddings to match our regression outputs.
     - Code to fine-tune Hyena-DNA's backbone and the added head together.
-- `III_Data_analysis.ipynb`: The notebook contains the functions used to perform the data analysis and create the figures included in the manuscript.
-- `IV_Revisions.ipynb`: Code and analyses during the revisions.
+- [`III_Data_analysis.ipynb`](https://github.com/RasmussenLab/CLASTER/blob/master/scripts/III_Data_analysis.ipynb): The notebook contains the functions used to perform the data analysis and create the figures included in the manuscript.
+- [`IV_Revisions.ipynb`](https://github.com/RasmussenLab/CLASTER/blob/master/scripts/IV_Revisions.ipynb): Code and analyses added during the revisions. These include:
+    - Creation of EIR config files to define CLASTER model variants:
+        - Short context (20kbp).
+        - Different test split.
+        - No H3K27ac.
+        - Different loss functions.
+        - Different last layer activation functions.
+        - Adding promoter-capture Hi-C.
+    - Enhancer-centric perturbational analysis.
+    - Extended perturbations to unveil the learned regulatory logic.
+    - Extended performance metrics.
+    - Data distribution plots.
+    - Predicting RNA-seq and POLR2A ChIP-seq.
+        - Benchmarking _in silico_ enhancer silencing with CRISPR enhancer KO experiments on K562.
 
 ### `targets`
 
-The folder contains the target EU-seq profiles matching the input (test) samples.
+The folder contains target EU-seq profiles matching the input (test) samples.
